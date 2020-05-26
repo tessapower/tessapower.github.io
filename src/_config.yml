@@ -1,0 +1,43 @@
+title: "Tessa Power"
+author: "Tessa Power"
+description: "Have you tried turning it off and on again?"
+permalink: /:title/
+lang: "en"
+excerpt_separator: "\n\n\n"
+date_format: "%-d %B %Y"
+
+# Layout
+
+sidebar: false              # show a sidebar instead of the usual header
+show_excerpts: true         # show article excerpts on the home page
+show_related: true          # show the previous and next links after every post
+show_description: false     # show the site description in the sidebar
+show_title: false           # always keep the site title visible
+
+# Styling
+
+dark_header: false          # always keep the header dark
+minimal: true               # use simpler style
+
+# Menu
+
+navigation:
+  - {file: "index.html", icon: terminal}
+  - {file: "about.md", icon: question}
+  - {file: "blog.html", icon: list-ul} 
+
+external:
+  # see http://fontawesome.com/icons
+  - {title: echo, icon: at, url: "mailto:tessa@tessapower.co"}
+  - {title: github , icon: github, url: "https://github.com/tessapower"}
+  - {title: twitter, icon: twitter, url: "https://twitter.com/dearesttessi"}
+#  - {title: rss, icon: rss, url: "/feed.xml"}
+
+remote_theme: niklasbuschmann/contrast@v2.8
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+
