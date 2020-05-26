@@ -1,0 +1,6 @@
+- name: cd
+  link: /
+- name: ls -la
+  link: /blog.html
+- name: whoami
+  link: /about.html
