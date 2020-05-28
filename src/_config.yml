@@ -24,7 +24,7 @@ minimal: true               # use simpler style
 navigation:
   - {file: "index.html", icon: terminal}
   - {file: "about.md", icon: question}
-  - {file: "blog.html", icon: list-ul} 
+  - {file: "archive.html", icon: list-ul} 
 
 external:
   # see http://fontawesome.com/icons
