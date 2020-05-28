@@ -1,10 +1,8 @@
 ---
-title: Hello, I'm Tessa.
+title: Hello, I'm Tessa
 layout: post
 ---
-### $ whoami
-
-At the time of writing, I'm 27. I'm from New Zealand, but I've lived in a few different countries and learned a few different languages. I only know enough to order an ice cream in Italy and a coffee in France—German is the language I can speak mostly fluently. 
+I'm 27 years old. I'm from New Zealand, but I've lived in a few different countries and travelled around a bit.
 
 Things that I will passionately talk your ear off about about are:
 * Languages (human and computer);
