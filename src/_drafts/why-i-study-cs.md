@@ -1,5 +1,5 @@
 ---
-title: How I started out. 
+title: Why I study CS 
 layout: post
 ---
 ### In 2015...
