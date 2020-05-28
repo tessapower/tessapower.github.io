@@ -28,10 +28,9 @@ navigation:
 
 external:
   # see http://fontawesome.com/icons
-  - {title: echo, icon: at, url: "mailto:tessa@tessapower.co"}
-  - {title: github , icon: github, url: "https://github.com/tessapower"}
+  - {title: github, icon: github, url: "https://github.com/tessapower"}
+  - {title: linkedin, icon: linkedin-in, url: "https://linkedin.com/in/tessa-power"}
   - {title: twitter, icon: twitter, url: "https://twitter.com/dearesttessi"}
-#  - {title: rss, icon: rss, url: "/feed.xml"}
 
 remote_theme: niklasbuschmann/contrast@v2.8
 
