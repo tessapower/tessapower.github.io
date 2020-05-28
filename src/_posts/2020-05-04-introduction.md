@@ -2,7 +2,8 @@
 title: Hello, I'm Tessa
 layout: post
 ---
-I'm 27 years old. I'm from New Zealand, but I've lived in a few different countries and travelled around a bit.
+I'm a 27 year old from New Zealand. I've lived in a few different countries, seen a few things, and now I'm studying Computer Science at Massey University.
+After I finish, I'm going to work in the games industry as a developer.
 
 Things that I will passionately talk your ear off about about are:
 * Languages (human and computer);
@@ -11,8 +12,5 @@ Things that I will passionately talk your ear off about about are:
 * Rock climbing;
 * Scuba Diving; and
 * Spicy food.
-
-
-I'm studying a Bachelor of Science at Massey University—my major is Computer Science and my minor is Math. After I finish, my goal is to work in the games industry as a developer.
 
 If you have feedback, know any bad jokes, or know something I should write about—just [tweet me](https://twitter.com/intent/tweet?text=@dearesttessi%20 "Tweet Tessa")!
