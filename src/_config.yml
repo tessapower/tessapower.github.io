@@ -36,7 +36,6 @@ external:
 remote_theme: niklasbuschmann/contrast@v2.8
 
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-remote-theme
