@@ -29,8 +29,6 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
-    jekyll-feed (0.13.0)
-      jekyll (>= 3.7, < 5.0)
     jekyll-remote-theme (0.4.2)
       addressable (~> 2.0)
       jekyll (>= 3.5, < 5.0)
@@ -75,10 +73,10 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.0.1)
-  jekyll-feed
   jekyll-remote-theme
   jekyll-seo-tag
   jekyll-sitemap
+  jekyll-timeago
   wdm (>= 0.1.0)
 
 BUNDLED WITH
