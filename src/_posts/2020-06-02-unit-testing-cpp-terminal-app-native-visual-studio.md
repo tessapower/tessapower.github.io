@@ -6,7 +6,7 @@ layout: post
 
 To learn C++, I'm building the well known game Tic Tac Toe using Visual Studio 2019, while reading through Stroustrup's ["The C++ Programming Language (4th Edition)"](http://www.stroustrup.com/4th.html). I'm no designer, so it's a console app that runs in Terminal.
 
-<img alt="TicTacToe on Terminal" src="./src/assets/posts/2020-06-02-unit-testing/tictactoe-game.gif" height=250>
+<img alt="TicTacToe on Terminal" src="https://raw.githubusercontent.com/tessapower/personal-website/test/new-post/src/assets/posts/2020-06-02-unit-testing/tictactoe-game.gif" height=250>
 
 The entire game (literally everything) is located in a single `.cpp` file in my VS solution called `TheGame.cpp`. I know—my creativity knows no bounds. But it's rather ugly, so I'm going to refactor the program to be object-oriented. Before making any changes, I wrote unit tests to make sure I won't break anything while refactoring.
 
