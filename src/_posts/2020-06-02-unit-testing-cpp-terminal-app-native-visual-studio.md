@@ -6,7 +6,7 @@ layout: post
 
 To learn C++, I'm building the well known game Tic Tac Toe using Visual Studio 2019, while reading through Stroustrup's ["The C++ Programming Language (4th Edition)"](http://www.stroustrup.com/4th.html). I'm no designer, so it's a console app that runs in Terminal.
 
-<img alt="TicTacToe on Terminal" src="https://raw.githubusercontent.com/tessapower/personal-website/test/new-post/src/assets/posts/2020-06-02-unit-testing/tictactoe-game.gif" height=250>
+<img alt="TicTacToe on Terminal" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/tictactoe-game.gif" height=250>
 
 The entire game (literally everything) is located in a single `.cpp` file in my VS solution called `TheGame.cpp`. I know—my creativity knows no bounds. But it's rather ugly, so I'm going to refactor the program to be object-oriented. Before making any changes, I wrote unit tests to make sure I won't break anything while refactoring.
 
@@ -21,27 +21,27 @@ VS 2019 ships with a native C++ unit test framework, which defines a series of m
 
 ### How I set up a Unit Test Project in the Solution:
 1. Right-click the solution and click `Add > New > Project`.
-2. Click the `Visual C++` category and choose the sub-category `Test`.
+2. Under the `Project Type` filter, choose `Test`.
 3. Select `Native Unit Test Project`, give the project a descriptive name, and click `OK`.
-
-    * Gif of creating new project](path)
+    
+    <img alt="Creating a Unit Test Project" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/new-test-project.gif" height=400>
 
     When creating a separate test project in VS 2019, you need to create a reference to the project you want to test. This give the Unit Test Project access to the project you want to test.
 
 4. Right-click the Unit Test Project and click `Add > Reference...`
 5. Check the box next to the projects to test and click `OK`.
 
+    <img alt="Add the Project Reference" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/add-project-ref.gif" height=400>
+
 What tripped me up was forgetting to also `#include` the header files the unit test would need access to. The reference doesn't automatically give the Unit Test Project access to the `#include`d headers from the referenced project—you need to specify the ones you need.
 
 At this stage, I didn't have any header files, so I didn't realise until later.
-
-* image of including header file in unit test project](path)
 
 ### Deciding how to structure the Unit Test Project
 
 When you create a Unit Test Project as described above, VS creates a template project, a `.cpp` file with example unit tests classes, unit test methods, and all the Native test framework dependencies already in place! It gave me a nice headstart and was easy to pickup how I should structure my tests. I decided to use this `.cpp` file to test only the game logic and to add `.cpp` files for other areas later.
 
-* image of template test class & method](path)
+<img alt="Structure of Unit Tests" src="{{ site.baseurl }}\assets\posts\2020-06-02-unit-testing\unit-test-structure.jpg" height=250>
 
 Splitting up unit testing over multiple .`cpp` files allows me to run one, some, or all of my unit tests. I could also do this by creating playlists of unit tests. So if I am working in area X, I don't need to also run the unit tests for area Y, which will speed up development. In my case it'd probably only be a few seconds, but still useful.
 
@@ -102,16 +102,18 @@ TEST_METHOD(ExpectNotWon_GameStateDraw)
 }
 ```
 
-Now that I have tests, it's time to run them!
+Now it's time to put my unit tests... to the test.
 
 ---
 
 ## Running the tests
 
+The tests currently call a function that I've haven't defined yet, so all tests should fail. Running them now will ensure any obvious logic fails will pop up before moving on to refactoring.
+
 ### Using the VS Test Explorer
 Since VS 2019 ships with the Native C++ Unit Test Framework, it's super simple to run unit test projects from within the IDE. If you're a GUI fan, you can use Test Explorer:
 
-* gif of using Test Explorer to run tests](path)
+<img alt="Running Tests with Test Explorer" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/test-explorer.gif" height=400>
 
 The GUI is a great way to quickly scan and see which tests have passed or failed.
 
@@ -123,18 +125,18 @@ According to Microsoft's VS docs, `VSTest.console.exe` is found in the following
 
 `c:\%Program Files(x86)%\Microsoft Visual Studio\<version>\<edition>\common7\ide\CommonExtensions\<Platform | Microsoft(x86)%\Microsoft Visual Studio\<version>\<edition>\common7\ide\CommonExtensions\<Platform | Microsoft>`
 
-It's a bit fiddly, but I eventually found it.
+It's a bit fiddly, but I eventually found it. To run the tests on my machine, it looked like this:
 
 ```powershell
 cd '\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow'
-vstest.console.exe c:\path\to\unit-tests\
+vstest.console.exe c:\path\to\unit\tests\
 ```
 
 Which resulted in this:
 
-* Gif of tests passing](path)
+<img alt="Running Tests in Terminal" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/terminal.gif" height=250>
 
-Now this part of `TheGame.cpp` is ready for refactoring!
+Now that the tests are doing a great job at failing, we can refactor `TheGame.cpp` to get them passing!
 
 ---
 
@@ -142,11 +144,7 @@ Now this part of `TheGame.cpp` is ready for refactoring!
 
 ### Linker Errors :(
 
-I missed a crucial step when setting up the Unit Tests Project that lead to linker errors when I first went to run the tests (LNK1165, LNK2005, and LNK2019). I was pretty frustrated, as the errors were blocking tests from running.
-
-* Gif of terminal linker problem](path)
-
-I googled the possible causes for (what felt like) forever, eventually finding out the issue:
+I missed a crucial step when setting up the Unit Tests Project that lead to linker errors when I first went to run the tests (_LNK1165_, _LNK2005_, and _LNK2019_). I was pretty frustrated, as the errors were blocking tests from running. After googling the possible causes for (what felt like) forever, I eventually finding out the issue:
 
 The code under test is built as an .exe file and not a .dll. Which means I needed to link the separate Unit Test Project to the output object file. The code being tested doesn't export the functions that I wanted to test, so the fix was to add the output .obj or .lib file to the dependencies of the test project.
 
@@ -156,7 +154,7 @@ Here's how I did that:
 2. Click `Properties` and in the new window click `Linker > Input > Additional Dependencies > Edit`.
 3. Add the path to the .obj file-in my case I used `"$(SolutionDir)TheGame\$(IntDir)*.obj"`, where `TheGame` is the target project name.
 
-* Gif of solving issue](path)
+<img alt="Solving the Dreaded Linker Error" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/linker-error.gif" height=400>
 
 ---
 
