@@ -4,24 +4,22 @@ layout: post
 ---
 In a [previous post]({% post_url 2020-06-02-unit-testing-cpp-terminal-app-native-visual-studio %}), I created unit tests for a console app using Visual Studio's Native C++ Framework and Test Platform. The process of running the tests with `VSTest.console.exe` in Terminal was rather tedious, so I decided to automate the process using GitHub Actions.
 
-Even if I used Visual Studio's built-in Test Explorer to run tests, there is always a risk that I break some's even push it to the remote branch without having tested it. Better to protect my code from my monkey brain and use something automated!
-
+<img alt="GitHub Actions in Action" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\action-in-action.gif">
 
 ---
 
 ## [GitHub Actions](#github-actions)
 
-[GitHub Actions](https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions) are essentially "scripts" that help to automate workflows directly in your GitHub repos. The Actions run on remote servers (called _runners_) and can be used to build, test, integrate and deploy projects. There is even a marketplace, where you can find ready-to-use Actions for common workflows.
+[GitHub Actions](https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions) are essentially scripts that help to automate workflows directly in your GitHub repos. The Actions run on remote servers (called _runners_) and can be used to build, test, integrate and deploy projects. There is even a marketplace, where you can find ready-to-use Actions for common workflows.
+
 
 ### Why GitHub Actions?
 
-Actions sounded perfect for automating C++ unit tests. I was keen to learn about Actions not just to automate unit tests, but also to block "bad code" from reaching the remote branch in the first place. Combined with GitHub's [Branch Protection Rules](https://help.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests) feature, my workflow will only allow PRs to merge to `master` if it completes successfully—it's a win-win! And, if that wasn't good enough, it's totally free!
+Not only do I love of all things GitHub, Actions genuinely sounded perfect for automating C++ unit tests. I wanted to learn about Actions not just to automate unit tests, but also to prevent me from introducing bugs. If any of the tests don't pass, then my Action will fail and I'll be notified. This will come in handy when I have many more tests, and don't run them all while coding.
 
-(It's also shiny and new, and I heart all things GitHub.)
-<img alt="Tessa hearts GitHub" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\github-stickers.jpeg" width=250>
+When you're working in a team, Actions is great to combine with the [Branch Protection Rules](https://help.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests) feature, which I'll talk about in another blog post. Basically, an Action can act as a check. Merging PRs to protected branches is disabled unless the check is successful. And, if that wasn't good enough, it's totally free!
 
 ---
-
 
 ## [Setting up a new workflow](#setting-up-a-new-workflow)
 
@@ -35,59 +33,11 @@ Setting up a workflow in my repo was super simple—here's how I did it:
 
 That's it, like I said—super simple! Alternatively, you can create a workflows folder in the root of your repo under `.github/workflows` and add a new `.YAML` or `.YML` file—this is where you configure your workflow.
 
-## [Workflow basics](#workflow-basics)
-
-Workflows are configured using GitHub's [workflow YAML syntax](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions) and are made up of jobs (at least one of them). Each job has a set of steps that perform individual tasks, like run commands or an Action shared by the GitHub community. For my workflow, I used a few Actions from the marketplace, and customised them to suit my project. The really nice thing about this is that you don't have to reinvent the wheel, and the result is just a few lines of syntax. 
-
-The basic structure of a workflow looks like this:
-
-```yml
-name: My Workflow
-
-# specify which event(s) and which branches trigger My Workflow
-on: 
-  push:
-    branches:
-      - master
-      - foo/*
-      - bar/*
-  
-  pull_request:
-    branches:
-      - master
-      - foo/*
-      - bar/*
-
-# Configure all the jobs for My Workflow here
-jobs:
-
-  my_job:
-    # specify which runner to use
-    runs-on: windows-latest 
-    name: This is a description of what my_job does!
-
-    steps:
-      - name: Run an Action
-        # Points to an action from the marketplace
-        uses: actions/some-action 
-
-  my_other_job:
-    runs-on: windows latest
-    name: A great description of my_other_job!
-
-    steps:
-      - name: Run a command
-        # Runs a command in the shell
-        run: echo "Ran command."
-
-    # etc...
-```
-
 ---
 
 ## [What to automate](#what-to-automate)
 
-The easiest way to figure out what my workflow needed to do was to treat it like setting up a new machine. That means my workflow needs to:
+Before configuring my workflow, I needed to figure out what it should actually do. The easiest way I found was to treat it like setting up a new machine. That meant my workflow needed to:
 
 1. Check out the code—the runner doesn't automatically do this.
 2. Build the project—to generate the unit tests `.dll` file.
@@ -131,7 +81,7 @@ Second, run MSBuild in the shell and build the project:
 
 ### Step 3: Run the tests
 
-I found Visual Studio on the [list of software installed on runners](https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners), which meant that I could use the VS Test Console tool to run unit tests like I normally would locally. After many (many) tests, I realised that this step also needed to two steps.
+I found Visual Studio on the [list of software installed on runners](https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners), which meant that I could use the VS Test Console tool to run unit tests like I normally would locally. After many (many) tests, I realised that this step also needed to be two steps.
 
 First, locate `vstest.console.exe` on the runner and add it to PATH. For this, I adapted the [Setup VSTest.console.exe](https://github.com/marketplace/actions/setup-vstest-console-exe) Action from GitHub user [darenm](https://github.com/darenm). The Action is intended for a UWP app, so some of the steps aren't necessary for a console app.
 
@@ -141,7 +91,7 @@ First, locate `vstest.console.exe` on the runner and add it to PATH. For this, I
   uses: darenm/Setup-VSTest@v1
 ```
 
-Second, run VSTest in the shell and run the tests:
+Second, run VSTest in the shell to run the tests:
 
 ```yml
 # Step 3.2: run VSTest
@@ -195,69 +145,13 @@ jobs:
 
 ---
 
-## [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
-
-I made a fair few mistakes and did a lot of rewrites to get to the above configuration! Because GitHub Actions is still quite new, the documentation is a WIP. Changes have not been updated everywhere, so sometimes there was conflicting information. With a bit of trial and error, and after reading through the workflow build logs, I got things back on track.
-
-### Mistake #1: Job scope
-
-The first thing that tripped me up was "job scope". Initially I had multiple jobs—one job to set up MSBUild and VSTest, and one job to run them. But what you find in build logs is that nothing (no data, outputs, or the state of the runner) persists after a job finishes, even within the same workflow.
-
-<img alt="Job Scope" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\job-scope.jpg">
-
-It's similar to what happens in a function, and whatever happened in that job is "reset" once the job finishes. This includes cleaning up the checked out repo. If you need the checked out code, data, or outputs for another job, you need to use global variables, called _environment variables_.
-
-For my workflow, I only needed to merge the two jobs into one—once MSBuild and VSTest had been set up, the changes were available for the next steps where they're run.
-
-### Mistake #2: Shell commands
-
-Another mistake I made was assuming where the runner ran shell commands from. I assumed from the root folder of the checked out repo, but this isn't the case. For commands that require a relative path, you need to specify the working directory. For my workflow, this was the root folder of the repo and generated build folder, as MSBuild and VSTest need the relative paths to the `.sln` and `.dll` files respectively.
-
-GitHub's documentation on Actions is extensive, but not exhaustive, and I found conflicting information where changes haven't been updated. This was the error that prompted me to dig around the docs some more:
-
-<img alt="GITHUB_WORKSPACE Error" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\gh-workspace-error.jpg">
-
-The issue was that GitHub's [list of default environment variables](https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables) states `GITHUB_WORKSPACE` is the GitHub workspace directory path. After digging around, I found out it should be `github.workspace`.
-
-The fix is pretty easy—I only needed to add one for each step that needed a specific working directory:
-
-```yml
-- name: ...
-  {% raw %}working-directory: ${{ github.workspace }}{% endraw %}
-  run: ...
-```
-
----
-
 ## [Putting the workflow to work](#putting-the-workflow-to-work)
 
 After a bunch of testing, reading logs, and fine-tuning, it's working! It was super useful to watch the build logs once the workflow triggered. You can find them under the `Actions` tab. Just click on any of the events that triggered your workflow to see more information. Here you will also find tests results, artifacts, and statuses for each step. 
 
 <img alt="GitHub Actions Build Logs" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\actions-build-log.gif">
 
-Now that my workflow is working, I can use it alongside Branch Protection.
-
----
-
-## [Combining GitHub Actions with Branch Protection](#combining-github-actions-with-branch-protection)
-
-Github's Branch Protection feature is going to save me from my lazy self, and I can worry less about merging breaking changes that slip through the testing cracks! Here's how to set it up:
-
-1. From the repo, click `Settings`.
-2. Click `Branches`.
-3. Click `Add rule` next to "Branch protection rules".
-    
-    <img alt="Setting up Branch Protection" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\branch-protection-1.gif">
-
-4. In Branch name pattern, type the name of the branch or a regex to match the branches you'd like the rule to apply to, e.g. `bugfix/*`.
-5. Check the box next to "Require status checks to pass before merging". A box will appear with the names of the latest events that triggered the Action.
-6. Check the box that corresponds to the version of your Action that you're happy with.
-
-    <img alt="Setting up Branch Protection" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\branch-protection-2.gif">
-
-7. Configure any other settings you'd like to apply, and click `Create`.
-
-I completed this for `master`, so now any PRs will need to run and successfully complete my GitHub Action before they're able to merge. And just for fun, I added a status badge to the repo's README:
+Now that my workflow is working, any pushes to remote branches will trigger the tests to run. And just for fun, I added a status badge for `master` to the repo's README:
 
 ![Build and Test](https://github.com/tessapower/tictactoe/workflows/Build%20and%20Test/badge.svg?branch=master)
 
@@ -267,4 +161,39 @@ I completed this for `master`, so now any PRs will need to run and successfully 
 
 Starting with something small was the perfect test, and helped me see that GitHub Actions can help me automate in many other areas. The next thing I'm going to do is create an action to Lint check all `.cpp` files!
 
+---
+
 > Take a look at my workflow here on [GitHub](https://www.github.com/tessapower/tictactoe).
+
+---
+
+## [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
+
+I made a fair few mistakes and did a lot of rewrites to get to the above configuration! Because GitHub Actions is still quite new, the documentation is a WIP. Changes have not been updated everywhere, so sometimes there was conflicting information. With a bit of trial and error, and after reading through the workflow build logs, I got things back on track.
+
+### Job scope
+
+The first thing that tripped me up was _job scope_ (like _block scope_). Initially, I had multiple jobs—one job to set up MSBuild and VSTest, and one job to run them. This caused an error, so I rummaged around in the build logs to figure out what was going on.
+
+The issue was that the second job didn't have access to the changes made in the first job. After finishing the first job (setting up MSBuild and VSTest) the runner reset _everything_. No data, outputs, or the state of the runner persists after a job finishes, even within the same workflow. 
+
+If you need anything for another job, use global variables (called _environment variables_). To solve this for my workflow though, I put all the steps to setup and run MSBuild and VSTest into one job.
+
+### Environment Variables Syntax
+
+For commands that require a relative path, you need to specify the working directory. For my workflow, this was the root folder of the repo and generated build folder, as MSBuild and VSTest need the relative paths to the `.sln` and `.dll` files respectively.
+
+GitHub's documentation on Actions is extensive, but not exhaustive, and I found conflicting information where changes haven't been updated. This was the error that prompted me to dig around the docs some more:
+
+<img alt="GITHUB_WORKSPACE Error" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\gh-workspace-error.jpg">
+
+The issue was that GitHub's [list of default environment variables](https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables) states `GITHUB_WORKSPACE` is the GitHub workspace directory path. After digging around, I found out it should be `github.workspace`.
+
+This fix was pretty easy—just update the environment variable for the working directory:
+
+```yml
+- name: ...
+  # working-directory: {% raw %}${{ GITHUB_WORKSPACE }}{% endraw %}
+  working-directory: {% raw %}${{ github.workspace }}{% endraw %}
+  run: ...
+```
