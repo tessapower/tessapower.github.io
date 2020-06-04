@@ -2,7 +2,7 @@
 title: "Unit testing a C++ console app with the Native test framework in Visual Studio"
 layout: post
 ---
-## Welcome to TheGame
+## [Welcome to TheGame](#welcome-to-thegame)
 
 To learn C++, I'm building the well known game Tic Tac Toe using Visual Studio 2019, while reading through Stroustrup's ["The C++ Programming Language (4th Edition)"](http://www.stroustrup.com/4th.html). I'm no designer, so it's a console app that runs in Terminal.
 
@@ -15,25 +15,24 @@ Since `TheGame.cpp` is a console app, it seemed fitting to use Terminal to run t
 
 ---
 
-## Setting up Unit Testing
+## [Setting up unit tests in Visual Studio 2019](#setting-up-unit-tests-in-visual-studio-2019)
 
-VS 2019 ships with a native C++ unit test framework, which defines a series of macros for simplified syntax. Setting up unit testing was nice and simple—I created a separate Native Unit Test Project in my solution. 
+VS 2019 ships with a native C++ Unit Test Framework, which defines a series of macros for simplified syntax. Setting up the unit tests was nice and simple—I created a separate Native Unit Test Project in my solution:
 
-### How I set up a Unit Test Project in the Solution:
 1. Right-click the solution and click `Add > New > Project`.
 2. Under the `Project Type` filter, choose `Test`.
 3. Select `Native Unit Test Project`, give the project a descriptive name, and click `OK`.
     
     <img alt="Creating a Unit Test Project" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/new-test-project.gif" height=400>
 
-    When creating a separate test project in VS 2019, you need to create a reference to the project you want to test. This give the Unit Test Project access to the project you want to test.
+    When creating a separate test project in VS 2019, you need to create a reference to the project you want to test. This gives the Unit Test Project access to the project you want to test.
 
 4. Right-click the Unit Test Project and click `Add > Reference...`
 5. Check the box next to the projects to test and click `OK`.
 
     <img alt="Add the Project Reference" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/add-project-ref.gif" height=400>
 
-What tripped me up was forgetting to also `#include` the header files the unit test would need access to. The reference doesn't automatically give the Unit Test Project access to the `#include`d headers from the referenced project—you need to specify the ones you need.
+What tripped me up was forgetting to also `#include` the header files the unit tests need access to. The reference doesn't automatically give the Unit Test Project access to the `#include`d headers from the referenced project—you need to specify the ones it will need.
 
 At this stage, I didn't have any header files, so I didn't realise until later.
 
@@ -47,7 +46,7 @@ Splitting up unit testing over multiple .`cpp` files allows me to run one, some,
 
 ---
 
-## Writing the tests
+## [Writing the unit tests](#writing-the-unit-tests)
 
 My first goal is to refactor how `TheGame.cpp` checks for a winner, so I wrote tests for what would later be my `GameWinChecker` class. This meant also thinking about how `GameWinChecker` should work. The rules of Tic Tac Toe are simple and well defined—I only needed to translate them into C++.
 
@@ -106,20 +105,20 @@ Now it's time to put my unit tests... to the test.
 
 ---
 
-## Running the tests
+## [Running the tests](#running-the-tests)
 
 The tests currently call a function that I've haven't defined yet, so all tests should fail. Running them now will ensure any obvious logic fails will pop up before moving on to refactoring.
 
-### Using the VS Test Explorer
-Since VS 2019 ships with the Native C++ Unit Test Framework, it's super simple to run unit test projects from within the IDE. If you're a GUI fan, you can use Test Explorer:
+### Using Visual Studio Test Explorer in the IDE
+Since VS 2019 ships with the VS Test Platform, it's super simple to run unit test projects from within the IDE, the VS Console or Terminal. If you're a GUI fan, you can use Test Explorer:
 
 <img alt="Running Tests with Test Explorer" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/test-explorer.gif" height=400>
 
 The GUI is a great way to quickly scan and see which tests have passed or failed.
 
-### Using `VSTest.console.exe` in Windows Terminal
+### Using Visual Studio Test Console in Windows Terminal
 
-I'm a Terminal fan, so I used `VSTest.console.exe` in Windows Terminal. Alternatively, you can use the built in VS Command Prompt, which you can find under `Tools` in the menu bar. The end result is exactly the same, except when using the VS Command Prompt, you'll start off in a different directory than where you usually do in a fresh Terminal window. This is important, because you need to know where to find `VSTest.console.exe` to run it.
+I'm a Terminal fan, so I opted to run `VSTest.console.exe` in Windows Terminal. Alternatively, you can use the built in VS Command Prompt, which you can find under `Tools` in the menu bar. The end result is exactly the same, except when using the VS Command Prompt, you'll start off in a different directory than where you usually do in a fresh Terminal window. This is important, because you need to know where to find `VSTest.console.exe` to run it.
 
 According to Microsoft's VS docs, `VSTest.console.exe` is found in the following directory:
 
@@ -140,7 +139,7 @@ Now that the tests are doing a great job at failing, we can refactor `TheGame.cp
 
 ---
 
-## Stuff that didn't go to plan 
+## [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
 
 ### Linker Errors :(
 
@@ -158,10 +157,9 @@ Here's how I did that:
 
 ---
 
-## What's next?
+## [What's next?](#whats-next)
 
-Using `VSTest.console.exe` works great! But if I have to do this every time, it's going to get tedious. Navigating here was overly complicated, so my next job is to automate unit testing using GitHub Actions before continuing with the refactor.
+Using the VS Test Platform in Terminal works great! But if I have to do this every time, it's going to get tedious. So my next job is to automate my unit testing using GitHub Actions before continuing with the refactor.
 
----
 
 > Take a look at `TheGame.cpp` here on [GitHub](https://www.github.com/tessapower/tictactoe).
