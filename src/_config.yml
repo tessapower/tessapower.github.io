@@ -25,6 +25,7 @@ navigation:
   - {file: "index.html", icon: terminal}
   - {file: "about.md", icon: question}
   - {file: "archive.html", icon: list-ul} 
+  - {file: "projects.md"}
 
 external:
   # see http://fontawesome.com/icons
