@@ -44,6 +44,9 @@
     {% if site.sidebar and site.show_description %}
       <div class="hidden description">{{ site.description }}</div>
     {% endif %}
+    {% if jekyll.environment == 'production' %}
+      {% include analytics.html %}
+    {% endif %}
   </header>
   {{ content }}
 </html>
