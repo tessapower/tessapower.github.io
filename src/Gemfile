@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.0.1"
+gem "jekyll", :git => 'https://github.com/jekyll/jekyll.git'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'jekyll-favicon', '~> 0.2.8', group: :jekyll_plugins
 
 group :jekyll_plugins do
   gem 'jekyll-sitemap'
