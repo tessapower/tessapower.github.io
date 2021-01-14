@@ -31,6 +31,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
+    ffi (1.14.2)
     ffi (1.14.2-x64-mingw32)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
@@ -71,6 +72,8 @@ GEM
     rouge (3.26.0)
     rubyzip (2.3.0)
     safe_yaml (1.0.5)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     terminal-table (2.0.0)
@@ -89,6 +92,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-timeago
+  wdm (>= 0.1.0)
 
 BUNDLED WITH
    2.1.4
