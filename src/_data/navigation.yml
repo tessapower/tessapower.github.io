@@ -4,3 +4,5 @@
   link: /blog.html
 - name: whoami
   link: /about.html
+- name: ps
+  link: /projects.html
