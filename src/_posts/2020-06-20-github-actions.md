@@ -1,6 +1,7 @@
 ---
 title: "Automating C++ unit tests with GitHub Actions, MSBuild, and VS Test Platform"
 layout: post
+tags: c++ github-actions vs
 ---
 In a [previous post]({% post_url 2020-06-02-unit-testing-cpp-terminal-app-native-visual-studio %}), I created unit tests for a console app using Visual Studio's Native C++ Framework and Test Platform. The process of running the tests with `VSTest.console.exe` in Terminal was rather tedious, so I decided to automate the process using GitHub Actions.
 
