@@ -2,7 +2,7 @@
 layout: default
 title: About
 ---
-### Hey, my name is Tessa.
+## Hey, my name is Tessa.
 
 I'm a developer studying a BSc in Computer Science at Massey University. I'm looking for remote intern opportunities working in C++. We'll get along great if you like dogs and terrible puns!
 
