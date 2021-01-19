@@ -5,7 +5,7 @@ title: Home
 
 ## Hey, my name is Tessa.
 
-I'm a developer studying a BSc in Computer Science at Massey University. I'm looking for remote intern opportunities working in C++. We'll get along great if you like dogs and terrible puns! 
+<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/> I'm a developer studying a BSc in Computer Science at Massey University. I'm looking for remote intern opportunities working in C++. We'll get along great if you like dogs and terrible puns! 
 
 In a previous life, I worked at tech startups big and small, and studied Mechatronics at a German University.
 
