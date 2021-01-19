@@ -19,20 +19,20 @@ You can check out things I've done [here](/projects/) and read about what I'm le
 ## Reading List
 
 **Up Next**
-- [Programming -- Principles and Practice using C++](https://www.stroustrup.com/programming.html) (2E)—Bjarne Stroustrup
+- [Programming -- Principles and Practice using C++](https://amzn.to/38ZTXGt) (2E)—Bjarne Stroustrup
 <br>
 
 **Currently Reading...**
-- [Eloquent Javascript](https://eloquentjavascript.net/) (3E)—Marijn Haverbeke
+- [Eloquent Javascript](https://amzn.to/2LMjeuY) (3E)—Marijn Haverbeke
 <br>
 
 **Previously Read**
-- [Understanding Complex Information Technology Solutions](https://g.co/kgs/RSxv9b)—Eva Heinrich
-- [The Agile Samurai](https://pragprog.com/titles/jtrap/the-agile-samurai/)—Jonathan Rasmusson
-- [SCRUM: The Art of Doing Twice the Work in Half the Time](https://www.scruminc.com/new-scrum-the-book/)—Jeff Sutherland
-- [Foundations of Software Testing (ISTQB Certification)](https://g.co/kgs/JhbVym)—Graham, Black, & van Veenendaal
-- [Beautiful Testing](https://www.oreilly.com/library/view/beautiful-testing/9780596806934/)—Tim Riley & Adam Goucher
-- [Introducing GitHub](https://www.oreilly.com/library/view/introducing-github-2nd/9781491981801/) (2E)—Brent Beer
-- [Learning the Vi and Vim Editors](https://www.oreilly.com/library/view/learning-the-vi/9780596529833/) (7E)—Robbins, Hannah, & Lamb
-- [Learning the Bash Shell](https://www.oreilly.com/library/view/learning-the-bash/0596009658/) (3E)—Cameron Newham
-- [The Mac Command Line with Terminal](https://www.takecontrolbooks.com/command-line/)—Joe Kissell
+- [Understanding Complex Information Technology Solutions](https://amzn.to/35TBb1s)—Eva Heinrich
+- [The Agile Samurai](https://amzn.to/3bVOwdE)—Jonathan Rasmusson
+- [SCRUM: The Art of Doing Twice the Work in Half the Time](https://amzn.to/3oZDSGn)—Jeff Sutherland
+- [Foundations of Software Testing (ISTQB Certification)](https://amzn.to/3iw9MrI)—Graham, Black, & van Veenendaal
+- [Beautiful Testing](https://amzn.to/3oZgNDP)—Tim Riley & Adam Goucher
+- [Introducing GitHub](https://amzn.to/2M6sYA9) (2E)—Brent Beer
+- [Learning the Vi and Vim Editors](https://amzn.to/3nUVqC1/) (7E)—Robbins, Hannah, & Lamb
+- [Learning the Bash Shell](https://amzn.to/3o0S1BG) (3E)—Cameron Newham
+- [Take Control of The Mac Command Line with Terminal](https://amzn.to/3iuY40w)—Joe Kissell
