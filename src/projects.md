@@ -1,20 +1,16 @@
 ---
 layout: page
-title: $ ps
+title: Projects
 ---
-### Current Projects
+## Current
 
-I'm looking for remote part-time development work. 
-If you'd like to work with me, [let me know](mailto:tessa@tessapower.co)!  
- 
-#### Reading
+- [TicTacToe Game for the Command Line](https://github.com/tessapower/tictactoe)<br><img alt="The programming language used for this project is C++" src="/assets/tags/cpp.png" width=40/>
 
-[Eloquent Javascript](https://eloquentjavascript.net/) (3E), Marijn Haverbeke 
+## Upcoming
 
-#### Writing
+- ...
 
-A Git cheatsheet (i.e. things I always forget) 
+## Previous
 
-#### Studying
+- Watch this space!
 
-Applied Statistics, Summer Semester 20/21
