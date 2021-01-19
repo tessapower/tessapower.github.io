@@ -25,7 +25,7 @@ navigation:
   - {file: "index.md"}
   - {title: "Resume", url: "/resume.pdf"}
   - {file: "about.md"}
-  - {file: "blog.html"}
+  - {file: "blog.md"}
   - {file: "projects.md"}
 
 external:
