@@ -14,7 +14,6 @@ show_excerpts: true         # show article excerpts on the home page
 show_related: true          # show the previous and next links after every post
 show_description: false     # show the site description in the sidebar
 show_title: false           # always keep the site title visible
-
 # Styling
 
 dark_header: false          # always keep the header dark
@@ -23,9 +22,10 @@ minimal: true               # use simpler style
 # Menu
 
 navigation:
-  - {file: "index.html", icon: terminal}
-  - {file: "about.md", icon: question}
-  - {file: "archive.html", icon: list-ul} 
+  - {file: "index.md"}
+  - {title: "Resume", url: "/resume.pdf"}
+  - {file: "about.md"}
+  - {file: "blog.html"}
   - {file: "projects.md"}
 
 external:
