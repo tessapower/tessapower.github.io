@@ -3,7 +3,7 @@ layout: default
 title: Home 
 ---
 
-# Hey, my name is Tessa.
+## Hey, my name is Tessa.
 
 I'm a developer studying a BSc in Computer Science at Massey University. I'm looking for remote intern opportunities working in C++. We'll get along great if you like dogs and terrible puns! 
 
@@ -13,7 +13,7 @@ You can find out more about me [here](/about/), check out things I've done [here
 
 ---
 
-# Latest Post
+## Latest Post
 
 {%- assign posts = paginator.posts | default: site.posts -%}
 {% for post in posts limit:1 %}
