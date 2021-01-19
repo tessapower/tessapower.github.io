@@ -1,8 +1,10 @@
-- name: cd
+- name: Home
   link: /
-- name: ls -la
+- name: Resume
+  link: /resume.pdf
+- name: Blog
   link: /blog.html
-- name: whoami
+- name: About
   link: /about.html
-- name: ps
+- name: Projects
   link: /projects.html
