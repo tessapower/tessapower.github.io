@@ -23,7 +23,7 @@ minimal: true               # use simpler style
 
 navigation:
   - {file: "index.md"}
-  - {title: "Resume", url: "/resume.pdf"}
+  - {title: "Résumé", url: "/resume.pdf"}
   - {file: "about.md"}
   - {file: "blog.md"}
   - {file: "projects.md"}
