@@ -9,7 +9,7 @@ In a [previous post]({% post_url 2020-06-02-unit-testing-cpp-terminal-app-native
 
 ---
 
-## [GitHub Actions](#github-actions)
+### [GitHub Actions](#github-actions)
 
 [GitHub Actions](https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions) are essentially scripts that help to automate workflows directly in your GitHub repos. The Actions run on remote servers (called _runners_) and can be used to build, test, integrate and deploy projects. There is even a marketplace, where you can find ready-to-use Actions for common workflows.
 
@@ -22,7 +22,7 @@ When you're working in a team, Actions is great to combine with the [Branch Prot
 
 ---
 
-## [Setting up a new workflow](#setting-up-a-new-workflow)
+### [Setting up a new workflow](#setting-up-a-new-workflow)
 
 Setting up a workflow in my repo was super simple—here's how I did it:
 
@@ -36,7 +36,7 @@ That's it, like I said—super simple! Alternatively, you can create a workflows
 
 ---
 
-## [What to automate](#what-to-automate)
+### [What to automate](#what-to-automate)
 
 Before configuring my workflow, I needed to figure out what it should actually do. The easiest way I found was to treat it like setting up a new machine. That meant my workflow needed to:
 
@@ -47,11 +47,11 @@ Before configuring my workflow, I needed to figure out what it should actually d
 {% include important.html
 content="I found out later that this high-level description needed to be fleshed out a lot, which I describe in more detail below." %}
 
-## [Configuring the Workflow](#configuring-the-workflow)
+### [Configuring the workflow](#configuring-the-workflow)
 
 My workflow, creatively named `Build and Test`, needs to build and test my Visual Studio console app, and will run on pushes to or pull requests for the branches `master`, `test/*`, `feature/*`, or `bugfix/*`. 
 
-### Step 1: Check out the code
+#### Step 1: Check out the code
 
 This step is pretty easy—use GitHub's own [Checkout Action](https://github.com/marketplace/actions/checkout).
 
@@ -61,7 +61,7 @@ This step is pretty easy—use GitHub's own [Checkout Action](https://github.com
   uses: actions/checkout
 ```
 
-### Step 2: Build the project
+#### Step 2: Build the project
 
 To build my project, I used [MSBuild](https://en.wikipedia.org/wiki/MSBuild), which is Microsoft's Build Engine. The great thing about MSBuild is it lets you build native C++ Visual Studio projects without VS needing to be installed. I quickly figured out that this step should actually be TWO steps.
 
@@ -81,7 +81,7 @@ Second, run MSBuild in the shell and build the project:
   run: msbuild.exe .\path\to\project
 ```
 
-### Step 3: Run the tests
+#### Step 3: Run the tests
 
 I found Visual Studio on the [list of software installed on runners](https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners), which meant that I could use the VS Test Console tool to run unit tests like I normally would locally. After many (many) tests, I realised that this step also needed to be two steps.
 
@@ -147,7 +147,7 @@ jobs:
 
 ---
 
-## [Putting the workflow to work](#putting-the-workflow-to-work)
+### [Putting the workflow to work](#putting-the-workflow-to-work)
 
 After a bunch of testing, reading logs, and fine-tuning, it's working! It was super useful to watch the build logs once the workflow triggered. You can find them under the `Actions` tab. Just click on any of the events that triggered your workflow to see more information. Here you will also find tests results, artifacts, and statuses for each step. 
 
@@ -159,7 +159,7 @@ Now that my workflow is working, any pushes to remote branches will trigger the 
 
 ---
 
-## [What's next?](#whats-next)
+### [What's next?](#whats-next)
 
 Starting with something small was the perfect test, and helped me see that GitHub Actions can help me automate in many other areas. The next thing I'm going to do is create an action to Lint check all `.cpp` files!
 
@@ -171,11 +171,11 @@ Starting with something small was the perfect test, and helped me see that GitHu
 
 ---
 
-## [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
+### [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
 
 I made a fair few mistakes and did a lot of rewrites to get to the above configuration! Because GitHub Actions is still quite new, the documentation is a WIP. Changes have not been updated everywhere, so sometimes there was conflicting information. With a bit of trial and error, and after reading through the workflow build logs, I got things back on track.
 
-### Job scope
+#### Job scope
 
 The first thing that tripped me up was _job scope_ (like _block scope_). Initially, I had multiple jobs—one job to set up MSBuild and VSTest, and one job to run them. This caused an error, so I rummaged around in the build logs to figure out what was going on.
 
@@ -183,7 +183,7 @@ The issue was that the second job didn't have access to the changes made in the 
 
 If you need anything for another job, use global variables (called _environment variables_). To solve this for my workflow though, I put all the steps to setup and run MSBuild and VSTest into one job.
 
-### Environment Variables Syntax
+#### Environment variables syntax
 
 For commands that require a relative path, you need to specify the working directory. For my workflow, this was the root folder of the repo and generated build folder, as MSBuild and VSTest need the relative paths to the `.sln` and `.dll` files respectively.
 
