@@ -2,15 +2,5 @@
 layout: default
 title: Projects
 ---
-## Currently Doing...
-
-[TicTacToe Game for the Command Line](https://github.com/tessapower/tictactoe)<br><img alt="The programming language used for this project is C++" src="/assets/tags/cpp.png" width=40/>
-
-## Up Next
-
-...
-
-## Previously Did
-
-Watch this space!
-
+- [TicTacToe Game for the Command Line](https://github.com/tessapower/tictactoe) <img alt="The programming language used for this project is C++" src="/assets/tags/cpp.svg" class="lang-tag"/>
+- [Conway's Game of Life](https://github.com/tessapower/game-of-life) <img alt="The programming language used for this project is JS" src="/assets/tags/js.svg" class="lang-tag"/> 
