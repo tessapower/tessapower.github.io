@@ -1,6 +1,7 @@
 ---
 title: "Unit testing a C++ console app with the Native test framework in Visual Studio"
 layout: post
+tags: [c++, console-app, vs, unit-testing]
 ---
 ## [Welcome to TheGame](#welcome-to-thegame)
 
@@ -32,9 +33,9 @@ VS 2019 ships with a native C++ Unit Test Framework, which defines a series of m
 
     <img alt="Add the Project Reference" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/add-project-ref.gif" height=400>
 
-What tripped me up was forgetting to also `#include` the header files the unit tests need access to. The reference doesn't automatically give the Unit Test Project access to the `#include`d headers from the referenced project—you need to specify the ones it will need.
 
-At this stage, I didn't have any header files, so I didn't realise until later.
+{% include warning.html
+    content="What tripped me up was forgetting to also `#include` the header files the unit tests need access to. The reference doesn't automatically give the Unit Test Project access to the `#include`d headers from the referenced project—you need to specify the ones it will need. At this stage, I didn't have any header files, so I didn't realise until later."%}
 
 ### Deciding how to structure the Unit Test Project
 
@@ -162,4 +163,6 @@ Here's how I did that:
 Using the VS Test Platform in Terminal works great! But if I have to do this every time, it's going to get tedious. So my next job is to automate my unit testing using GitHub Actions before continuing with the refactor.
 
 
-> Take a look at `TheGame.cpp` here on [GitHub](https://www.github.com/tessapower/tictactoe).
+{% include callout.html
+    content="Take a look at `TheGame.cpp` here on [GitHub](https://www.github.com/tessapower/tictactoe)"
+    type="primary" %}
