@@ -1,7 +1,7 @@
 ---
 title: "Automating C++ unit tests with GitHub Actions, MSBuild, and VS Test Platform"
 layout: post
-tags: c++ github-actions vs
+tags: [c++, github-actions, vs]
 ---
 In a [previous post]({% post_url 2020-06-02-unit-testing-cpp-terminal-app-native-visual-studio %}), I created unit tests for a console app using Visual Studio's Native C++ Framework and Test Platform. The process of running the tests with `VSTest.console.exe` in Terminal was rather tedious, so I decided to automate the process using GitHub Actions.
 
@@ -44,7 +44,8 @@ Before configuring my workflow, I needed to figure out what it should actually d
 2. Build the project—to generate the unit tests `.dll` file.
 3. Run the tests—if any of the tests fail, the action will fail.
 
-I found out later that this high-level description needed to be fleshed out a lot, which I describe in more detail below.
+{% include important.html
+content="I found out later that this high-level description needed to be fleshed out a lot, which I describe in more detail below." %}
 
 ## [Configuring the Workflow](#configuring-the-workflow)
 
@@ -164,7 +165,9 @@ Starting with something small was the perfect test, and helped me see that GitHu
 
 ---
 
-> Take a look at my workflow here on [GitHub](https://www.github.com/tessapower/tictactoe).
+{% include callout.html
+    content="Take a look at my workflow here on [GitHub](https://www.github.com/tessapower/tictactoe)." 
+    type="primary" %}
 
 ---
 
