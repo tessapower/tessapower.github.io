@@ -6,6 +6,7 @@
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/callout.css" | prepend: site.baseurl }}">
 
   {%- if jekyll.environment == 'production' -%}
     {%- include analytics.html -%}
