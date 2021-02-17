@@ -101,7 +101,7 @@ When everything is connected up, I can see an overview of which branches are bei
 
 ![Branches in Amplify]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/branches-in-amplify.jpg)
 
-## Deploying a Jekyll static site from the Command Line
+## [Deploying a Jekyll static site from the Command Line](#deploying-a-jekyll-static-site-from-the-command-line)
 
 The simplicity in this CD pipeline came about mostly from the groundwork of setting up the connection between GitHub and Amplify that suited my needs. The final result makes for a wonderfully succint workflow! This is what it looks like (@500x) deploying from Terminal:
 
