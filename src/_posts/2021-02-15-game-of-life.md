@@ -11,6 +11,7 @@ I took a short detour from C++ to learn Javascript by working through the book [
 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) (or simply *Life* ) is a well-known cellular automaton created by mathematician John Conway. Life is played on an infinitely large grid of square *cells*—each cell can be either *alive* or *dead*.
 
 An alive cell is shown by putting a marker on its square, like this:
+<!--more-->
 
 ![Neighborhood]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/neighborhood.svg)
 
@@ -19,8 +20,6 @@ Each cell has eight neighbours, which are the cells that are found horizontal, v
 ![Neighbors]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/neighbors.svg)
 
 Life is a zero-player game, which means that you can set the initial configuration and watch how it evolves over time—the game doesn't need any further user input.
-
-
 
 #### The rules
 
@@ -65,7 +64,7 @@ Life, as we all know, comes with its challenges. To play Life, I needed to answe
 
 Like all good projects, these questions lead to more questions, which we'll dive into as well.
 
-##### What's the state of each cell?
+> What's the state of each cell?
 
 Before I could answer this question, I needed out to figure out how to best represent the grid. In this case, a 2D array made sense—thinking of the grid like a coordinate system meant that I could locate each cell with a point `(x, y)`, starting from `(0, 0)`, much like pixels on a canvas...!
 
@@ -91,7 +90,7 @@ for (let point of grid) {
 
 Now the function `isAlive(point, grid)` has everything it needs to return if the cell is alive or dead given a `Point` and a `Grid`.
 
-##### How many alive neighbors does each cell have?
+> How many alive neighbors does each cell have?
 
 The function `isAlive()`, along with all other gameplay specific functions, are located in `game-logic.js`. This is also where the function `numAliveNeighbors(point, grid)` lives, which takes a `Point` and a `Grid` and returns the meaning of life... *badum tss...* just kidding. It returns the number of alive neighbors around the cell at that point in the grid.
 
@@ -110,7 +109,7 @@ Figuring out how to answer those two questions proved to be the trickiest part�
 {% include game-of-life.html %}
 
 {% include callout.html
-    content ="Take a look at `The Game of Life` here on [Github](https://www.github.com/tessapower/game-of-life)"
+    content ="Take a look at `The Game of Life` [here](https://www.github.com/tessapower/game-of-life) on GitHub"
     type="primary" %}
 
 ---

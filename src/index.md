@@ -20,6 +20,6 @@ You can find out more about me [here](/about/), check out things I've done [here
   <article>
    {% include meta.html post=post preview=true %}
    {{ post.excerpt }}
-   <div class="more"><a href="{{ post.url | relative_url }}">read more</a></div>
+   <div class="more"><a href="{{ post.url | relative_url }}">keep reading</a></div>
   </article>
 {% endfor %}
