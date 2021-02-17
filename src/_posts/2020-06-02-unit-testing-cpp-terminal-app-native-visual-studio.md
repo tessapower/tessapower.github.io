@@ -164,5 +164,5 @@ Using the VS Test Platform in Terminal works great! But if I have to do this eve
 
 
 {% include callout.html
-    content="Take a look at `TheGame.cpp` here on [GitHub](https://www.github.com/tessapower/tictactoe)"
+    content="Take a look at `TheGame.cpp` [here](https://www.github.com/tessapower/tictactoe) on Github"
     type="primary" %}
