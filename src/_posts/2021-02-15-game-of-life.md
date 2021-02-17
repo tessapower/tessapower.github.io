@@ -109,7 +109,7 @@ Figuring out how to answer those two questions proved to be the trickiest partâ€
 {% include game-of-life.html %}
 
 {% include callout.html
-    content ="Take a look at `The Game of Life` here on [Github](https://www.github.com/tessapower/game-of-life)"
+    content ="Take a look at `The Game of Life` [here](https://www.github.com/tessapower/game-of-life) on GitHub"
     type="primary" %}
 
 ---
