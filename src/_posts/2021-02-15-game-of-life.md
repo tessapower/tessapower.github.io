@@ -1,5 +1,5 @@
 ---
-title: "A Short Detour Through Life"
+title: "Cellular Automata—A JavaScript Implementation of Conway's Game of Life"
 layout: post
 tags: [js, html, book]
 ---
