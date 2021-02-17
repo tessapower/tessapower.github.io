@@ -105,3 +105,5 @@ When everything is connected up, I can see an overview of which branches are bei
 
 The simplicity in this CD pipeline came about mostly from the groundwork of setting up the connection between GitHub and Amplify that suited my needs. The final result makes for a wonderfully succint workflow!
 
+![End to End Continuous Deployment]()
+
