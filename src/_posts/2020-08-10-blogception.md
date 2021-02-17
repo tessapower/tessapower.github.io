@@ -3,9 +3,11 @@ title: "Continuous Deployment for a Jekyll Static Site with GitHub and aws Ampli
 layout: post
 tags: [blog, jekyll, github, aws, amplify]
 ---
-## [A Static Site](#a-static-site)
+### [A Static Site](#a-static-site)
 
-When I was thinking about creating a website, I went looking for something that would keep things super simple, yet let me have full control over the design and functionality. A very smart person pointed me in the direction of Jekyll, which turned out to be perfect for someone who likes to dive into the code rather than fiddle with a GUI. The source code for my website would simply be stored in a repo on GitHub, not hiding behind an SP like Squarespace or Wix. Other nice details, like being able to write blog posts in Markdown, and that it's free, were also a deciding factor.
+When I was thinking about creating a website, I went looking for something that would keep things super simple, yet let me have full control over the design and functionality.
+
+A very smart person pointed me in the direction of *Jekyll*, which turned out to be perfect for someone who likes to dive into the code rather than fiddle with a GUI. The source code for my website would simply be stored in a repo on GitHub, not hiding behind an SP like Squarespace or Wix. Other nice details, like being able to write blog posts in Markdown, and that it's *totally free*, were also deciding factors.
 
 Keeping things "simple" meant that my workflow should look something like this:
 <!--more-->
@@ -15,7 +17,7 @@ Keeping things "simple" meant that my workflow should look something like this:
 
 And that's it—super simple. It turns out there's a *little bit* more to it, but my main goal was to be able to deploy a website in two steps.
 
-## [Step 1: Make changes locally](#step-1-make-changes-locally)
+### [Step 1: Make changes locally](#step-1-make-changes-locally)
 
 In reality, Step 1 looks more like:
 
@@ -51,11 +53,11 @@ Running `jekyll serve` results in this:
 
 I only need to run this command once, and Jekyll will continue to serve any changes as I make them. That makes the hardest part of creating a Jekyll static site just thinking of new content.
 
-## [Step 2: Push changes to GitHub *(...and automagically deploy a site)*](#step-2-push-changes-to-github-and-automagically-deploy-a-site)
+### [Step 2: Push changes to GitHub *(...and automagically deploy a site)*](#step-2-push-changes-to-github-and-automagically-deploy-a-site)
 
 I wanted to push changes to GitHub and not need to then worry about manually deploying the site. The perfect candidate for this job is [aws Amplify](https://aws.amazon.com/amplify/). One of Amplify's main selling points is using the Amplify console to host a static website with a Git-based workflow simply by connecting to my repo.
 
-### What does aws Amplify do?
+#### What does aws Amplify do?
 
 In a nutshell, Amplify works by watching one or multiple branches in my connected GitHub repo, and any time changes are pushed to that branch, it will build and deploy my Jekyll site based on my build settings.
 
@@ -73,7 +75,7 @@ This is well suited if you wanted to connect a dev/staging branch to a dev/stagi
 - **Access Control:** lets me slap a password on certain branches so I can work on new features without making them public. Trying to access `https://test.tessapower.co` will prompt you for credentials.
 ![Access Control]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/access-control.jpg)
 
-### Setting up Continuous Deployment
+#### Setting up Continuous Deployment
 
 The build settings are where I can run scripts that install dependencies, run tests, and build the Jekyll site for production. This is what my build settings currently look like:
 
@@ -101,7 +103,7 @@ When everything is connected up, I can see an overview of which branches are bei
 
 ![Branches in Amplify]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/branches-in-amplify.jpg)
 
-## [Deploying a Jekyll static site from the Command Line](#deploying-a-jekyll-static-site-from-the-command-line)
+### [Deploying a Jekyll static site from the Command Line](#deploying-a-jekyll-static-site-from-the-command-line)
 
 The simplicity in this CD pipeline came about mostly from the groundwork of setting up the connection between GitHub and Amplify that suited my needs. The final result makes for a wonderfully succint workflow! This is what it looks like (@500x) deploying from Terminal:
 
