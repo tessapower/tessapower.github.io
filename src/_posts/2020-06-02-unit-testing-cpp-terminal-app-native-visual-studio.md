@@ -9,10 +9,10 @@ To learn C++, I'm building the well known game Tic Tac Toe using Visual Studio 2
 
 <img alt="TicTacToe on Terminal" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/tictactoe-game.gif" height=250>
 
+<!--more-->
 The entire game (literally everything) is located in a single `.cpp` file in my VS solution called `TheGame.cpp`. I know—my creativity knows no bounds. But it's rather ugly, so I'm going to refactor the program to be object-oriented. Before making any changes, I wrote unit tests to make sure I won't break anything while refactoring.
 
 Since `TheGame.cpp` is a console app, it seemed fitting to use Terminal to run the tests. For this, I used Visual Studio's unit testing tools `VSTest.console.exe` and the Native C++ unit test framework.
-
 
 ---
 
@@ -164,5 +164,5 @@ Using the VS Test Platform in Terminal works great! But if I have to do this eve
 
 
 {% include callout.html
-    content="Take a look at `TheGame.cpp` here on [GitHub](https://www.github.com/tessapower/tictactoe)"
+    content="Take a look at `TheGame.cpp` [here](https://www.github.com/tessapower/tictactoe) on Github"
     type="primary" %}
