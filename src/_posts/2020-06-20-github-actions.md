@@ -7,12 +7,12 @@ In a [previous post]({% post_url 2020-06-02-unit-testing-cpp-terminal-app-native
 
 <img alt="GitHub Actions in Action" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\action-in-action.gif">
 
+<!--more-->
 ---
 
 ### [GitHub Actions](#github-actions)
 
 [GitHub Actions](https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions) are essentially scripts that help to automate workflows directly in your GitHub repos. The Actions run on remote servers (called _runners_) and can be used to build, test, integrate and deploy projects. There is even a marketplace, where you can find ready-to-use Actions for common workflows.
-
 
 ### Why GitHub Actions?
 

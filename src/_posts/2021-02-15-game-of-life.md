@@ -11,6 +11,7 @@ I took a short detour from C++ to learn Javascript by working through the book [
 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) (or simply *Life* ) is a well-known cellular automaton created by mathematician John Conway. Life is played on an infinitely large grid of square *cells*—each cell can be either *alive* or *dead*.
 
 An alive cell is shown by putting a marker on its square, like this:
+<!--more-->
 
 ![Neighborhood]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/neighborhood.svg)
 
@@ -19,8 +20,6 @@ Each cell has eight neighbours, which are the cells that are found horizontal, v
 ![Neighbors]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/neighbors.svg)
 
 Life is a zero-player game, which means that you can set the initial configuration and watch how it evolves over time—the game doesn't need any further user input.
-
-
 
 #### The rules
 
