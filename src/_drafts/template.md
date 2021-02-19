@@ -10,10 +10,10 @@ Lorem ipsum sit dolor amet.
 ### A list in a list
 
 1. An item in the list<br>
-  a) Nested lists
-  b) need to look
-  c) like this
-<--!more-->
+  a) Nested lists<br>
+  b) need to look<br>
+  c) like this<br>
+<!--more-->
 2. Another item in the list!
 
 ![An image]({{ site.baseurl }}/assets/404.png)
