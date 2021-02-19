@@ -108,12 +108,12 @@ Not only is this approach modern and extremely fast, it has made my workflow pre
 ---
 ### [The Stats](#the-stats)
 
-| Availability                        | Four 9's        |
-| Average Latency (worldwide)         | ~15ms           |
-| Time to set up                      | 0.5 hours       |
-| Amount of gross PHP or JavaScript   | 0 lines         |
-| Total cost*                         | $0.00           |
-| My face                             | (ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ |
+| **Availability**                      | Four 9's        |
+| **Time to set up**                    | 0.5 hours       |
+| **Average Latency (worldwide)**       | ~15ms           |
+| **Amount of gross PHP or JavaScript** | 0 lines         |
+| **Total cost**                        | $0.00           |
+| **My face**                           | (ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ |
 
 {% include callout.html
     content="*I already have my custom domain and DNS set up with Route53—this extra setup comes within Amazon's Free Tier."
