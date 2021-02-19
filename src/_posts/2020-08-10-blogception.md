@@ -21,38 +21,57 @@ Why not Squarespace, Wix, or Wordpress? ~$15/month for a simple static site and 
 ---
 ### [Jekyll—the static site](#jekyll-the-static-site)
 
-I chose to use *[Jekyll](https://jekyllrb.com/)*—an open-source, blog-aware static site generator. Compared to other options, Jekyll ticked a lot of the boxes:
+I chose to use *[Jekyll](https://jekyllrb.com/)*—an open-source, blog-aware static site generator created by Tom Preston-Werner, one of the co-founders of GitHub. Compared to other options, Jekyll ticked a lot of the boxes:
 
 - Setup is super quick;
 - Only needs to be built once, so it's fast;
 - No moving parts that can break or require maintenance;
 - Write content in Markdown, which makes things readable in plain text on GitHub;
 
-After set up, it was extremely simple to add content and build the site locally:
+It only takes a few lines to get set up, and you have a fully functioning static site. This is what the initial bare-bones folder structure looks like:
+
+```
+.
+├── _posts
+│   └── 2020-08-10-welcome-to-jekyll.markdown
+├── index.markdown
+├── about.markdown
+├── 404.html
+├── .gitignore
+├── _config.yml
+├── Gemfile
+└── Gemfile.lock
+```
+`index.markdown`, `about.markdown` and `404.html` are the pages of your site. `_config.yml` contains the settings that affect your whole blog, e.g. title, description, baseurl, and the theme. Blog posts go in the `_posts` folder, and Jekyll automatically generates these on your site according to date. An example post could look like this:
+
+```markdown
+---
+layout: post
+title:  "Lorem Ipsum"
+date:   2020-08-10 08:04:17 +1300
+tags: [example, jekyll, markdown]
+---
+
+# Example Title
+
+This is an example of a **Jekyll** blog post written in *Markdown*.
+
+## H2
+
+![Cool image](/assets/cool-image.jpg)
+
+### H3
+
+| A table | that has | important info |
+```
+
+Within a post you can use [Liquid](https://shopify.github.io/liquid/) tags to access site-wide variables, e.g. `page.path` refers to the path to the raw post or page. As you'd expect, these elements combined make a Jekyll site delightfully readable and simple to maintain! Jekyll also has excellent documentation and plenty of support for migrating content from other popular static site generators.
+
+When you want to start creating content, building the site locally is fast:
 
 ![Building the site locally]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/jekyll-serve.gif)
 
-Run `bundle exec jekyll serve` once and Jekyll will continue to serve any changes as I make them—making the hardest part thinking of new content.
-
-Here are a few useful commands (this also serves as a reminder to my future self):
-
-```bash
-# Builds your site any time a source file changes and serves it locally
-# The --open_url option opens the site's URL in the browser
-bundle exec jekyll serve --open_url
-
-# Lets you view posts in the _drafts folder as if they were published
-bundle exec jekyll serve --drafts
-
-# Lets you view posts that have future dates as if they were already published
-bundle exec jekyll serve --future
-
-# Removes all generated files
-bundle exec jekyll clean
-
-# Performs a one-off build—for when you need to generate the site for production
-bundle exec jekyll build
-```
+Run `bundle exec jekyll serve` once and Jekyll will continue to serve any changes as I make them—making the hardest part thinking of what to write.
 
 ---
 
