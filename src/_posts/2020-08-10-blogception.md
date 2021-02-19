@@ -92,7 +92,7 @@ For my site, Amplify Console automatically detects branches that match `feature/
 
 Previews let me see how my site looks on different devices after building it—I use this as a final checkpoint because merging to `master`.
 
-![Previews placeholder]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/previews.jpg)
+![Previews]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/preview-checks.gif)
 
 I use Access Control to prompt anyone who tries to access `https://test.tessapower.co` for credentials, so it's a safe place for me to test changes in the wild.
 
