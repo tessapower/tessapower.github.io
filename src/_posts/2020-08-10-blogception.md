@@ -1,5 +1,5 @@
 ---
-title: "A fast, modern Static Site—authored in Markdown, deployed to AWS"
+title: "A fast, modern static site—authored in Markdown, deployed to AWS"
 layout: post
 tags: [blog, jekyll, github, aws, amplify, serverless, cloudfront, markdown]
 ---
@@ -101,19 +101,19 @@ I use Access Control to prompt anyone who tries to access `https://test.tessapow
 ---
 ### [My workflow](my-workflow)
 
-Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can create a new post and deploy my website with just one line of code! Here's what it looks like (@500x speed):
+Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can create a new post and deploy my website with just one line of code! Here's what it looks like:
 
 ![End to End Continuous Deployment]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/end-to-end.gif)
 
 ---
 ### [The Stats](#the-stats)
 
-| **Availability**                      | Four 9's        |
-| **Time to set up**                    | 0.5 hours       |
-| **Average Latency (worldwide)**       | ~15ms           |
-| **Amount of gross PHP or JavaScript** | 0 lines         |
-| **Total cost**                        | $0.00           |
-| **My face**                           | (ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ |
+| **Availability**                | Four 9's        |
+| **Time to set up**              | 0.5 hours       |
+| **Average Latency (worldwide)** | ~15ms           |
+| **Amount of PHP or JavaScript** | 0 lines         |
+| **Total cost**                  | $0.00           |
+| **My face**                     | (ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ |
 
 {% include callout.html
     content="*I already have my custom domain and DNS set up with Route53—this extra setup comes within Amazon's Free Tier."
