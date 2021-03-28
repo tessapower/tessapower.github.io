@@ -19,14 +19,16 @@ You can check out things I've done [here](/projects/) and read about what I'm le
 ## Reading List
 
 **Up Next**
-- [Programming -- Principles and Practice using C++](https://amzn.to/38ZTXGt) (2E)—Bjarne Stroustrup
+- [The C Programming Language](https://amzn.to/3lRMrCd) (2E)—Kernighan & Ritchie
+- [Book of Proof](https://amzn.to/31h0OGX) (3E)—Richard Hammack
 <br>
 
 **Currently Reading...**
-- [Eloquent Javascript](https://amzn.to/2LMjeuY) (3E)—Marijn Haverbeke
+- [Programming -- Principles and Practice using C++](https://amzn.to/38ZTXGt) (2E)—Bjarne Stroustrup
 <br>
 
 **Previously Read**
+- [Eloquent Javascript](https://amzn.to/2LMjeuY) (3E)—Marijn Haverbeke
 - [Understanding Complex Information Technology Solutions](https://amzn.to/35TBb1s)—Eva Heinrich
 - [The Agile Samurai](https://amzn.to/3bVOwdE)—Jonathan Rasmusson
 - [SCRUM: The Art of Doing Twice the Work in Half the Time](https://amzn.to/3oZDSGn)—Jeff Sutherland
