@@ -144,15 +144,15 @@ Now that the tests are doing a great job at failing, we can refactor `TheGame.cp
 
 #### Linker Errors :(
 
-I missed a crucial step when setting up the Unit Tests Project that lead to linker errors when I first went to run the tests (_LNK1165_, _LNK2005_, and _LNK2019_). I was pretty frustrated, as the errors were blocking tests from running. After googling the possible causes for (what felt like) forever, I eventually finding out the issue:
+I missed a crucial step when setting up the Unit Tests Project that lead to linker errors when I first went to run the tests (_LNK1165_, _LNK2005_, and _LNK2019_). I was pretty frustrated, as the errors were blocking tests from running. After googling the possible causes for (what felt like) forever, I eventually found out the issue:
 
-The code under test is built as an .exe file and not a .dll. Which means I needed to link the separate Unit Test Project to the output object file. The code being tested doesn't export the functions that I wanted to test, so the fix was to add the output .obj or .lib file to the dependencies of the test project.
+The code under test is built as an `.exe` file and not a `.dll`. Which means I needed to link the separate Unit Test Project to the output object file. The code being tested doesn't export the functions that I wanted to test, so the fix was to add the output `.obj` or `.lib` file to the dependencies of the test project.
 
 Here's how I did that:
 
 1. Right-click the Unit Test Project.
 2. Click `Properties` and in the new window click `Linker > Input > Additional Dependencies > Edit`.
-3. Add the path to the .obj file-in my case I used `"$(SolutionDir)TheGame\$(IntDir)*.obj"`, where `TheGame` is the target project name.
+3. Add the path to the `.obj` file-in my case I used `"$(SolutionDir)TheGame\$(IntDir)*.obj"`, where `TheGame` is the target project name.
 
 <img alt="Solving the Dreaded Linker Error" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/linker-error.gif" height=400>
 
