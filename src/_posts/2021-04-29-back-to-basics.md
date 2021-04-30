@@ -16,7 +16,7 @@ It's generally used with a build system like CMake or Bazel.
 
 You might think I'm a masochist for foregoing a standard setup in favour of
 programming in VIM and manually linking. Why go back to the basics?
-
+<!--more-->
 It's *good* to do things the hard way sometimes and good practice to remember
 the basics. As a minimalist approach, it also works really well for small-scale
 projects like the ones I complete for my BSc.
@@ -45,7 +45,7 @@ can be run from the command line, I did the following:
 
 Here's what it looks like when it runs:
 
-[Running GTest]({{ site.baseurl }}/assets/posts/2021-04-29-back-to-basics/running-gtest.gif)
+![Running GTest]({{ site.baseurl }}/assets/posts/2021-04-29-back-to-basics/running-gtest.gif)
 
 The result is a minimalist one-liner with all the niceties of GTest and no
 extra overhead.
