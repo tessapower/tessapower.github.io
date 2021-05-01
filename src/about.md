@@ -4,8 +4,7 @@ title: About
 ---
 ## Hey, my name is Tessa.
 
-<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/> I'm a software engineer also studying a BSc in Comp Sci and Mathematics at Massey University.
-I'm looking for remote opportunities working in C++. We'll get along great if you like dogs and terrible puns!
+<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/> I'm a software engineer at Shuttlerock, and I also study a BSc in Comp Sci and Mathematics at Massey. We'll get along great if you like C++, dogs, or terrible puns!
 
 In a previous life, I worked at tech startups big and small! I worked together with the CTO of [YR](https://thisisyr.com) to transition their development teams (distributed across New York, San Francisco, London, Hong Kong, and Tokyo) to Agile and improve how their teams work remotely across timezones. I'm a Scrum Alliance Certified Product Owner, and have years of experience working remotely and in teams.
 
