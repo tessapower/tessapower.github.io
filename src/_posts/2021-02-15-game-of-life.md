@@ -1,5 +1,5 @@
 ---
-title: "Cellular Automata—A JavaScript Implementation of Conway's Game of Life"
+title: "Cellular Automata—a JavaScript implementation of Conway's Game of Life"
 layout: post
 tags: [js, html, book]
 ---
