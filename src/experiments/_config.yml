@@ -1,0 +1,57 @@
+title:              "TP"
+author:             "Tessa Power"
+description:        "Have you tried turning it off and on again?"
+permalink:          /:title/
+lang:               "en"
+excerpt_separator:  "<!--more-->"
+date_format:        "%-d %B %Y"
+google_analytics:   G-V0165CBTYP
+
+# Layout
+
+sidebar:          false # show a sidebar instead of the usual header
+show_excerpts:    true  # show article excerpts on the home page
+show_related:     true  # show the previous and next links after every post
+show_description: false # show the site description in the sidebar
+show_title:       false # always keep the site title visible
+
+
+# Styling
+
+dark_header:  false # always keep the header dark
+minimal:      true  # use simpler style
+
+# Menu
+
+navigation:
+  - {file:  "index.md"                      }
+  - {title: "Résumé",     url: "/resume.pdf"}
+  - {file:  "about.md"                      }
+  - {file:  "blog.md"                       }
+  - {file:  "projects.md"                   }
+
+external:
+  # see https://fontawesome.com/icons
+  - {title: github,   icon: github,      url: "https://github.com/tessapower"      }
+  - {title: linkedin, icon: linkedin-in, url: "https://linkedin.com/in/tessa-power"}
+  - {title: twitter,  icon: twitter,     url: "https://twitter.com/sass_pwr"       }
+
+# https://githib.com/niklasbuschmann/contrast
+remote_theme: niklasbuschmann/contrast@v2.8
+
+comments:
+  provider:         utterances
+  # https://applause-button.com/
+  applause-button:  true
+
+utterances:
+  repo:       "tessapower/personal-website"
+  issue-term: "pathname"
+  label:      "Comments"
+  theme:      "boxy-light"
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+

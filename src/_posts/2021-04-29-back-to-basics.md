@@ -29,7 +29,7 @@ the tools!)
 ### [Manually Linking against GoogleTest](#setup-run-googletest)
 
 To manually link against the test framework and produce a test executable that
-can be run from the command line, I did the following:
+can be run from the command line, do the following:
 
 1. The library needs to be in place to link against it, so first install the
    `libtest-dev` package:
