@@ -41,7 +41,7 @@ remote_theme: niklasbuschmann/contrast@v2.8
 
 comments:
   # https://applause-button.com/
-  applause-button:  true
+  applause_button:  false
 
 plugins:
   - jekyll-sitemap
