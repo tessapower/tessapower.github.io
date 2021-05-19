@@ -7,10 +7,8 @@ layout: default
   {{ content }}
 </article>
 
-{% if jekyll.environment == "production" %}
-  {% include applause.html %}
-  {% include comments.html %}
-{% endif %}
+{% include applause.html %}
+{% include comments.html %}
 
 {% if site.show_related %}
   <footer class="related">
