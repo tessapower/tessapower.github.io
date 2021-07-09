@@ -5,7 +5,7 @@ title: Home
 
 ## Hey, my name is Tessa.
 
-<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/> I'm a software engineer at Shuttlerock, and I also study a BSc in Comp Sci and Mathematics at Massey. We'll get along great if you like C++, dogs, and terrible puns! 
+<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/> I'm a software engineer at Shuttlerock studying towards my master    's in comp sci and mathematics at Massey. We'll get along great if you like C++, dogs, or terrible puns! 
 
 In a previous life, I worked at tech startups big and small, and studied Mechatronics at a German University.
 

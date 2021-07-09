@@ -4,7 +4,7 @@ title: About
 ---
 ## Hey, my name is Tessa.
 
-<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/> I'm a software engineer at Shuttlerock, and I also study a BSc in Comp Sci and Mathematics at Massey. We'll get along great if you like C++, dogs, or terrible puns!
+<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/> I'm a software engineer at Shuttlerock studying towards my master's in comp sci and mathematics at Massey. We'll get along great if you like C++, dogs, or terrible puns!
 
 In a previous life, I worked at tech startups big and small! I worked together with the CTO of [YR](https://thisisyr.com) to transition their development teams (distributed across New York, San Francisco, London, Hong Kong, and Tokyo) to Agile and improve how their teams work remotely across timezones. I'm a Scrum Alliance Certified Product Owner, and have years of experience working remotely and in teams.
 
@@ -20,11 +20,11 @@ You can check out things I've done [here](/projects/) and read about what I'm le
 
 **Up Next**
 - [The C Programming Language](https://amzn.to/3lRMrCd) (2E)—Kernighan & Ritchie
-- [Book of Proof](https://amzn.to/31h0OGX) (3E)—Richard Hammack
 <br>
 
 **Currently Reading...**
-- [Programming -- Principles and Practice using C++](https://amzn.to/38ZTXGt) (2E)—Bjarne Stroustrup
+- [Programming -- Principles and Practice using C++](https://amzn.to/38ZTXGt) (2E)—Bjarne Stroustrup (on hold)
+- [The Pragmatic Programmer](https://amzn.to/3yJDIaJ) (1E)—Andrew Hunt & David Thomas
 <br>
 
 **Previously Read**
