@@ -166,7 +166,7 @@ Starting with something small was the perfect test, and helped me see that GitHu
 ---
 
 {% include callout.html
-    content="Take a look at my workflow [here](https://www.github.com/tessapower/tictactoe) on Github"
+    content="Take a look at [the workflow](https://github.com/tessapower/tictactoe/blob/master/.github/workflows/build.yml) on Github"
     type="primary" %}
 
 ---
