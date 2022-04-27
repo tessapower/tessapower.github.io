@@ -9,3 +9,6 @@ _site/
 *.css.map
 *.sass.map
 *.scss.map
+
+# JetBrains
+**/.idea/
