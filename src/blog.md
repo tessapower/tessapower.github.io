@@ -3,4 +3,6 @@ title: "Blog"
 layout: default
 ---
 
-{% include home.html %}
+## Blog Posts
+
+{% include archive.html %}

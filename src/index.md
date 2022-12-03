@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home 
+title: Home
 ---
 
 ## Hey, my name is Tessa.
@@ -17,13 +17,6 @@ You can find out more about me [here](/about/), check out things I've done
 
 ---
 
-## Latest Post
+## Latest Posts
 
-{%- assign posts = paginator.posts | default: site.posts -%}
-{% for post in posts limit:1 %}
-  <article>
-   {% include meta.html post=post preview=true %}
-   {{ post.excerpt }}
-   <div class="more"><a href="{{ post.url | relative_url }}">keep reading</a></div>
-  </article>
-{% endfor %}
+{% include latest.html %}

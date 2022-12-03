@@ -2,29 +2,22 @@
 layout: default
 ---
 
-{% if site.show_related %}
-  <footer class="related">
-    <div class="previous">{% if page.previous.url %}<span>Previous Post</span><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>{% endif %}</div>
-    <div class="next">{% if page.next.url %}<span>Next Post</span><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>{% endif %}</div>
-  </footer>
-{% endif %}
-
-<hr>
-
 <article>
   {% include meta.html post=page %}
   {{ content }}
 
   <hr>
 
-  {% comment %}
-    Applause Button: https://applause-button.com/
-  {% endcomment %}
-  {% if site.comments.applause_button %}
-    <applause-button style="width: 58px; height: 58px;"/>
+  <br>
+
+  {% if site.show_related %}
+  <footer class="related">
+    <div class="previous">{% if page.previous.url %}<span>Previous Post</span><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>{% endif %}</div>
+    <div class="next">{% if page.next.url %}<span>Next Post</span><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>{% endif %}</div>
+  </footer>
   {% endif %}
 
-  <br>
+  <hr>
 
   {% comment %}
     Comments Section: https://giscus.vercel.app
