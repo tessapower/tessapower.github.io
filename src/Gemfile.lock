@@ -1,20 +1,20 @@
 GIT
   remote: https://github.com/jekyll/jekyll.git
-  revision: 26a949df85a1f9577e8080e19f2196c8a3db17ec
+  revision: bf67f086c4b23f2a35f1aff4244b26c81fef25c0
   specs:
-    jekyll (4.2.1)
+    jekyll (4.3.1)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
       i18n (~> 1.0)
-      jekyll-sass-converter (~> 2.0)
+      jekyll-sass-converter (>= 2.0, < 4.0)
       jekyll-watch (~> 2.0)
       kramdown (~> 2.3, >= 2.3.1)
       kramdown-parser-gfm (~> 1.0)
       liquid (~> 4.0)
       mercenary (>= 0.3.6, < 0.5)
       pathutil (~> 0.9)
-      rouge (~> 3.0)
+      rouge (>= 3.0, < 5.0)
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
@@ -82,7 +82,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  jekyll (~> 4.2)!
+  jekyll (~> 4.3)!
   jekyll-remote-theme
   jekyll-seo-tag
   jekyll-sitemap
