@@ -1,12 +1,27 @@
 ---
 permalink: /404.html
-title: "404: Page not found"
 layout: default
-sitemap: false
+title: Oh snap...
 ---
 
-<article>
-  <img alt="Oh snap..." src="/assets/404.png"/>
-  <header><h2>404: page not found</h2></header>
+<style type="text/css" media="screen">
+  .container {
+    margin: 1em auto;
+    max-width: 60em;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="container">
+  <h2>404: page not found</h2>
+  <img alt="Oh snap..." src="/images/404.png"/>
   <p>Have you tried turning it off and on again?</p>
-</article>
+  <br>
+  <a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+</div>

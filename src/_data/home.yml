@@ -1,0 +1,105 @@
+navbar_entries:
+  - title: Home
+    url: https://tessapower.co
+
+  - title: About
+    url: about
+
+  - title: Blog
+    url: blog
+
+project_entries:
+  - title: 3D Terrain Simulation
+    url: https://github.com/tessapower/cgra350-group-project
+    desc: 3D terrain simulation with an editable, procedurally generated terrain
+      mesh that updates in real-time. Built for the course CGRA350 Real Time
+      Rendering at VUW.
+    keywords: [Real-time Rendering, C++, OpenGL, GLSL]
+
+  - title: DXEngine
+    url: https://github.com/tessapower/dxengine
+    desc: Hardware accelerated DX11 based tiling game engine built with Win32.
+    highlight: WIP
+    keywords: [Game Engine, C++, DirectX, Win32]
+
+  - title: Snek
+    url: https://github.com/tessapower/snek
+    desc: A simple remake of the classic game Snake, built in Java using my own
+      custom 2D game engine TEngine.
+    keywords: [Java, Game, TEngine]
+
+  - title: TEngine
+    url: https://github.com/tessapower/tengine
+    desc: A 2D game engine built to support building games in Java for the
+      course 159261 Games Programming at Massey University.
+    keywords: [Java, Game Engine]
+
+  - title: Conway's Game of Life
+    url: https://github.com/tessapower/game-of-life
+    desc: A JS implementation of Conway's Game of Life.
+    keywords: [JavaScript, Cellular Automata]
+
+  - title: TicTacToe
+    url: https://github.com/tessapower/tictactoe
+    desc: A TicTacToe Game for the command line, written in C++.
+    keywords: [C++, Game]
+
+# old_project_entries:
+  # - title: Cookie
+  #   url: https://github.com/abhinavs/cookie
+  #   desc: An open source landing website with supporting pages and integrated blog
+
+  # - title: Moonwalk
+  #   url: https://github.com/abhinavs/moonwalk
+  #   desc: A fast and minimalist Jekyll blog theme with clean dark mode
+
+  # - title: Humangous
+  #   url: https://www.humangous.co
+  #   desc: The better people know you, the better they collaborate
+
+footer_entries:
+  - title: GitHub
+    url: https://github.com/tessapower
+
+  - title: Linkedin
+    url: https://linkedin.com/in/tessa-power
+
+  - title: Twitter
+    url: https://twitter.com/sass_pwr
+
+  - title: Résumé
+    url: ./resume.pdf
+
+# misc_entries:
+#   - title: this is an example vertical list
+#     url: false
+
+#   - title: you can show or hide using a boolean flag in _config.yml
+#     url: false
+
+#   - title: and you can add data in _data/home.yml
+#     url: false
+
+#   - title: Blog posts
+#     post_list: true
+#     url: false
+
+#   - title: moonwalk on the Internet
+#     url: false
+#     entries:
+#       - title: on Github
+#         url: https://github.com/abhinavs/moonwalk
+
+#       - title: originally built for abhinav's homepage
+#         url: https://www.abhinav.co
+
+#       - title: this list is scalable and can be nested
+#         url: false
+#         entries:
+#           - title: this is nested inside a nested list
+#             url: false
+
+#           - title: it is easy to use, see _data/home.yml to see how to configure it.
+#             url: false
+
+

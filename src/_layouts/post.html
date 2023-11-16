@@ -2,38 +2,37 @@
 layout: default
 ---
 
-<article>
-  {% include meta.html post=page %}
-  {{ content }}
+{% if site.theme_config.show_navbar == true %}
+  {% include horizontal_list.html collection=site.data.home.navbar_entries %}
+  <div class="dashed"></div>
+{% endif %}
 
-  <hr>
+<h1 class="post-title">{{ page.title }}</h1>
+{% include date_and_social_share.html %}
+{{ content }}
 
-  <br>
+<hr>
 
-  {% if site.show_related %}
-  <footer class="related">
-    <div class="previous">{% if page.previous.url %}<span>Previous Post</span><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>{% endif %}</div>
-    <div class="next">{% if page.next.url %}<span>Next Post</span><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>{% endif %}</div>
+{% comment %}
+  Comments Section: https://giscus.vercel.app
+{% endcomment %}
+
+<script src="https://giscus.app/client.js"
+        data-repo="tessapower/personal-website"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjU3ODc4OTM="
+        data-category="General"
+        data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyOTQyMjg3"
+        data-mapping="url"
+        data-reactions-enabled="1"
+        data-theme="transparent_dark"
+        crossorigin="anonymous"
+        async
+>
+</script>
+
+{% if site.theme_config.show_footer == true %}
+  <footer>
+    <div class="dashed"></div>
+    {% include horizontal_list.html collection=site.data.home.footer_entries %}
   </footer>
-  {% endif %}
-
-  <hr>
-
-  {% comment %}
-    Comments Section: https://giscus.vercel.app
-  {% endcomment %}
-  <script src="https://giscus.app/client.js"
-          data-repo="tessapower/personal-website"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkyNjU3ODc4OTM="
-          data-category="General"
-          data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyOTQyMjg3"
-          data-mapping="url"
-          data-reactions-enabled="1"
-          data-theme="preferred_color_scheme"
-          crossorigin="anonymous"
-          async
-  >
-  </script>
-
-</article>
-
+{% endif %}
