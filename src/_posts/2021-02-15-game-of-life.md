@@ -13,11 +13,11 @@ I took a short detour from C++ to learn Javascript by working through the book [
 An alive cell is shown by putting a marker on its square, like this:
 <!--more-->
 
-![Neighborhood]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/neighborhood.svg)
+![Neighborhood]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/neighborhood.svg)
 
 Each cell has eight neighbours, which are the cells that are found horizontal, vertical, or diagonal to the cell:
 
-![Neighbors]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/neighbors.svg)
+![Neighbors]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/neighbors.svg)
 
 Life is a zero-player game, which means that you can set the initial configuration and watch how it evolves over time—the game doesn't need any further user input.
 
@@ -26,13 +26,13 @@ Life is a zero-player game, which means that you can set the initial configurati
 Conway actually wrote **four** rules for Life, but they can be condensed into these **three**:
 
 1. Any **alive** cell with two or three alive neighbors survives.
-<br>![Rule 1]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/rule-1.svg)
+<br>![Rule 1]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/rule-1.svg)
 2. Any **alive** cell with less than two or more than three alive neighbors dies (isolation or overpopulation).
-<br>![Rule 2]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/rule-2.svg)
+<br>![Rule 2]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/rule-2.svg)
 3. Any **dead** cell with three alive neighbors becomes an alive cell.
-<br>![Rule 3]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/rule-3.svg)
+<br>![Rule 3]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/rule-3.svg)
 
-At each tick, a new generation is created by counting the number of alive neighbors each cell has and applying the rules to every cell simulataneously in the grid. 
+At each tick, a new generation is created by counting the number of alive neighbors each cell has and applying the rules to every cell simulataneously in the grid.
 
 {% include important.html
     content="The number of alive neighbors is always based on the cells *before* the rule was applied." %}
@@ -49,11 +49,11 @@ This implementation turned out to be pretty inefficient though, and performance 
 
 Here it is running in the browser—I even made the checkboxes smaller so they looked more like cells:
 
-![Game of Life with Checkboxes]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/checkbox-gol.gif)
+![Game of Life with Checkboxes]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/checkbox-gol.gif)
 
 You can see it's running pretty slowly! My poor browser was desperately trying to render more than 11,000 checkboxes in a 150x75 table each tick. The frame rate reduced to a measley 0.7 fps and my laptop sounded like it was trying to take off. Using the browser's developer tools, I could see where there were bottlenecks in my code and why it was having such a hard time. In my next post, I'll write more about these performance issues and how I went about refactoring and testing my changes.
 
-Not only was using a table of checkboxes causing the DOM tree to rebuild more frequently than I'd like, the cool spaceships and still-lifes that make Life so interesting were difficult to recognise. I decided to go beyond what the exercise called for and use an **HTML Canvas** instead. As the canvas is a low-level procedural model backed by a bitmap—not only would it look cooler—it could simply bypass all the expensive calculations associated with the DOM. 
+Not only was using a table of checkboxes causing the DOM tree to rebuild more frequently than I'd like, the cool spaceships and still-lifes that make Life so interesting were difficult to recognise. I decided to go beyond what the exercise called for and use an **HTML Canvas** instead. As the canvas is a low-level procedural model backed by a bitmap—not only would it look cooler—it could simply bypass all the expensive calculations associated with the DOM.
 
 #### How Life works
 
@@ -68,7 +68,7 @@ Like all good projects, these questions lead to more questions, which we'll dive
 
 Before I could answer this question, I needed out to figure out how to best represent the grid. In this case, a 2D array made sense—thinking of the grid like a coordinate system meant that I could locate each cell with a point `(x, y)`, starting from `(0, 0)`, much like pixels on a canvas...!
 
-![Grid Layout]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/grid-layout.svg)
+![Grid Layout]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/grid-layout.svg)
 
 To work with the grid, I first created the `Point` class—a general-use class whose constructor takes two integers `(x, y)` and returns a new `Point`. Its methods can return any of the points individual neighbors. Calling `Point.neighbors()` returns an array of the coordinates of the neighboring points, which helps to answer question number 2.
 
@@ -76,7 +76,7 @@ Using the `Point` class, I built up the `Grid` class—another general-use class
 
 Armed with a `Point` and a `Grid`, I could create the gameboard for Life!
 
-![Grid with States]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/grid-with-states.svg)
+![Grid with States]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/grid-with-states.svg)
 
 
 To check the state of each cell, I also created the `GridIterator` class, which provides an interface to safely loop over each entry in a `Grid` row-by-row like this:
@@ -96,7 +96,7 @@ The function `isAlive()`, along with all other gameplay specific functions, are 
 
 To do this, I used the `Point` method `Point.Neighbors()`. What you might have realised is that using this method on an edge or corner point will return all neighboring points—*including points outside of the grid boundaries*:
 
-![numAliveNeighbors]({{ site.baseurl }}/assets/posts/2021-02-15-game-of-life/numAliveNeighbors.svg)
+![numAliveNeighbors]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/numAliveNeighbors.svg)
 
 To solve this issue, `numAliveNeighbors()` first checks if the grid contains the point before checking if the cell at that point is alive.
 

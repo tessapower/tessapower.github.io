@@ -1,10 +1,11 @@
 ---
-layout: default
+layout: about
 title: About
 ---
+
 ## Hey, my name is Tessa.
 
-<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/>
+<img alt="Me!" src="/images/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/>
 I'm a software engineer studying computer science and graphics at Victoria University of Wellington. We'll get along great if you like C++, dogs, or terrible puns!
 
 In a previous life, I worked at tech startups big and small! I worked together
@@ -65,5 +66,5 @@ learning and working on [here](/blog/).
 - [O'Reilly: Learning the Bash Shell](https://amzn.to/3o0S1BG) (3E)—Cameron Newham
 - [The Mac Command Line with Terminal](https://amzn.to/3iuY40w)—Joe Kissell
 
-</br>
+
 Updated: 23 July 2023

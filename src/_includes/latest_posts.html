@@ -1,0 +1,12 @@
+<article>
+  <ul class="latest">
+    {% for post in site.posts limit: 3 %}
+    <li>
+      <span class="home-date">
+        {{ post.date | date: site.theme_config.date_format }}»
+      </span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</article>
