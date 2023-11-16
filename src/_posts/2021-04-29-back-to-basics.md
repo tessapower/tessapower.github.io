@@ -1,7 +1,7 @@
 ---
 title: "Back to basics: using GoogleTest without CMake for C++ projects"
 layout: post
-tags: [ cpp, gtest, googletest, cmake ]
+tags: [ c++, gtest, googletest, cmake ]
 ---
 In this post, I'm going to explain how I went back to basics and used
 [GoogleTest](https://google.github.io/googletest/) as a standalone library
@@ -21,7 +21,7 @@ It's *good* to do things the hard way sometimes and good practice to remember
 the basics. As a minimalist approach, it also works really well for small-scale
 projects like the ones I complete for my BSc.
 
-Using the terminal and nothing else, I can avoid the overhead of an IDE and 
+Using the terminal and nothing else, I can avoid the overhead of an IDE and
 CMake, and as a nice bonus, my directories are decluttered of IDE files.
 (This is what I do for "fun", in the workplace I play by the rules and use all
 the tools!)
@@ -33,19 +33,21 @@ can be run from the command line, do the following:
 
 1. The library needs to be in place to link against it, so first install the
    `libtest-dev` package:
-  ```zsh
-  sudo apt install libgtest-dev
-  ```
+
+```zsh
+sudo apt install libgtest-dev
+```
 2. Write the tests, and include the header `<gtest/gtest.h>` in the test
    files.
-3. Compile the tests and link against `-lgtest`, and `-lgtest_main`: 
-  ```zsh
-  clang++ -pthread **/*.cc -lgtest -lgtest_main && ./a.out
-  ```
+3. Compile the tests and link against `-lgtest`, and `-lgtest_main`:
+
+```zsh
+clang++ -pthread **/*.cc -lgtest -lgtest_main && ./a.out
+```
 
 Here's what it looks like when it runs:
 
-![Running GTest]({{ site.baseurl }}/assets/posts/2021-04-29-back-to-basics/running-gtest.gif)
+![Running GTest]({{ site.baseurl }}/images/posts/2021-04-29-back-to-basics/running-gtest.gif)
 
 The result is a minimalist one-liner with all the niceties of GTest and no
 extra overhead.
@@ -53,6 +55,7 @@ extra overhead.
 ### [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
 
 When I first tried to compile the tests, I ran the command without `-pthread`:
+
 ```zsh
 clang++ **/*.cc -lgtest -lgtest_main && ./a.out
 ```

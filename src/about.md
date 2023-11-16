@@ -1,12 +1,12 @@
 ---
-layout: default
+layout: about
 title: About
 ---
+
 ## Hey, my name is Tessa.
 
-<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/>
-I'm a software engineer studying comp sci at VUW. We'll get along great if you
-like C++, dogs, or terrible puns!
+<img alt="Me!" src="/images/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/>
+I'm a software engineer studying computer science and graphics at Victoria University of Wellington. We'll get along great if you like C++, dogs, or terrible puns!
 
 In a previous life, I worked at tech startups big and small! I worked together
 with the CTO of [YR](https://thisisyr.com) to transition their development
@@ -38,17 +38,22 @@ learning and working on [here](/blog/).
 
 **Up Next**
 - [Foundations of Game Engine Development: Mathematics](https://www.amazon.com/Foundations-Game-Engine-Development-Mathematics-dp-B09M5B6NML/dp/B09M5B6NML/ref=mt_other?_encoding=UTF8&me=&qid=1651041997) (1E)—Eric Lengyel
-- [Game Programming Patterns](https://www.amazon.com/Game-Programming-Patterns-Robert-Nystrom/dp/0990582906/ref=sr_1_1?crid=OK2MUY2G5LY8&keywords=Game+Design+Patterns&qid=1651042024&s=books&sprefix=game+design+patter%2Cstripbooks-intl-ship%2C248&sr=1-1) (1E)—Robert Nystrom
-- [The Nature of Code: Simulating Natural Systems](https://www.amazon.com/Nature-Code-Simulating-Natural-Processing/dp/0985930802/ref=sr_1_1?crid=3OVP6G73P925K&keywords=the+nature+of+code&qid=1651042162&s=books&sprefix=the+nature+of+cod%2Cstripbooks-intl-ship%2C253&sr=1-1) (1E)—Daniel Shiffman
 <br>
+- [The Nature of Code: Simulating Natural Systems](https://www.amazon.com/Nature-Code-Simulating-Natural-Processing/dp/0985930802/ref=sr_1_1?crid=3OVP6G73P925K&keywords=the+nature+of+code&qid=1651042162&s=books&sprefix=the+nature+of+cod%2Cstripbooks-intl-ship%2C253&sr=1-1) (1E)—Daniel Shiffman
 
 **Currently Reading...**
-- [UML Distilled](https://www.amazon.com/UML-Distilled-Standard-Modeling-Language/dp/0321193687/ref=sr_1_1?crid=14Q8PM408XFWU&keywords=UML+distilled&qid=1651042227&s=books&sprefix=uml+distille%2Cstripbooks-intl-ship%2C246&sr=1-1) (3E)—Martin Fowler
-- [Effective Java]() (3E)—Joshua Bloch
-- [Stanford CS106B: Programming Abstractions in C++](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997/ref=sr_1_1?crid=15QQS3DZX0NL8&keywords=effective+java&qid=1651042246&s=books&sprefix=effective+ja%2Cstripbooks-intl-ship%2C254&sr=1-1) (1E)—Eric Roberts
+- [Computer Graphics: Principles and Practice](https://www.amazon.com/Computer-Graphics-Principles-Practice-3rd/dp/0321399528/ref=sr_1_2?keywords=Computer+Graphics&qid=1690144655&sr=8-2&ufe=app_do%3Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc) (3E)—Hughs, van Dam, et al.
 <br>
 
 **Previously Read**
+- [Operating Systems: Three Easy Pieces](https://www.amazon.com/Operating-Systems-Three-Easy-Pieces/dp/198508659X) (1E)—Andrea & Remzi Arpaci-Dusseau
+- [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/) (1E)—Brian "Beej" Hall
+- [Game Programming Patterns](https://www.amazon.com/Game-Programming-Patterns-Robert-Nystrom/dp/0990582906/ref=sr_1_1?crid=OK2MUY2G5LY8&keywords=Game+Design+Patterns&qid=1651042024&s=books&sprefix=game+design+patter%2Cstripbooks-intl-ship%2C248&sr=1-1) (1E)—Robert Nystrom
+- [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8) (1E)—Gamma, Helm, Johnson, & Vlissides
+- [UML Distilled](https://www.amazon.com/UML-Distilled-Standard-Modeling-Language/dp/0321193687/ref=sr_1_1?crid=14Q8PM408XFWU&keywords=UML+distilled&qid=1651042227&s=books&sprefix=uml+distille%2Cstripbooks-intl-ship%2C246&sr=1-1) (3E)—Martin Fowler
+- [MIT Press: Processing](https://www.amazon.com/Processing-Programming-Handbook-Designers-Artists/dp/026202828X) (2E)—Casey Reas & Ben Fry
+- [Effective Java](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997/ref=sr_1_1?crid=3HYJJ4SYO1WFF&keywords=effective+java&qid=1690144869&sprefix=effective+jav%2Caps%2C188&sr=8-1) (3E)—Joshua Bloch
+- [Stanford CS106B: Programming Abstractions in C++](https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997/ref=sr_1_1?crid=15QQS3DZX0NL8&keywords=effective+java&qid=1651042246&s=books&sprefix=effective+ja%2Cstripbooks-intl-ship%2C254&sr=1-1) (1E)—Eric Roberts
 - [Stanford CS106A: The Art & Science of Java](https://www.amazon.com/Art-Science-Java-Pearson-International-dp-1292026030/dp/1292026030/ref=mt_other?_encoding=UTF8&me=&qid=1651042260) (1E)—Eric Roberts
 - [Oracle Press: Java, A Beginner's Guide](https://www.amazon.com/Java-Beginners-Eighth-Herbert-Schildt-ebook/dp/B07J2ZZ29H/ref=sr_1_2?crid=CDSA6SP4H1SC&keywords=java+a+beginners+guide&qid=1651042287&s=books&sprefix=java+a+beginners+gui%2Cstripbooks-intl-ship%2C248&sr=1-2) (8E)—Herbert Schildt
 - [Eloquent Javascript](https://amzn.to/2LMjeuY) (3E)—Marijn Haverbeke
@@ -60,3 +65,6 @@ learning and working on [here](/blog/).
 - [O'Reilly: The Vi and Vim Editors](https://amzn.to/3nUVqC1/) (7E)—Robbins, Hannah, & Lamb
 - [O'Reilly: Learning the Bash Shell](https://amzn.to/3o0S1BG) (3E)—Cameron Newham
 - [The Mac Command Line with Terminal](https://amzn.to/3iuY40w)—Joe Kissell
+
+
+Updated: 23 July 2023

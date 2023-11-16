@@ -7,7 +7,7 @@ tags: [c++, console-app, vs, unit-testing]
 
 To learn C++, I'm building the well known game Tic Tac Toe using Visual Studio 2019, while reading through Stroustrup's ["The C++ Programming Language (4th Edition)"](http://www.stroustrup.com/4th.html). I'm no designer, so it's a console app that runs in Terminal.
 
-<img alt="TicTacToe on Terminal" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/tictactoe-game.gif" height=250>
+<img alt="TicTacToe on Terminal" src="{{ site.baseurl }}/images/posts/2020-06-02-unit-testing/tictactoe-game.gif" height=250>
 
 <!--more-->
 The entire game (literally everything) is located in a single `.cpp` file in my VS solution called `TheGame.cpp`. I know—my creativity knows no bounds. But it's rather ugly, so I'm going to refactor the program to be object-oriented. Before making any changes, I wrote unit tests to make sure I won't break anything while refactoring.
@@ -23,15 +23,15 @@ VS 2019 ships with a native C++ Unit Test Framework, which defines a series of m
 1. Right-click the solution and click `Add > New > Project`.
 2. Under the `Project Type` filter, choose `Test`.
 3. Select `Native Unit Test Project`, give the project a descriptive name, and click `OK`.
-    
-    <img alt="Creating a Unit Test Project" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/new-test-project.gif" height=400>
+
+    <img alt="Creating a Unit Test Project" src="{{ site.baseurl }}/images/posts/2020-06-02-unit-testing/new-test-project.gif" height=400>
 
     When creating a separate test project in VS 2019, you need to create a reference to the project you want to test. This gives the Unit Test Project access to the project you want to test.
 
 4. Right-click the Unit Test Project and click `Add > Reference...`
 5. Check the box next to the projects to test and click `OK`.
 
-    <img alt="Add the Project Reference" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/add-project-ref.gif" height=400>
+    <img alt="Add the Project Reference" src="{{ site.baseurl }}/images/posts/2020-06-02-unit-testing/add-project-ref.gif" height=400>
 
 
 {% include warning.html
@@ -41,7 +41,7 @@ VS 2019 ships with a native C++ Unit Test Framework, which defines a series of m
 
 When you create a Unit Test Project as described above, VS creates a template project, a `.cpp` file with example unit tests classes, unit test methods, and all the Native test framework dependencies already in place! It gave me a nice headstart and was easy to pickup how I should structure my tests. I decided to use this `.cpp` file to test only the game logic and to add `.cpp` files for other areas later.
 
-<img alt="Structure of Unit Tests" src="{{ site.baseurl }}\assets\posts\2020-06-02-unit-testing\unit-test-structure.jpg" height=250>
+<img alt="Structure of Unit Tests" src="{{ site.baseurl }}\images\posts\2020-06-02-unit-testing\unit-test-structure.jpg" height=250>
 
 Splitting up unit testing over multiple .`cpp` files allows me to run one, some, or all of my unit tests. I could also do this by creating playlists of unit tests. So if I am working in area X, I don't need to also run the unit tests for area Y, which will speed up development. In my case it'd probably only be a few seconds, but still useful.
 
@@ -92,7 +92,7 @@ TEST_METHOD(ExpectNotWon_GameStateDraw)
 	'X', 'X', 'O',
 	'O', 'X', 'O'
 	};
-    
+
     // Act
     GameWinChecker gameWinChecker;
     bool gameWon = gameWinChecker.checkIfSymbolHasWon(symbol, gameState);
@@ -113,7 +113,7 @@ The tests currently call a function that I've haven't defined yet, so all tests 
 #### Using Visual Studio Test Explorer in the IDE
 Since VS 2019 ships with the VS Test Platform, it's super simple to run unit test projects from within the IDE, the VS Console or Terminal. If you're a GUI fan, you can use Test Explorer:
 
-<img alt="Running Tests with Test Explorer" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/test-explorer.gif" height=400>
+<img alt="Running Tests with Test Explorer" src="{{ site.baseurl }}/images/posts/2020-06-02-unit-testing/test-explorer.gif" height=400>
 
 The GUI is a great way to quickly scan and see which tests have passed or failed.
 
@@ -134,7 +134,7 @@ vstest.console.exe c:\path\to\unit\tests\
 
 Which resulted in this:
 
-<img alt="Running Tests in Terminal" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/terminal.gif" height=250>
+<img alt="Running Tests in Terminal" src="{{ site.baseurl }}/images/posts/2020-06-02-unit-testing/terminal.gif" height=250>
 
 Now that the tests are doing a great job at failing, we can refactor `TheGame.cpp` to get them passing!
 
@@ -154,7 +154,7 @@ Here's how I did that:
 2. Click `Properties` and in the new window click `Linker > Input > Additional Dependencies > Edit`.
 3. Add the path to the `.obj` file-in my case I used `"$(SolutionDir)TheGame\$(IntDir)*.obj"`, where `TheGame` is the target project name.
 
-<img alt="Solving the Dreaded Linker Error" src="{{ site.baseurl }}/assets/posts/2020-06-02-unit-testing/linker-error.gif" height=400>
+<img alt="Solving the Dreaded Linker Error" src="{{ site.baseurl }}/images/posts/2020-06-02-unit-testing/linker-error.gif" height=400>
 
 ---
 
