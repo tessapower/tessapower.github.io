@@ -1,29 +1,11 @@
 ---
-layout: default
-title: Home 
+layout: home
+title: Home
 ---
 
-## Hey, my name is Tessa.
+<img alt="Me!" src="/images/profile-photo.png" width="200" style="float:left;
+vertical-align:middle;margin:20px 10px"/> I'm a software engineer studying computer science and graphics at Victoria University of Wellington. We'll get along great if you like C++, dogs, or terrible puns!
 
-<img alt="Me!" src="/assets/profile-photo.png" width="200" style="float:left;
-vertical-align:middle;margin:20px 10px"/> I'm a software engineer studying
-computer science and graphics at Victoria University of Wellington. We'll get along great if you like C++, dogs, or terrible puns!
+In a previous life, I worked at tech startups big and small, and studied Mechatronics at a German University.
 
-In a previous life, I worked at tech startups big and small, and studied
-Mechatronics at a German University.
-
-You can find out more about me [here](/about/), check out things I've done
-[here](/projects/), and read about what I'm learning and working on [here](/blog/).
-
----
-
-## Latest Post
-
-{%- assign posts = paginator.posts | default: site.posts -%}
-{% for post in posts limit:1 %}
-  <article>
-   {% include meta.html post=post preview=true %}
-   {{ post.excerpt }}
-   <div class="more"><a href="{{ post.url | relative_url }}">keep reading</a></div>
-  </article>
-{% endfor %}
+You can find out more about me [here](/about/), read about what I'm learning and working on [here](/blog/), and check out my projects below.

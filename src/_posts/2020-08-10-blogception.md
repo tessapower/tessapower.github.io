@@ -58,7 +58,7 @@ This is an example of a **Jekyll** blog post written in *Markdown*.
 
 ## H2
 
-![Cool image](/assets/cool-image.jpg)
+![Cool image](/images/cool-image.jpg)
 
 ### H3
 
@@ -69,7 +69,7 @@ Within a post you can use [Liquid](https://shopify.github.io/liquid/) tags to ac
 
 When you want to start creating content, building the site locally is fast:
 
-![Building the site locally]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/jekyll-serve.gif)
+![Building the site locally]({{ site.baseurl }}/images/posts/2020-08-10-blogception/jekyll-serve.gif)
 
 Run `bundle exec jekyll serve` once and Jekyll will continue to serve any changes as I make them—making the hardest part thinking of what to write.
 
@@ -92,37 +92,37 @@ There are a bunch more features which I haven't mentioned—these are just the o
 
 When everything is set up, you can see an overview of which branches will be built, any previous builds, and their statuses:
 
-![Branches in Amplify]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/branches-in-amplify.jpg)
+![Branches in Amplify]({{ site.baseurl }}/images/posts/2020-08-10-blogception/branches-in-amplify.jpg)
 
 ---
 #### [Behind Amplify Console](#behind-amplify-console)
 
 Amplify Console leverages **S3** and **Cloudfront** to build, deploy, and serve static sites and SPAs. According to their website, Cloudfront has *"225+ Points of Presence (215+ Edge locations and 12 regional mid-tier caches) in 89 cities across 46 countries."*, which means it really is as close as possible to the requesting client, and has excellent availability (99.99%). Combined with S3, which has [11 9's of durability](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DataDurability.html), it's a pretty solidly supported and well distributed static site.
 
-![Amazon Cloudfront Edge Locations]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/cloudfront-cdn.png)
+![Amazon Cloudfront Edge Locations]({{ site.baseurl }}/images/posts/2020-08-10-blogception/cloudfront-cdn.png)
 
 ### [My setup](#my-setup)
 
 For my site, Amplify Console automatically detects branches that match `feature/*` or `test/*` to build and deploy to the subdomains `https://feature.tessapower/co` and `https://test.tessapower.co`.
 
-![Branch Auto-detection]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/branch-detection.jpg)
+![Branch Auto-detection]({{ site.baseurl }}/images/posts/2020-08-10-blogception/branch-detection.jpg)
 
-![Domain Management]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/domain-mgmt.jpg)
+![Domain Management]({{ site.baseurl }}/images/posts/2020-08-10-blogception/domain-mgmt.jpg)
 
 Previews let me see how my site looks on different devices after building it—I use this as a final checkpoint because merging to `master`.
 
-![Previews]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/preview-checks.gif)
+![Previews]({{ site.baseurl }}/images/posts/2020-08-10-blogception/preview-checks.gif)
 
 I use Access Control to prompt anyone who tries to access `https://test.tessapower.co` for credentials, so it's a safe place for me to test changes in the wild.
 
-![Access Control]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/access-control.jpg)
+![Access Control]({{ site.baseurl }}/images/posts/2020-08-10-blogception/access-control.jpg)
 
 ---
 ### [My workflow](my-workflow)
 
 Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can create a new post and deploy my website with just one line of code! Here's what it looks like:
 
-![End to End Continuous Deployment]({{ site.baseurl }}/assets/posts/2020-08-10-blogception/end-to-end.gif)
+![End to End Continuous Deployment]({{ site.baseurl }}/images/posts/2020-08-10-blogception/end-to-end.gif)
 
 ---
 ### [The Stats](#the-stats)
