@@ -68,7 +68,7 @@ footer_entries:
     url: https://twitter.com/sass_pwr
 
   - title: Résumé
-    file: ./resume.pdf
+    url: ./resume.pdf
 
 # misc_entries:
 #   - title: this is an example vertical list
