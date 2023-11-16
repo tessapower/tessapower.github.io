@@ -5,12 +5,12 @@
       <a href="{{ item.url }}">
         <span class="header">
           {{ item.title }}
-          <br />
 
           {% if item.highlight %}
-            <mark>{{ item.highlight }}</mark>
+          <mark>{{ item.highlight }}</mark>
           {% endif %}
 
+          <br />
           {% for keyword in item.keywords %}
             <mark class="keywords">{{ keyword }}</mark>
           {% endfor %}

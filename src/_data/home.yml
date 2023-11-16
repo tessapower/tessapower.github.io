@@ -20,7 +20,7 @@ project_entries:
     url: https://github.com/tessapower/dxengine
     desc: Hardware accelerated DX11 based tiling game engine built with Win32.
     highlight: WIP
-    keywords: [C++, DirectX, Win32, Game Engine]
+    keywords: [Game Engine, C++, DirectX, Win32]
 
   - title: Snek
     url: https://github.com/tessapower/snek
