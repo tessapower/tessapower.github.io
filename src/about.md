@@ -1,8 +1,8 @@
 ---
 layout: about
 title: About
----
 
+---
 ## Hey, my name is Tessa.
 
 <img alt="Me!" src="/images/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/>
