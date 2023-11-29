@@ -99,7 +99,7 @@ Amplify Console leverages **S3** and **Cloudfront** to build, deploy, and serve 
 
 ### [My setup](#my-setup)
 
-For my site, Amplify Console automatically detects branches that match `feature/*` or `test/*` to build and deploy to the subdomains `https://feature.tessapower/co` and `https://test.tessapower.co`.
+For my site, Amplify Console automatically detects branches that match `feature/*` or `test/*` to build and deploy to the subdomains `https://feature.tessapower.xyz` and `https://test.tessapower.xyz`.
 
 ![Branch Auto-detection](./src/assets/posts/2020-08-10-blogception/branch-detection.jpg)
 
@@ -109,7 +109,7 @@ Previews let me see how my site looks on different devices after building it—I
 
 ![Previews](./src/assets/posts/2020-08-10-blogception/preview-checks.gif)
 
-I use Access Control to prompt anyone who tries to access `https://test.tessapower.co` for credentials, so it's a safe place for me to test changes in the wild.
+I use Access Control to prompt anyone who tries to access `https://test.tessapower.xyz` for credentials, so it's a safe place for me to test changes in the wild.
 
 ![Access Control](./src/assets/posts/2020-08-10-blogception/access-control.jpg)
 
