@@ -1,6 +1,6 @@
 navbar_entries:
   - title: Home
-    url: https://tessapower.co
+    url: home
 
   - title: About
     url: about
