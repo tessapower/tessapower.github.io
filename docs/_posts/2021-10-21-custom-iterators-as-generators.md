@@ -1,5 +1,5 @@
 ---
-title: "Repurposing custom iterators as generators"
+title: "Repurposing iterators as geometric generators"
 layout: post
 tags: [c++, iterators, generators, computer vision, backtracking]
 ---
@@ -15,7 +15,7 @@ to identify and highlight the broken buttons by placing a red box around them.
 We can easily understand how useful this would be on a factory production line
 to help automate quality control, so the motivation is clear.
 
-![Scan of Buttons]({{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/scan.png)
+![Scan of Buttons]({{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/scan.jpg)
 
 We're given the criteria for a button that passes the quality control test:
 <!--more-->
@@ -25,7 +25,10 @@ We're given the criteria for a button that passes the quality control test:
 - Exactly four interior holes (apparently this is a very boring
 button factory).
 
-![Scan of Buttons]({{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/broken.png)
+At the end of it all, we want to be able to highlight the broken buttons like
+so:
+
+![Highlighted Buttons]({{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/result.jpg)
 
 ## [Use of Backtracking](#use-of-backtracking)
 
@@ -204,7 +207,7 @@ CircumferenceIterator CircumferenceIterator::end() const {
 
 Which would result in the following:
 
-![One Octant]({{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/one-octant.gif)
+<img src="{{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/one-octant.gif" alt="One Octant" width=300 />
 
 ### [Jumping from octant to octant](#jumping-from-octant-to-octant)
 
@@ -214,7 +217,7 @@ all the **reflected points** for the current `x` coordinate in all eight octants
 before moving on. Here's what that would look like if we drew the points as we
 moved around:
 
-![Jumping Octants]({{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/octant-jump.gif)
+<img src="{{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/octant-jump.gif" alt="All Octants" width=300 />
 
 Doing this has a neat effect on efficiency! Keeping our goal in mind to find the
 broken buttons, we want to stop as soon as we find any point that doesn't
@@ -308,9 +311,9 @@ if (is_broken) {
 }
 ```
 
-**And here's the final result of all of our hard work:**
+**And here's a visualization of all of our hard work coming together:**
 
-![Result]({{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/result.jpg)
+![Result]({{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/debug-view.jpg)
 
 ---
 
