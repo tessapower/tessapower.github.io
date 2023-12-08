@@ -24,9 +24,13 @@
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-  <!-- Favicon -->
 
+  <!-- CSS -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
+  <link rel="stylesheet" href="{{ "/assets/css/callout.css" | prepend: site.baseurl }}">
+
+  <!--FontAwesome-->
+  <script src="https://kit.fontawesome.com/c09fe7955a.js" crossorigin="anonymous"></script>
 
   {% if site.theme_config.appearance_toggle %}
     {% include toggle_theme_js.html %}
