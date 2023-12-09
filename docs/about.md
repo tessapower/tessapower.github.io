@@ -5,8 +5,12 @@ title: About
 ---
 ## Hey, my name is Tessa.
 
+Want the short version? [Here's my résumé](/resume.pdf).
+
 <img alt="Me!" src="/images/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/>
-I'm a software engineer studying computer science and graphics at Victoria University of Wellington. We'll get along great if you like C++, dogs, or terrible puns!
+I'm a software engineer studying computer science and graphics at Victoria
+University of Wellington. We'll get along great if you like C++, dogs, or
+terrible puns!
 
 In a previous life, I worked at tech startups big and small! I worked together
 with the CTO of [YR](https://thisisyr.com) to transition their development
@@ -25,12 +29,12 @@ I also initiated Tātou's transition from Katalon to Detox for their React Nativ
 app, and from Katalon to React Testing Library for their ReactJS Web app.
 
 I speak English and German! I studied Mechatronics for a year while working at
-[Cenit](https://cenit.com), a German firm that produces the world's leading
-software for offline robotics programming and optimisation of production line
-processes.
+[Cenit](https://cenit.com), a German company that produces the world's leading
+graphical software for offline robotics programming and optimisation of
+production line processes.
 
-You can check out things I've done [here](/projects/) and read about what I'm
-learning and working on [here](/blog/).
+You can check out my projects [on GitHub](https://github.com/tessapower) and
+read about what I'm learning and working on [here](/blog/).
 
 ---
 
