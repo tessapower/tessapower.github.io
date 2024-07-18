@@ -8,16 +8,15 @@ title: About
 Want the short version? [Here's my résumé](/resume.pdf).
 
 <img alt="Me!" src="/images/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/>
-I'm a software engineer studying computer science and graphics at Victoria
-University of Wellington. We'll get along great if you like C++, dogs, or
-terrible puns!
+I'm a software engineer with a special interest in computer graphics. We'll get
+along great if you like C++, dogs, or terrible puns!
 
 In a previous life, I worked at tech startups big and small! I worked together
 with the CTO of [YR](https://thisisyr.com) to transition their development
 teams (distributed across New York, San Francisco, London, Hong Kong, and
-Tokyo) to Agile and improve how their teams work remotely across timezones.
-I'm a Scrum Alliance Certified Product Owner, and have years of experience
-working remotely and in teams.
+Tokyo) to Agile processes and improve how their teams work remotely across
+timezones. I'm a Scrum Alliance Certified Product Owner, and have years of
+experience working remotely and in teams.
 
 I'm certified by the ISTQB as a Foundation level tester, and through
 experience I have an appreciation for software testing and quality control;
@@ -31,7 +30,11 @@ app, and from Katalon to React Testing Library for their ReactJS Web app.
 I speak English and German! I studied Mechatronics for a year while working at
 [Cenit](https://cenit.com), a German company that produces the world's leading
 graphical software for offline robotics programming and optimisation of
-production line processes.
+production line processes. Recently I graduated from the Victoria University of
+Wellington, a top research university in New Zealand, with a Bachelor of Science
+in Computer Science. Outside of the standard CS courses, the majority of my
+studies focussed on many different areas of computer graphics, including real-time
+rendering, game engine development, and computer vision.
 
 You can check out my projects [on GitHub](https://github.com/tessapower) and
 read about what I'm learning and working on [here](/blog/).
