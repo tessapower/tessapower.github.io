@@ -67,7 +67,7 @@ Within a post you can use [Liquid](https://shopify.github.io/liquid/) tags to ac
 
 When you want to start creating content, building the site locally is fast:
 
-![Building the site locally](./docs/images/posts/2020-08-10-blogception/jekyll-serve.gif)
+![Building the site locally](./docs/images/readme/build-jekyll-locally.gif)
 
 
 Run `bundle exec jekyll serve` once and Jekyll will continue to serve any changes as I make them—making the hardest part thinking of what to write.
@@ -94,4 +94,4 @@ to focus on writing content, and less on maintaining the site.
 
 Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can add a new post and deploy it to the blog within seconds!
 
-![End to End Continuous Deployment](./docs/images/posts/2020-08-10-blogception/end-to-end.gif)
+![Github Pages Deployment](.\docs\images\readme\github-pages-deployment.gif)
