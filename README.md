@@ -1,7 +1,7 @@
 ## Personal Website
 
 This is a repo for my personal website, where I post about what I'm learning and working on. It's generated using [Jekyll](https://github.com/jekyll/jekyll),
-the [Contrast](https://github.com/niklasbuschmann/contrast) template from Niklas Buschmann, and automatically deployed via [aws Amplify](https://aws.amazon.com/amplify/). It also supports comments on blogposts via [Giscus](https://github.com/giscus/giscus), which you can see in the Discussion section of this repo.
+the [Contrast](https://github.com/niklasbuschmann/contrast) template from Niklas Buschmann, and automatically deployed via [GitHub Pages](https://pages.github.com/). It also supports comments on blogposts via [Giscus](https://github.com/giscus/giscus), which you can see in the Discussion section of this repo.
 
 This README serves mostly as a reminder to myself about the structure of the repo and how to deploy when I write new posts.
 
@@ -24,7 +24,8 @@ The requirements are also pretty lean:
 
 ### Setup
 
-It only takes a few lines to get set up, and you have a fully functioning static site. This is what the initial bare-bones folder structure looks like:
+It only takes a few lines to get set up, and you have a fully functioning static
+site. This is what the initial bare-bones folder structure looks like:
 
 ```
 .
@@ -38,6 +39,7 @@ It only takes a few lines to get set up, and you have a fully functioning static
 ├── Gemfile
 └── Gemfile.lock
 ```
+
 `index.markdown`, `about.markdown` and `404.html` are the pages of your site. `_config.yml` contains the settings that affect your whole blog, e.g. title, description, baseurl, and the theme. Blog posts go in the `_posts` folder, and Jekyll automatically generates these on your site according to date. An example post could look like this:
 
 ```markdown
@@ -65,57 +67,31 @@ Within a post you can use [Liquid](https://shopify.github.io/liquid/) tags to ac
 
 When you want to start creating content, building the site locally is fast:
 
-![Building the site locally](./src/assets/posts/2020-08-10-blogception/jekyll-serve.gif)
+![Building the site locally](./docs/assets/posts/2020-08-10-blogception/jekyll-serve.gif)
+
 
 Run `bundle exec jekyll serve` once and Jekyll will continue to serve any changes as I make them—making the hardest part thinking of what to write.
 
 ---
 
-### [Deploying to AWS with Amplify Console](#deplying-to-aws-with-amplify-console)
+## GitHub Pages
 
-To build, host, and deploy my static site, I use the [AWS Amplify Console](https://aws.amazon.com/amplify/hosting/). In a nutshell, Amplify Console provides fully managed hosting for static sites and web apps.
+To set up GitHub pages, I followed the [GitHub Pages docs](https://docs.github.com/en/pages/quickstart). I created a new repository, pushed my Jekyll site to the repo
+(paying attention to the expected directory structure!),
+and GitHub automatically built and hosted it for me (for free!) using my custom
+domain. Having switched from using AWS Amplify, I found GitHub Pages to be a lot
+more intuitive and easier to set up, however I did lose a few features like
+previews, custom redirects, and password protected subdomains.
 
-By connecting Amplify Console to a GitHub repo, I can continuously deploy my static site simply by git pushing commits to connected branches. Amplify Console will build the site or app based on the build settings (including running any pre- or post-build commands and tests), and deploy it to Amazon's CDN.
+### [Deploying automatically to GitHub Pages](#deploying-automatically-to-github-pages)
 
-Amplify Console offers some pretty useful features:
-
-- **Branch Auto-detection/-disconnection:** lets Amplify automatically connect to branches that match certain patterns, e.g. `feature/*` or `release*`, and automatically disconnects when branches are deleted.
-- **Domain Management:** connect branches to domains or subdomains, e.g. commits to `dev/*` trigger a build and deploy changes to `https://dev.example.app`. You also get a free HTTPS certificate so your site is secure.
-- **Access Control:** add a password to certain sub-domains to work on new features or content without making it public.
-- **Previews:** see a preview of how your site looks on different devices before merging to the production branch.
-
-There are a bunch more features which I haven't mentioned—these are just the ones I found useful.
-
-When everything is set up, you can see an overview of which branches will be built, any previous builds, and their statuses:
-
-![Branches in Amplify](./src/assets/posts/2020-08-10-blogception/branches-in-amplify.jpg)
-
----
-#### [Behind Amplify Console](#behind-amplify-console)
-
-Amplify Console leverages **S3** and **Cloudfront** to build, deploy, and serve static sites and SPAs. According to their website, Cloudfront has *"225+ Points of Presence (215+ Edge locations and 12 regional mid-tier caches) in 89 cities across 46 countries."*, which means it really is as close as possible to the requesting client, and has excellent availability (99.99%). Combined with S3, which has [11 9's of durability](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DataDurability.html), it's a pretty solidly supported and well distributed static site.
-
-![Amazon Cloudfront Edge Locations](./src/assets/posts/2020-08-10-blogception/cloudfront-cdn.png)
-
-### [My setup](#my-setup)
-
-For my site, Amplify Console automatically detects branches that match `feature/*` or `test/*` to build and deploy to the subdomains `https://feature.tessapower.xyz` and `https://test.tessapower.xyz`.
-
-![Branch Auto-detection](./src/assets/posts/2020-08-10-blogception/branch-detection.jpg)
-
-![Domain Management](./src/assets/posts/2020-08-10-blogception/domain-mgmt.jpg)
-
-Previews let me see how my site looks on different devices after building it—I use this as a final checkpoint because merging to `master`.
-
-![Previews](./src/assets/posts/2020-08-10-blogception/preview-checks.gif)
-
-I use Access Control to prompt anyone who tries to access `https://test.tessapower.xyz` for credentials, so it's a safe place for me to test changes in the wild.
-
-![Access Control](./src/assets/posts/2020-08-10-blogception/access-control.jpg)
+Deploying is as simple as merging a working branch into `main` — GitHub
+takes care of the rest! This extremely simple setup is a efficient and allows me
+to focus on writing content, and less on maintaining the site.
 
 ---
 ### [My workflow](my-workflow)
 
-Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can create a new post and deploy my website with just one line of code! Here's what it looks like:
+Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can add a new post and deploy it to the blog within seconds!
 
-![End to End Continuous Deployment](./src/assets/posts/2020-08-10-blogception/end-to-end.gif)
+![End to End Continuous Deployment](./docs/assets/posts/2020-08-10-blogception/end-to-end.gif)
