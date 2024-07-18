@@ -18,7 +18,7 @@ project_entries:
 
   - title: DXEngine
     url: https://github.com/tessapower/dxengine
-    desc: Hardware accelerated DX11 based tiling game engine built with Win32.
+    desc: Hardware accelerated DX11 based rendering engine built on Win32.
     highlight: WIP
     keywords: [Game Engine, C++, DirectX, Win32]
 
@@ -34,15 +34,15 @@ project_entries:
       course 159261 Games Programming at Massey University.
     keywords: [Java, Game Engine]
 
+  - title: Holy Whac-a-Moley
+    url: https://github.com/tessapower/weeksauce-feb24
+    desc: A game jam entry created for Weeksauce February 2024, using the Godot game engine and GDScript.
+    keywords: [GDScript, Game, Godot Engine, Game Jam]
+
   - title: Conway's Game of Life
     url: https://github.com/tessapower/game-of-life
     desc: A JS implementation of Conway's Game of Life.
     keywords: [JavaScript, Cellular Automata]
-
-  - title: TicTacToe
-    url: https://github.com/tessapower/tictactoe
-    desc: A TicTacToe Game for the command line, written in C++.
-    keywords: [C++, Game]
 
 # old_project_entries:
   # - title: Cookie
