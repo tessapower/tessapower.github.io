@@ -9,6 +9,11 @@ navbar_entries:
     url: blog
 
 project_entries:
+  - title: Video Stabilizer
+    url: https://github.com/tessapower/video-stabilizer
+    desc: An application of computer vision algorithms and techniques to stabilize shaky video footage, including Lowe's Scale-Invariant Feature Transform (SIFT) technique for feature detection and Fischler and Bolles' RAndom SAmple Consesus (RANSAC) algorithm to compute robust homography matrices.
+    keywords: [Computer Vision, C++, OpenCV, SIFT, RANSAC]
+
   - title: 3D Terrain Simulation
     url: https://github.com/tessapower/3d-terrain
     desc: 3D terrain simulation with an editable, procedurally generated terrain
