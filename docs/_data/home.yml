@@ -10,7 +10,7 @@ navbar_entries:
 
 project_entries:
   - title: 3D Terrain Simulation
-    url: https://github.com/tessapower/cgra350-group-project
+    url: https://github.com/tessapower/3d-terrain
     desc: 3D terrain simulation with an editable, procedurally generated terrain
       mesh that updates in real-time. Built for the course CGRA350 Real Time
       Rendering at VUW.
