@@ -54,3 +54,4 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-remote-theme
+  - jekyll-glossary_tooltip
