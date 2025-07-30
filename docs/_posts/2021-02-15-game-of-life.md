@@ -6,7 +6,19 @@ tags: [js, html, book]
 
 I took a short detour from C++ to learn Javascript by working through the book [Eloquent Javascript](https://amzn.to/2LMjeuY). It's a delightful, well written book that introduces the language and offers exercises at the end of each chapter—one of the more interesting exercises was implementing **Conway's Game of Life**.
 
-### [What is Life?](#what-is-life)
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [What is Life?](#what-is-life)
+  - [The rules](#the-rules)
+- [The exercise](#the-exercise)
+  - [How Life works](#how-life-works)
+- [The Canvas](#the-canvas)
+- [What's next?](#whats-next)
+
+---
+
+## [What is Life?](#what-is-life)
 
 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) (or simply *Life* ) is a well-known cellular automaton created by mathematician John Conway. Life is played on an infinitely large grid of square *cells*—each cell can be either *alive* or *dead*.
 
@@ -21,7 +33,7 @@ Each cell has eight neighbours, which are the cells that are found horizontal, v
 
 Life is a zero-player game, which means that you can set the initial configuration and watch how it evolves over time—the game doesn't need any further user input.
 
-#### The rules
+### The rules
 
 Conway actually wrote **four** rules for Life, but they can be condensed into these **three**:
 
@@ -39,7 +51,7 @@ At each tick, a new generation is created by counting the number of alive neighb
 
 ---
 
-### [The exercise](#the-exercise)
+## [The exercise](#the-exercise)
 
 For this exercise, I needed to display a table of checkbox fields on a webpage, with buttons to advance to the next generation and to run the game automatically. If the user checks or unchecks the checkboxes, their changes should be included when computing the next generation.
 
@@ -55,7 +67,7 @@ You can see it's running pretty slowly! My poor browser was desperately trying t
 
 Not only was using a table of checkboxes causing the DOM tree to rebuild more frequently than I'd like, the cool spaceships and still-lifes that make Life so interesting were difficult to recognise. I decided to go beyond what the exercise called for and use an **HTML Canvas** instead. As the canvas is a low-level procedural model backed by a bitmap—not only would it look cooler—it could simply bypass all the expensive calculations associated with the DOM.
 
-#### How Life works
+### How Life works
 
 Life, as we all know, comes with its challenges. To play Life, I needed to answer two questions to create each new generation:
 
@@ -102,7 +114,7 @@ To solve this issue, `numAliveNeighbors()` first checks if the grid contains the
 
 This is one of the limitations of using a 2D array to represent the grid—they can't have negative or infinite indices. The Game of Life is meant to stretch infinitely in all directions, but a computer has finite memory and I'd need a much more complex data structure to represent it.
 
-### The Canvas
+## The Canvas
 
 Figuring out how to answer those two questions proved to be the trickiest part—drawing on the canvas was relatively intuitive! The structure of the `Grid` meant that it was simple to draw and update cells on the canvas at their corresponding coordinates. I used [webpack](https://webpack.js.org) to bundle everything together, so you can play Life right here from my post:
 
@@ -114,6 +126,12 @@ Figuring out how to answer those two questions proved to be the trickiest part�
 
 ---
 
-### What's next?
+## What's next?
 
 Using the canvas instead of checkboxes gave Life a huge boost in performance—you can read about how I profiled and optimised the Game of Life in my next post.
+
+---
+
+{% include callout.html
+    content ="Check out the [repo on GitHub](https://github.com/tessapower/game-of-life)!"
+    type="primary" %}
