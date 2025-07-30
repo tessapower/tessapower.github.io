@@ -3,12 +3,26 @@ title: "Repurposing iterators as geometric generators"
 layout: post
 tags: [c++, iterators, generators, computer vision, backtracking]
 ---
+
 In this post, I'm going to cover a slightly unusual use case for custom C++
 iterators. We are going to repurpose a C++ iterator as a generator to represent
-the geometric properties of circles and rectangles. This novel approach evolved while I was working on an interesting computer vision problem, and had a really
-nice effect on the memory footprint and program efficiency as you will soon see!
+the geometric properties of circles and rectangles. This novel approach evolved while I was working on an interesting computer vision problem, and had a really nice effect on the memory footprint and program efficiency as you will soon see!
 
-## [The problem](#the-problem)
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [The Problem](#the-problem)
+- [Use of Backtracking](#use-of-backtracking)
+- [Finding the Buttons](#finding-the-buttons)
+- [Assessing the Buttons](#assessing-the-buttons)
+  - [Testing for "Roughly Circularness"](#testing-for-roughly-circularness)
+- [Custom Iterators as Generators](#custom-iterators-as-generators)
+  - [A First Pass with the First Octant](#a-first-pass-with-the-first-octant)
+  - [Jumping from Octant to Octant](#jumping-from-octant-to-octant)
+- [Plugging into STL Algorithms](#plugging-into-stl-algorithms)
+- [The Outcome](#the-outcome)
+
+## [The Problem](#the-problem)
 
 We're given a basic black and white 2D scan of clothing buttons, and our job is
 to identify and highlight the broken buttons by placing a red box around them.
@@ -41,7 +55,7 @@ already know, they start to get messy when we include predicate testing.
 Because we need to walk before we can run, we're going to first identify the
 buttons and then move on to assessing their quality.
 
-## [Finding the buttons](#finding-the-buttons)
+## [Finding the Buttons](#finding-the-buttons)
 
 This is a pretty standard "finding islands within islands" problem, so I won't
 go into detail about how we found the buttons (though if you're curious, you
@@ -56,7 +70,7 @@ Now we can move on to assessing them.
 
 ---
 
-## [Assessing the buttons](#assessing-the-buttons)
+## [Assessing the Buttons](#assessing-the-buttons)
 
 Ignoring the number of holes requirement for now, we'll first test for broken
 edges. As you can see from the scan, we need to take into account that buttons
@@ -93,12 +107,12 @@ button.
 Technically, a circle has an infinite number of points on its circumference,
 but that doesn't translate well into code, so how do we test all points on its circumference?
 
-### [Testing for "roughly circularness"](#testing-for-roughly-circularness)
+### [Testing for "Roughly Circularness"](#testing-for-roughly-circularness)
 
 Our initial approach will be to first calculate the points on the circumference,
 then store them in a suitable data structure, and finally verify that each point satisfies the right condition.
 
-Using [Bresenham's circle algorithm](https://en.wikipedia.org/wiki/Midpoint_circle_algorithm), we can generate a finite number of points on the
+Using [Bresenham's Circle Algorithm](https://en.wikipedia.org/wiki/Midpoint_circle_algorithm), we can generate a finite number of points on the
 circumference at fixed intervals for a single octant of a circle. These points
 can then simply be reflected across the x and y axes appropriately to generate
 the rest of the points in the other seven octants, as shown below:
@@ -130,7 +144,7 @@ on the circumference on-the-fly.**
 
 ---
 
-## [Custom iterators as generators](#custom-iterators-as-generators)
+## [Custom Iterators as Generators](#custom-iterators-as-generators)
 
 The `CircumferenceIterator` will function as you would normally expect a
 forward iterator to, but instead of returning the next point on the
@@ -165,7 +179,7 @@ exactly what repurposing an iterator as a generator will allow us to do, and
 we're going to do it in a way that's more efficient and readable than the naïve
 approach above.
 
-### [A first pass with the first octant](#a-first-pass-with-the-first-octant)
+### [A First Pass with the First Octant](#a-first-pass-with-the-first-octant)
 
 For our `CircumferenceIterator` to act as a generator, we need to customize the
 dereference and increment operators while keeping track of the current octant at
@@ -209,7 +223,7 @@ Which would result in the following:
 
 <img src="{{ site.baseurl }}/images/posts/2021-10-21-custom-iterators-as-generators/one-octant.gif" alt="One Octant" width=300 />
 
-### [Jumping from octant to octant](#jumping-from-octant-to-octant)
+### [Jumping from Octant to Octant](#jumping-from-octant-to-octant)
 
 Naturally, our first approach would involve testing all points in one octant
 to completion before moving on to the next, but instead we're going to calculate
@@ -259,7 +273,7 @@ Now we get to the cool part, seeing how it all comes together!
 
 ---
 
-## [Plugging into STL algorithms](#plugging-into-stl-algorithms)
+## [Plugging into STL Algorithms](#plugging-into-stl-algorithms)
 
 It turns out that representing a geometric property like the points on a
 circumference with an iterator-turned-generator works quite well! We can now
@@ -317,7 +331,7 @@ if (is_broken) {
 
 ---
 
-## [The outcome](#the-outcome)
+## [The Outcome](#the-outcome)
 
 This was just a small part of the larger project of many classes and multiple
 namespaces! Like I mentioned before, backtracking algorithms are very simple at
@@ -371,5 +385,5 @@ void alg::process_scan() {
 ```
 
 {% include callout.html
-    content ="Check out the [repo on GitHub](https://www.github.com/tessapower/)!"
+    content ="Check out the [repo on GitHub](https://github.com/tessapower/backtracking-buttons)!"
     type="primary" %}
