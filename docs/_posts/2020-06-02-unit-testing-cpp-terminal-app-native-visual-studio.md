@@ -3,7 +3,26 @@ title: "Unit testing a C++ console app with the Native test framework in Visual 
 layout: post
 tags: [c++, console-app, vs, unit-testing]
 ---
-### [Welcome to TheGame](#welcome-to-thegame)
+
+In this post, I’ll show you how to set up and run unit tests for a native C++ console app using Visual Studio 2019's built-in testing tools. I'll cover setting up the test project, writing tests, and running them in Terminal. We'll also look at some pitfalls I encountered along the way.
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Welcome to TheGame](#welcome-to-thegame)
+- [Setting up Unit Tests in Visual Studio 2019](#setting-up-unit-tests-in-visual-studio-2019)
+  - [Deciding How to Structure the Unit Test Project](#deciding-how-to-structure-the-unit-test-project)
+- [Writing the Unit Tests](#writing-the-unit-tests)
+  - [Knowing What to Test](#knowing-what-to-test)
+    - [Covering the Test Cases](#covering-the-test-cases)
+- [Running the Tests](#running-the-tests)
+  - [Using Visual Studio Test Explorer in the IDE](#using-visual-studio-test-explorer-in-the-ide)
+    - [Using Visual Studio Test Console in Windows Terminal](#using-visual-studio-test-console-in-windows-terminal)
+- [Stuff That Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
+  - [Linker Errors :(](#linker-errors-)
+- [What's Next?](#whats-next)
+
+## [Welcome to TheGame](#welcome-to-thegame)
 
 To learn C++, I'm building the well known game Tic Tac Toe using Visual Studio 2019, while reading through Stroustrup's ["The C++ Programming Language (4th Edition)"](http://www.stroustrup.com/4th.html). I'm no designer, so it's a console app that runs in Terminal.
 
@@ -16,7 +35,7 @@ Since `TheGame.cpp` is a console app, it seemed fitting to use Terminal to run t
 
 ---
 
-### [Setting up unit tests in Visual Studio 2019](#setting-up-unit-tests-in-visual-studio-2019)
+## [Setting up Unit Tests in Visual Studio 2019](#setting-up-unit-tests-in-visual-studio-2019)
 
 VS 2019 ships with a native C++ Unit Test Framework, which defines a series of macros for simplified syntax. Setting up the unit tests was nice and simple—I created a separate Native Unit Test Project in my solution:
 
@@ -33,11 +52,10 @@ VS 2019 ships with a native C++ Unit Test Framework, which defines a series of m
 
     <img alt="Add the Project Reference" src="{{ site.baseurl }}/images/posts/2020-06-02-unit-testing/add-project-ref.gif" height=400>
 
-
 {% include warning.html
     content="What tripped me up was forgetting to also `#include` the header files the unit tests need access to. The reference doesn't automatically give the Unit Test Project access to the `#include`d headers from the referenced project—you need to specify the ones it will need. At this stage, I didn't have any header files, so I didn't realise until later."%}
 
-#### Deciding how to structure the Unit Test Project
+### Deciding How to Structure the Unit Test Project
 
 When you create a Unit Test Project as described above, VS creates a template project, a `.cpp` file with example unit tests classes, unit test methods, and all the Native test framework dependencies already in place! It gave me a nice headstart and was easy to pickup how I should structure my tests. I decided to use this `.cpp` file to test only the game logic and to add `.cpp` files for other areas later.
 
@@ -47,11 +65,11 @@ Splitting up unit testing over multiple .`cpp` files allows me to run one, some,
 
 ---
 
-### [Writing the unit tests](#writing-the-unit-tests)
+## [Writing the Unit Tests](#writing-the-unit-tests)
 
 My first goal is to refactor how `TheGame.cpp` checks for a winner, so I wrote tests for what would later be my `GameWinChecker` class. This meant also thinking about how `GameWinChecker` should work. The rules of Tic Tac Toe are simple and well defined—I only needed to translate them into C++.
 
-#### Knowing what to test
+### Knowing What to Test
 
 In `TheGame.cpp`, the state of the gameboard, a.k.a. the `gameState`, is an empty STL array. As players make moves, the `gameState` fills up with their symbols. Each index corresponds to a position on the 3x3 board.
 
@@ -78,7 +96,7 @@ const bool checkIfSymbolHasWon(char symbol, std::array<char, 9> gameState);
 
 Having now defined the function, I could start writing the tests for it.
 
-#### Covering the test cases
+#### Covering the Test Cases
 
 The first test cases covered the basic assumptions, e.g if `gameState` is full but has no winning move (i.e. a draw), `GameWinChecker` returns *false*.
 
@@ -89,9 +107,9 @@ TEST_METHOD(ExpectNotWon_GameStateDraw)
     char symbol = 'X';
     std::array<char, 9> gameState = {
         'X', 'O', 'X',
-	'X', 'X', 'O',
-	'O', 'X', 'O'
-	};
+    'X', 'X', 'O',
+    'O', 'X', 'O'
+    };
 
     // Act
     GameWinChecker gameWinChecker;
@@ -106,11 +124,12 @@ Now it's time to put my unit tests... to the test.
 
 ---
 
-### [Running the tests](#running-the-tests)
+## [Running the Tests](#running-the-tests)
 
 The tests currently call a function that I've haven't defined yet, so all tests should fail. Running them now will ensure any obvious logic fails will pop up before moving on to refactoring.
 
-#### Using Visual Studio Test Explorer in the IDE
+### Using Visual Studio Test Explorer in the IDE
+
 Since VS 2019 ships with the VS Test Platform, it's super simple to run unit test projects from within the IDE, the VS Console or Terminal. If you're a GUI fan, you can use Test Explorer:
 
 <img alt="Running Tests with Test Explorer" src="{{ site.baseurl }}/images/posts/2020-06-02-unit-testing/test-explorer.gif" height=400>
@@ -140,9 +159,9 @@ Now that the tests are doing a great job at failing, we can refactor `TheGame.cp
 
 ---
 
-### [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
+## [Stuff That Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
 
-#### Linker Errors :(
+### Linker Errors :(
 
 I missed a crucial step when setting up the Unit Tests Project that lead to linker errors when I first went to run the tests (_LNK1165_, _LNK2005_, and _LNK2019_). I was pretty frustrated, as the errors were blocking tests from running. After googling the possible causes for (what felt like) forever, I eventually found out the issue:
 
@@ -158,11 +177,10 @@ Here's how I did that:
 
 ---
 
-### [What's next?](#whats-next)
+## [What's Next?](#whats-next)
 
 Using the VS Test Platform in Terminal works great! But if I have to do this every time, it's going to get tedious. So my next job is to automate my unit testing using GitHub Actions before continuing with the refactor.
 
-
 {% include callout.html
-    content="Take a look at `TheGame.cpp` [here](https://www.github.com/tessapower/tictactoe) on Github"
+    content="Check out the [repo on GitHub](https://www.github.com/tessapower/tictactoe)!"
     type="primary" %}
