@@ -5,7 +5,22 @@ tags: [blog, jekyll, github, aws, amplify, serverless, cloudfront, markdown]
 ---
 In this post, I'm going to talk about how I set up and deployed a static site that's fast, modern, serverless, and written in Markdown to AWS. And it cost me **$0.00**.
 
-### [The Goal](#the-goal)
+<!--more-->
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [The Goal](#the-goal)
+- [Using Jekyll for the Static Site](#using-jekyll-for-the-static-site)
+- [Deploying to AWS with Amplify Console](#deploying-to-aws-with-amplify-console)
+  - [Behind Amplify Console](#behind-amplify-console)
+  - [My setup](#my-setup)
+- [My workflow](#my-workflow)
+- [The Stats](#the-stats)
+
+---
+
+## [The Goal](#the-goal)
 
 I wanted to create a website to write about things I'm working on and learning. I only had a few requirements:
 <!--more-->
@@ -19,7 +34,8 @@ I wanted to create a website to write about things I'm working on and learning. 
 Why not Squarespace, Wix, or Wordpress? ~$15/month for a simple static site and WYSIWYG text editors with 1000 buttons—*no, thanks*.
 
 ---
-### [Jekyll—the static site](#jekyll-the-static-site)
+
+## [Using Jekyll for the Static Site](#using-jekyll-for-the-static-site)
 
 I chose to use *[Jekyll](https://jekyllrb.com/)*—an open-source, blog-aware static site generator created by Tom Preston-Werner, one of the co-founders of GitHub. Compared to other options, Jekyll ticked a lot of the boxes:
 
@@ -30,7 +46,7 @@ I chose to use *[Jekyll](https://jekyllrb.com/)*—an open-source, blog-aware st
 
 It only takes a few lines to get set up, and you have a fully functioning static site. This is what the initial bare-bones folder structure looks like:
 
-```
+```md
 .
 ├── _posts
 │   └── 2020-08-10-welcome-to-jekyll.markdown
@@ -42,6 +58,7 @@ It only takes a few lines to get set up, and you have a fully functioning static
 ├── Gemfile
 └── Gemfile.lock
 ```
+
 `index.markdown`, `about.markdown` and `404.html` are the pages of your site. `_config.yml` contains the settings that affect your whole blog, e.g. title, description, baseurl, and the theme. Blog posts go in the `_posts` folder, and Jekyll automatically generates these on your site according to date. An example post could look like this:
 
 ```markdown
@@ -75,7 +92,7 @@ Run `bundle exec jekyll serve` once and Jekyll will continue to serve any change
 
 ---
 
-### [Deploying to AWS with Amplify Console](#deplying-to-aws-with-amplify-console)
+## [Deploying to AWS with Amplify Console](#deplying-to-aws-with-amplify-console)
 
 To build, host, and deploy my static site, I use the [AWS Amplify Console](https://aws.amazon.com/amplify/hosting/). In a nutshell, Amplify Console provides fully managed hosting for static sites and web apps.
 
@@ -95,7 +112,8 @@ When everything is set up, you can see an overview of which branches will be bui
 ![Branches in Amplify]({{ site.baseurl }}/images/posts/2020-08-10-blogception/branches-in-amplify.jpg)
 
 ---
-#### [Behind Amplify Console](#behind-amplify-console)
+
+### [Behind Amplify Console](#behind-amplify-console)
 
 Amplify Console leverages **S3** and **Cloudfront** to build, deploy, and serve static sites and SPAs. According to their website, Cloudfront has *"225+ Points of Presence (215+ Edge locations and 12 regional mid-tier caches) in 89 cities across 46 countries."*, which means it really is as close as possible to the requesting client, and has excellent availability (99.99%). Combined with S3, which has [11 9's of durability](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DataDurability.html), it's a pretty solidly supported and well distributed static site.
 
@@ -118,14 +136,16 @@ I use Access Control to prompt anyone who tries to access `https://test.tessapow
 ![Access Control]({{ site.baseurl }}/images/posts/2020-08-10-blogception/access-control.jpg)
 
 ---
-### [My workflow](my-workflow)
+
+## [My workflow](my-workflow)
 
 Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can create a new post and deploy my website with just one line of code! Here's what it looks like:
 
 ![End to End Continuous Deployment]({{ site.baseurl }}/images/posts/2020-08-10-blogception/end-to-end.gif)
 
 ---
-### [The Stats](#the-stats)
+
+## [The Stats](#the-stats)
 
 | **Availability**                | Four 9's        |
 | **Time to set up**              | 0.5 hours       |
@@ -137,3 +157,9 @@ Not only is this approach modern and extremely fast, it has made my workflow pre
 {% include callout.html
     content="*I already have my custom domain and DNS set up with Route53—this extra setup comes within Amazon's Free Tier."
     type="default" %}
+
+---
+
+{% include callout.html
+    content ="Check out the [repo on GitHub](https://github.com/tessapower/tessapower.github.io)!"
+    type="primary" %}
