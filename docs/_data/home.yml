@@ -41,7 +41,7 @@ project_entries:
     url: https://github.com/tessapower/dxengine
     desc: Hardware accelerated DX11 based rendering engine built on Win32.
     highlight: WIP
-    keywords: [Game Engine, C++, DirectX, Win32]
+    keywords: [Rendering Engine, Shader Development, HLSL, C++, DirectX, Win32]
 
   - title: TEngine
     url: https://github.com/tessapower/tengine
