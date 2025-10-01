@@ -333,8 +333,7 @@ if (is_broken) {
 
 ## [The Outcome](#the-outcome)
 
-This was just a small part of the larger project of many classes and multiple
-namespaces! Like I mentioned before, backtracking algorithms are very simple at
+Like I mentioned before, backtracking algorithms are very simple at
 their core, and they usually get complicated when they're riddled with tests.
 This was going to be especially true, considering we are performing backtracking
 within backtracking! With around 100 lines of code, we managed to reduce the
