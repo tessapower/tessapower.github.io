@@ -18,7 +18,7 @@ project_entries:
     url: https://github.com/tessapower/trail-conditions-map
     desc: Full-stack trail conditions map for Austin MTB trails with real-time weather integration, TrailForks API, and intelligent condition warnings.
     highlight: WIP
-    keywords: [Fullstack, JavaScript, TypeScript, React.js, Web Dev]
+    keywords: [Fullstack, JavaScript, TypeScript, React.js]
 
   - title: 3D Terrain Simulation
     url: https://github.com/tessapower/3d-terrain
