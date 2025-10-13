@@ -27,6 +27,11 @@ project_entries:
       Rendering at VUW.
     keywords: [Real-time Rendering, C++, OpenGL, GLSL]
 
+  - title: sfx
+    url: https://github.com/tessapower/sfx
+    desc: A hot-reloadable shader playground for experimenting with GLSL fragment shaders offline, built with React, TypeScript, and Three.js.
+    keywords: [TypeScript, React, Three.js, WebGL, Shaders]
+
   - title: 3D Gaussian Splat Viewer
     url: https://github.com/tessapower/3dgs-viewer
     desc: A simple Godot tool for visualizing and interacting with 3D Gaussian Splat point cloud data. Supports .PLY (Stanford Triangle Format), .SPLAT (3D Gaussian Splat format) and .XYZ files (simple point format).
