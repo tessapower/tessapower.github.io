@@ -10,7 +10,6 @@ without CMake for small-scale C++ projects.
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [GoogleTest](#googletest)
 - [Manually Linking against GoogleTest](#manually-linking-against-googletest)
 - [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)

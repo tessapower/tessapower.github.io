@@ -9,12 +9,9 @@ In this post, I'm going to talk about how I set up and deployed a static site th
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [The Goal](#the-goal)
 - [Using Jekyll for the Static Site](#using-jekyll-for-the-static-site)
 - [Deploying to AWS with Amplify Console](#deploying-to-aws-with-amplify-console)
-  - [Behind Amplify Console](#behind-amplify-console)
-  - [My setup](#my-setup)
 - [My workflow](#my-workflow)
 - [The Stats](#the-stats)
 

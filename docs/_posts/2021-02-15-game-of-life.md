@@ -8,7 +8,6 @@ I took a short detour from C++ to learn Javascript by working through the book [
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [What is Life?](#what-is-life)
   - [The rules](#the-rules)
 - [The exercise](#the-exercise)

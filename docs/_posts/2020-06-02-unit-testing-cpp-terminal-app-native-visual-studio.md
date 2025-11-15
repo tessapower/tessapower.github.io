@@ -8,18 +8,11 @@ In this post, I’ll show you how to set up and run unit tests for a native C++ 
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Welcome to TheGame](#welcome-to-thegame)
 - [Setting up Unit Tests in Visual Studio 2019](#setting-up-unit-tests-in-visual-studio-2019)
-  - [Deciding How to Structure the Unit Test Project](#deciding-how-to-structure-the-unit-test-project)
 - [Writing the Unit Tests](#writing-the-unit-tests)
-  - [Knowing What to Test](#knowing-what-to-test)
-    - [Covering the Test Cases](#covering-the-test-cases)
 - [Running the Tests](#running-the-tests)
-  - [Using Visual Studio Test Explorer in the IDE](#using-visual-studio-test-explorer-in-the-ide)
-    - [Using Visual Studio Test Console in Windows Terminal](#using-visual-studio-test-console-in-windows-terminal)
 - [Stuff That Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
-  - [Linker Errors :(](#linker-errors-)
 - [What's Next?](#whats-next)
 
 ## [Welcome to TheGame](#welcome-to-thegame)

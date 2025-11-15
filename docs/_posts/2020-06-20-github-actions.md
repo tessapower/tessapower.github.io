@@ -12,20 +12,13 @@ In a [previous post]({% post_url 2020-06-02-unit-testing-cpp-terminal-app-native
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [GitHub Actions](#github-actions)
-  - [Why GitHub Actions?](#why-github-actions)
 - [Setting up a new workflow](#setting-up-a-new-workflow)
 - [What to Automate](#what-to-automate)
 - [Configuring the Workflow](#configuring-the-workflow)
-  - [Step 1: Check out the Code](#step-1-check-out-the-code)
-  - [Step 2: Build the Project](#step-2-build-the-project)
-  - [Step 3: Run the Tests](#step-3-run-the-tests)
 - [Putting the Workflow to Work](#putting-the-workflow-to-work)
-  - [What's Next?](#whats-next)
-  - [Stuff that Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
-    - [Job scope](#job-scope)
-    - [Environment variables syntax](#environment-variables-syntax)
+- [What's Next?](#whats-next)
+- [Stuff that Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
 
 ---
 
@@ -178,7 +171,7 @@ Now that my workflow is working, any pushes to remote branches will trigger the 
 
 ---
 
-### [What's Next?](#whats-next)
+## [What's Next?](#whats-next)
 
 Starting with something small was the perfect test, and helped me see that GitHub Actions can help me automate in many other areas. The next thing I'm going to do is create an action to Lint check all `.cpp` files!
 
@@ -190,11 +183,11 @@ Starting with something small was the perfect test, and helped me see that GitHu
 
 ---
 
-### [Stuff that Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
+## [Stuff that Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
 
 I made a fair few mistakes and did a lot of rewrites to get to the above configuration! Because GitHub Actions is still quite new, the documentation is a WIP. Changes have not been updated everywhere, so sometimes there was conflicting information. With a bit of trial and error, and after reading through the workflow build logs, I got things back on track.
 
-#### Job scope
+### Job scope
 
 The first thing that tripped me up was _job scope_ (like _block scope_). Initially, I had multiple jobs—one job to set up MSBuild and VSTest, and one job to run them. This caused an error, so I rummaged around in the build logs to figure out what was going on.
 
@@ -202,7 +195,7 @@ The issue was that the second job didn't have access to the changes made in the 
 
 If you need anything for another job, use global variables (called _environment variables_). To solve this for my workflow though, I put all the steps to setup and run MSBuild and VSTest into one job.
 
-#### Environment variables syntax
+### Environment variables syntax
 
 For commands that require a relative path, you need to specify the working directory. For my workflow, this was the root folder of the repo and generated build folder, as MSBuild and VSTest need the relative paths to the `.sln` and `.dll` files respectively.
 

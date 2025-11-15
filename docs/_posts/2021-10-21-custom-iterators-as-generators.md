@@ -10,7 +10,6 @@ the geometric properties of circles and rectangles. This novel approach evolved 
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [The Problem](#the-problem)
 - [Use of Backtracking](#use-of-backtracking)
 - [Finding the Buttons](#finding-the-buttons)
