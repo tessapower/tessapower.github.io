@@ -1,7 +1,7 @@
 ## Personal Website
 
 This is a repo for my personal website, where I post about what I'm learning and working on. It's generated using [Jekyll](https://github.com/jekyll/jekyll),
-the [Contrast](https://github.com/niklasbuschmann/contrast) template from Niklas Buschmann, and automatically deployed via [GitHub Pages](https://pages.github.com/). It also supports comments on blogposts via [Giscus](https://github.com/giscus/giscus), which you can see in the Discussion section of this repo.
+the [Moonwalk](https://github.com/abhinavs/moonwalk) theme, and automatically deployed via [GitHub Pages](https://pages.github.com/). It also supports comments on blogposts via [Giscus](https://github.com/giscus/giscus), which you can see in the Discussion section of this repo.
 
 This README serves mostly as a reminder to myself about the structure of the repo and how to deploy when I write new posts.
 
@@ -76,7 +76,8 @@ Run `bundle exec jekyll serve` once and Jekyll will continue to serve any change
 
 ## GitHub Pages
 
-To set up GitHub pages, I followed the [GitHub Pages docs](https://docs.github.com/en/pages/quickstart). I created a new repository, pushed my Jekyll site to the repo
+To set up GitHub pages, I followed the [GitHub Pages docs](https://docs.github.com/en/pages/quickstart).
+I created a new repository, pushed my Jekyll site to the repo
 (paying attention to the expected directory structure!),
 and GitHub automatically built and hosted it for me (for free!) using my custom
 domain. Having switched from using AWS Amplify, I found GitHub Pages to be a lot
@@ -92,6 +93,7 @@ to focus on writing content, and less on maintaining the site.
 ---
 ### [My workflow](my-workflow)
 
-Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can add a new post and deploy it to the blog within seconds!
+Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can add
+a new post and deploy it to the blog within seconds!
 
 ![Github Pages Deployment](.\docs\images\readme\github-pages-deployment.gif)
