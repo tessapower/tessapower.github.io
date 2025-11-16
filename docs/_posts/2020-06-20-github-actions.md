@@ -36,9 +36,9 @@ Setting up a workflow in my repo was super simple—here's how I did it:
 
 1. Navigate to the repo where the workflow will run.
 2. Click the `Actions` tab.
-    <img alt="The Actions Tab" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\ttt-repo.jpg">
+    <img alt="The Actions Tab" src="{{ site.baseurl }}\images\posts\2020-06-20-github-actions\ttt-repo.jpg">
 3. Click `New Workflow`.
-    <img alt="New Workflow" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\new-workflow.jpg">
+    <img alt="New Workflow" src="{{ site.baseurl }}\images\posts\2020-06-20-github-actions\new-workflow.jpg">
 
 That's it, like I said—super simple! Alternatively, you can create a workflows folder in the root of your repo under `.github/workflows` and add a new `.YAML` or `.YML` file—this is where you configure your workflow.
 
@@ -159,7 +159,7 @@ jobs:
 
 After a bunch of testing, reading logs, and fine-tuning, it's working! It was super useful to watch the build logs once the workflow triggered. You can find them under the `Actions` tab. Just click on any of the events that triggered your workflow to see more information. Here you will also find tests results, artifacts, and statuses for each step.
 
-<img alt="GitHub Actions Build Logs" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\actions-build-log.gif">
+<img alt="GitHub Actions Build Logs" src="{{ site.baseurl }}\images\posts\2020-06-20-github-actions\actions-build-log.gif">
 
 Now that my workflow is working, any pushes to remote branches will trigger the tests to run. And just for fun, I added a status badge for `master` to the repo's README:
 
