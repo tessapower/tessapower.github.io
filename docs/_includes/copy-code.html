@@ -1,0 +1,26 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.highlight').forEach(block => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'copy-button';
+    button.innerHTML = '<i class="fa-regular fa-copy"></i>';
+    button.setAttribute('aria-label', 'Copy code');
+
+    button.addEventListener('click', async () => {
+      // Target only the code content, not the line numbers
+      const codeElement = block.querySelector('td.code pre') || block.querySelector('code');
+      const code = codeElement.textContent;
+      await navigator.clipboard.writeText(code);
+      button.innerHTML = '<i class="fa-solid fa-check"></i>';
+      button.classList.add('copied');
+      setTimeout(() => {
+        button.innerHTML = '<i class="fa-regular fa-copy"></i>';
+        button.classList.remove('copied');
+      }, 2000);
+    });
+
+    block.appendChild(button);
+  });
+});
+</script>
