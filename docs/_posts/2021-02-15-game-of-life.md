@@ -119,7 +119,7 @@ Figuring out how to answer those two questions proved to be the trickiest partâ€
 
 ## What's Next?
 
-Using the canvas instead of checkboxes gave Life a huge boost in performance, but for now, this little experiment was a fun detour and I don't plan to develop it further. If you're interested in seeing the code, check out the GitHub repo linked below!
+Using the canvas instead of checkboxes gave Life a huge boost in performance! For now, this little experiment was a fun detour and I don't plan to develop it further. If you're interested in seeing the code, check out the GitHub repo linked below!
 
 ---
 
