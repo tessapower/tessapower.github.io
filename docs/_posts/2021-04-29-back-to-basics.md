@@ -17,7 +17,7 @@ without CMake for small-scale C++ projects.
 
 ---
 
-## [GoogleTest](#GoogleTest)
+## [GoogleTest](#googletest)
 
 GoogleTest (or GTest) is Google's testing and mocking framework for C++. GTest
 can be used for any kind of tests, not just unit tests, and has some nice
@@ -81,18 +81,18 @@ to both compile and link POSIX-compliant multi-threaded applications. On top of
 that, Linux machines should also make use of `-pthread`, according to the
 [Linux man pages](https://man7.org/linux/man-pages/man7/pthreads.7.html).
 
-### [ `-pthread` vs. `-lpthread`](#lpthread-vs-pthread)
+### [`-pthread` vs. `-lpthread`](#lpthread-vs-pthread)
 
 I went down the rabbit hole to discover the difference between `-pthread` and
 `lpthread`. Here's what I learned:
 
-- The `-pthread` option sets flags for both the compiler preprocessor *and* linker.
-  - At *compile time*, `-pthread` manifests that the Pthread API is requested
+* The `-pthread` option sets flags for both the compiler preprocessor *and* linker.
+  * At *compile time*, `-pthread` manifests that the Pthread API is requested
     and defines platform-specific macros, such as `_REENTRANT` on Linux.
-  - At *link time*, the linker will specifically link the resultant object
+  * At *link time*, the linker will specifically link the resultant object
     against libpthread.
 
-- In comparison, `-lpthread` will only do the _second part_, i.e. linking against
+* In comparison, `-lpthread` will only do the *second part*, i.e. linking against
   libpthread.
 
 Had I not manually linked against GTest, I would not have discovered this,
@@ -100,4 +100,3 @@ which proves that it's always a good idea to go back to the basics every now
 and then!
 
 ---
-

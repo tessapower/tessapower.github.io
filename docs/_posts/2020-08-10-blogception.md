@@ -31,11 +31,11 @@ In this post, I'm going to talk about how I set up and deployed a static site th
 I wanted to create a website to write about things I'm working on and learning. I only had a few requirements:
 <!--more-->
 
-- fast;
-- inexpensive;
-- minimal setup;
-- low maintenance;
-- lets me write posts in Markdown;
+* fast;
+* inexpensive;
+* minimal setup;
+* low maintenance;
+* lets me write posts in Markdown;
 
 Why not Squarespace, Wix, or Wordpress? ~$15/month for a simple static site and WYSIWYG text editors with 1000 buttons—*no, thanks*.
 
@@ -98,7 +98,7 @@ Run `bundle exec jekyll serve` once and Jekyll will continue to serve any change
 
 ---
 
-## [Deploying to AWS with Amplify Console](#deplying-to-aws-with-amplify-console)
+## [Deploying to AWS with Amplify Console](#deploying-to-aws-with-amplify-console)
 
 To build, host, and deploy my static site, I use the [AWS Amplify Console](https://aws.amazon.com/amplify/hosting/). In a nutshell, Amplify Console provides fully managed hosting for static sites and web apps.
 
@@ -106,10 +106,10 @@ By connecting Amplify Console to a GitHub repo, I can continuously deploy my sta
 
 Amplify Console offers some pretty useful features:
 
-- **Branch Auto-detection/-disconnection:** lets Amplify automatically connect to branches that match certain patterns, e.g. `feature/*` or `release*`, and automatically disconnects when branches are deleted.
-- **Domain Management:** connect branches to domains or subdomains, e.g. commits to `dev/*` trigger a build and deploy changes to `https://dev.example.app`. You also get a free HTTPS certificate so your site is secure.
-- **Access Control:** add a password to certain sub-domains to work on new features or content without making it public.
-- **Previews:** see a preview of how your site looks on different devices before merging to the production branch.
+* **Branch Auto-detection/-disconnection:** lets Amplify automatically connect to branches that match certain patterns, e.g. `feature/*` or `release*`, and automatically disconnects when branches are deleted.
+* **Domain Management:** connect branches to domains or subdomains, e.g. commits to `dev/*` trigger a build and deploy changes to `https://dev.example.app`. You also get a free HTTPS certificate so your site is secure.
+* **Access Control:** add a password to certain sub-domains to work on new features or content without making it public.
+* **Previews:** see a preview of how your site looks on different devices before merging to the production branch.
 
 There are a bunch more features which I haven't mentioned—these are just the ones I found useful.
 

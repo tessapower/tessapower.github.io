@@ -29,7 +29,7 @@ Each cell has eight neighbours, which are the cells that are found horizontal, v
 
 Life is a zero-player game, which means that you can set the initial configuration and watch how it evolves over time—the game doesn't need any further user input.
 
-### The rules
+### The Rules
 
 Conway actually wrote **four** rules for Life, but they can be condensed into these **three**:
 
@@ -47,7 +47,7 @@ At each tick, a new generation is created by counting the number of alive neighb
 
 ---
 
-## [The exercise](#the-exercise)
+## [The Exercise](#the-exercise)
 
 For this exercise, I needed to display a table of checkbox fields on a webpage, with buttons to advance to the next generation and to run the game automatically. If the user checks or unchecks the checkboxes, their changes should be included when computing the next generation.
 
@@ -63,7 +63,7 @@ You can see it's running pretty slowly! My poor browser was desperately trying t
 
 Not only was using a table of checkboxes causing the DOM tree to rebuild more frequently than I'd like, the cool spaceships and still-lifes that make Life so interesting were difficult to recognise. I decided to go beyond what the exercise called for and use an **HTML Canvas** instead. As the canvas is a low-level procedural model backed by a bitmap—not only would it look cooler—it could simply bypass all the expensive calculations associated with the DOM.
 
-### How Life works
+### How Life Works
 
 Life, as we all know, comes with its challenges. To play Life, I needed to answer two questions to create each new generation:
 
@@ -115,15 +115,11 @@ Figuring out how to answer those two questions proved to be the trickiest part�
 
 {% include game-of-life.html %}
 
-{% include callout.html
-    content ="Take a look at `The Game of Life` [here](https://www.github.com/tessapower/game-of-life) on GitHub"
-    type="primary" %}
-
 ---
 
-## What's next?
+## What's Next?
 
-Using the canvas instead of checkboxes gave Life a huge boost in performance—you can read about how I profiled and optimised the Game of Life in my next post.
+Using the canvas instead of checkboxes gave Life a huge boost in performance, but for now, this little experiment was a fun detour and I don't plan to develop it further. If you're interested in seeing the code, check out the GitHub repo linked below!
 
 ---
 

@@ -26,9 +26,9 @@ to help automate quality control, so the motivation is clear.
 We're given the criteria for a button that passes the quality control test:
 <!--more-->
 
-- Round shape;
-- No obviously broken edges;
-- Exactly four interior holes (apparently this is a very boring
+* Round shape;
+* No obviously broken edges;
+* Exactly four interior holes (apparently this is a very boring
 button factory).
 
 At the end of it all, we want to be able to highlight the broken buttons like
@@ -194,7 +194,8 @@ Point CircumferenceIterator::operator*() const {
 }
 
 /**
-  * @brief Increment the iterator to the next point on the circumference.
+  * @brief Increment the iterator to the next point on
+  * the circumference.
   */
 CircumferenceIterator CircumferenceIterator::operator++() {
   dx += 1;
@@ -207,7 +208,8 @@ CircumferenceIterator CircumferenceIterator::begin() const {
 }
 
 CircumferenceIterator CircumferenceIterator::end() const {
-  const int end_dx = static_cast<int>(circle.get_radius() / sqrt(2) + 1);
+  const int end_dx
+    = static_cast<int>(circle.get_radius() / sqrt(2) + 1);
 
   return CircumferenceIterator{circle, end_dx};
 }
@@ -321,7 +323,8 @@ the dereference and increment operators, we can do the following:
 
 {% highlight cpp %}
 if (is_broken) {
-  for (auto const &point : bounds.perimeter()) draw_point(point, Color::Red());
+  for (auto const &point : bounds.perimeter())
+    draw_point(point, Color::Red());
 }
 {% endhighlight %}
 
@@ -354,13 +357,19 @@ void alg::process_scan() {
   for (auto const &bounds : discover_all_button_bounds()) {
     bool is_broken = false;
 
-    // Draw two concentric circles and require that the pixelated edge of the
-    // button falls between them.
+    // Draw two concentric circles and require that the
+    // pixelated edge of the button falls between them.
     const int radius =
         static_cast<int>(std::max(bounds.width(), bounds.height()) / 2.0);
 
-    const geom::Circle outer{bounds.center(), static_cast<int>(radius * 1.2)};
-    const geom::Circle inner{bounds.center(), static_cast<int>(radius * 0.9)};
+    const geom::Circle outer{
+      bounds.center(),
+      static_cast<int>(radius * 1.2)
+    };
+    const geom::Circle inner{
+      bounds.center(),
+      static_cast<int>(radius * 0.9)
+    };
 
     auto outer_circumference = outer.circumference();
     auto inner_circumference = inner.circumference();
@@ -373,7 +382,8 @@ void alg::process_scan() {
                              inner_circumference.end(),
                              is_not_part_of_fastener);
 
-    is_broken |= discover_num_holes(inner.bounding_box()) != kNumRequiredHoles;
+    is_broken
+      |= discover_num_holes(inner.bounding_box()) != kNumRequiredHoles;
 
     if (is_broken) {
       for (auto const &point : bounds.perimeter())
