@@ -47,14 +47,14 @@ Why not Squarespace, Wix, or Wordpress? ~$15/month for a simple static site and 
 
 I chose to use *[Jekyll](https://jekyllrb.com/)*—an open-source, blog-aware static site generator created by Tom Preston-Werner, one of the co-founders of GitHub. Compared to other options, Jekyll ticked a lot of the boxes:
 
-- Setup is super quick;
-- Only needs to be built once, so it's fast;
-- No moving parts that can break or require maintenance;
-- Write content in Markdown, which makes things readable in plain text on GitHub;
+* Setup is super quick;
+* Only needs to be built once, so it's fast;
+* No moving parts that can break or require maintenance;
+* Write content in Markdown, which makes things readable in plain text on GitHub;
 
 It only takes a few lines to get set up, and you have a fully functioning static site. This is what the initial bare-bones folder structure looks like:
 
-```md
+{% highlight bash %}
 .
 ├── _posts
 │   └── 2020-08-10-welcome-to-jekyll.markdown
@@ -65,11 +65,11 @@ It only takes a few lines to get set up, and you have a fully functioning static
 ├── _config.yml
 ├── Gemfile
 └── Gemfile.lock
-```
+{% endhighlight %}
 
 `index.markdown`, `about.markdown` and `404.html` are the pages of your site. `_config.yml` contains the settings that affect your whole blog, e.g. title, description, baseurl, and the theme. Blog posts go in the `_posts` folder, and Jekyll automatically generates these on your site according to date. An example post could look like this:
 
-```markdown
+{% highlight markdown %}
 ---
 layout: post
 title:  "Lorem Ipsum"
@@ -88,7 +88,7 @@ This is an example of a **Jekyll** blog post written in *Markdown*.
 ### H3
 
 | A table | that has | important info |
-```
+{% endhighlight %}
 
 Within a post you can use [Liquid](https://shopify.github.io/liquid/) tags to access site-wide variables, e.g. `page.path` refers to the path to the raw post or page. As you'd expect, these elements combined make a Jekyll site delightfully readable and simple to maintain! Jekyll also has excellent documentation and plenty of support for migrating content from other popular static site generators.
 

@@ -83,13 +83,13 @@ fall somewhere between them.
 
 Our two concentric circles will be slighty smaller and larger than the bounds:
 
-```cpp
+{% highlight cpp linenos %}
 const int radius =
   static_cast<int>(std::max(bounds.width(), bounds.height()) / 2.0f);
 
 const Circle outer{bounds.center(), static_cast<int>(radius * 1.2f)};
 const Circle inner{bounds.center(), static_cast<int>(radius * 0.9f)};
-```
+{% endhighlight %}
 
 {% include callout.html
     content ="Code examples in this post have been simplified for clarity and may differ slightly from the [final result found on GitHub](https://github.com/tessapower/backtracking-buttons)."
@@ -121,13 +121,13 @@ the rest of the points in the other seven octants, as shown below:
 So now that we have our circumference points, we would ideally iterate over them
 and test each point against our condition:
 
-```cpp
+{% highlight cpp %}
   bool is_broken = std::any_of(circ.begin(), circ.end(), some_condition);
   // OR
   for (auto point : circ) {
     some_condition(point);
   }
-```
+{% endhighlight %}
 
 There are a few problems with this approach:
 
@@ -160,17 +160,18 @@ Given a specific `Circle` instance, we create a `CircumferenceIterator` such
 that we have access to the geometric properties of the circle needed to generate
 the next point on the circumference:
 
-```cpp
-  /**
-    * @brief Construct a CircumferenceIterator for a given Circle.
-    *
-    * @param c The Circle to generate points for.
-    * @param dx The x coordinate of the first point on the circumference.
-    */
-  constexpr CircumferenceIterator(Circle const &c, int dx) noexcept
-      : circle{c}, dx{dx}, radius{c.get_radius()},
-        origin_x{c.get_origin().get_x()}, origin_y{c.get_origin().get_y()} {};
-```
+{% highlight cpp %}
+/**
+  * @brief Construct a CircumferenceIterator for a given Circle.
+  *
+  * @param c The Circle to generate points for.
+  * @param dx The x coordinate of the first point on the circumference.
+  */
+constexpr CircumferenceIterator(Circle const &c, int dx) noexcept
+    : circle{c}, dx{dx}, radius{c.get_radius()},
+      origin_x{c.get_origin().get_x()},
+      origin_y{c.get_origin().get_y()} {};
+{% endhighlight %}
 
 You may have been thinking, _"why not calculate the position of a point on the
 circumference and then immediately assess it?"_, and you'd be right! That's
@@ -188,9 +189,10 @@ lifting—it will return the next point taking the current octant into account.
 Here's what it would look like if we were only generating points for **one**
 octant using Bresenham's circle algorithm:
 
-```cpp
+{% highlight cpp %}
 /**
-  * @brief Dereferences the iterator to get the current point on the circumference.
+  * @brief Dereferences the iterator to get the current
+  * point on the circumference.
   */
 Point CircumferenceIterator::operator*() const {
   const int dy = (int)sqrt(pow(radius, 2) - pow(dx, 2));
@@ -216,7 +218,7 @@ CircumferenceIterator CircumferenceIterator::end() const {
 
   return CircumferenceIterator{circle, end_dx};
 }
-```
+{% endhighlight %}
 
 Which would result in the following:
 
@@ -242,7 +244,7 @@ buttons like the one above.
 Taking all eight octants into account, our dereference and increment operators
 now look like this:
 
-```cpp
+{% highlight cpp %}
 Point CircumferenceIterator::operator*() const {
   const int dy = (int)sqrt(pow(r, 2) - pow(dx, 2));
 
@@ -266,7 +268,7 @@ CircumferenceIterator CircumferenceIterator::operator++() {
 }
 
 // begin() and end() remain the same
-```
+{% endhighlight %}
 
 Now we get to the cool part, seeing how it all comes together!
 
@@ -282,31 +284,37 @@ algorithms succinct and avoid cluttering them with our bad button tests.
 Checking that each button is roughly circular is now very succinct and fantastically
 readable thanks to `std::any_of` and a few predicate functions:
 
-```cpp
+{% highlight cpp %}
 // For each found button:
 bool is_broken = false;
 
 // Test the points on the outer circumference.
-is_broken |= std::any_of(outer_circumference.begin(), outer_circumference.end(),
-                         is_part_of_fastener);
+is_broken |= std::any_of(
+  outer_circumference.begin(),
+  outer_circumference.end(),
+  is_part_of_fastener
+);
 
 // Test the points on the inner circumference.
-is_broken |= std::any_of(inner_circumference.begin(), inner_circumference.end(),
-                         is_not_part_of_fastener);
-```
+is_broken |= std::any_of(
+  inner_circumference.begin(),
+  inner_circumference.end(),
+  is_not_part_of_fastener
+);
+{% endhighlight %}
 
 Now coming back to the requirement for the number of button holes, we'll use
 another backtracking algorithm to locate the interior holes of each button and
 check that against our requirements:
 
-```cpp
+{% highlight cpp %}
 // For each found button:
 bool is_broken = false;
 
 // Test the concentric circles...
 
 is_broken |= discover_num_holes(inner.bounding_box()) != kNumRequiredHoles;
-```
+{% endhighlight %}
 
 Below shows each hole that the backtracking algorithm discovered:
 
@@ -318,11 +326,11 @@ perimeter of rectangles too! We'll accomplish this by creating a
 `PerimiterIterator` for the bounding box, and with the appropriate changes to
 the dereference and increment operators, we can do the following:
 
-```cpp
+{% highlight cpp %}
 if (is_broken) {
   for (auto const &point : bounds.perimeter()) draw_point(point, Color::Red());
 }
-```
+{% endhighlight %}
 
 **And here's a visualization of all of our hard work coming together:**
 
@@ -348,7 +356,7 @@ Below is the culmination of our work in this post in the function to process a
 scan. I'd highly recommend checking out the entire project to fully appreciate
 the approach!
 
-```cpp
+{% highlight cpp %}
 void alg::process_scan() {
   for (auto const &bounds : discover_all_button_bounds()) {
     bool is_broken = false;
@@ -380,7 +388,7 @@ void alg::process_scan() {
     }
   }
 }
-```
+{% endhighlight %}
 
 {% include callout.html
     content ="Check out the [repo on GitHub](https://github.com/tessapower/backtracking-buttons)!"

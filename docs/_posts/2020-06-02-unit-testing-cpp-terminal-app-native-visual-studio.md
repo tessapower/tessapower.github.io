@@ -66,7 +66,7 @@ My first goal is to refactor how `TheGame.cpp` checks for a winner, so I wrote t
 
 In `TheGame.cpp`, the state of the gameboard, a.k.a. the `gameState`, is an empty STL array. As players make moves, the `gameState` fills up with their symbols. Each index corresponds to a position on the 3x3 board.
 
-```cpp
+{% highlight bash %}
    |   |
  0 | 1 | 2   // Horizontal winning combos:
 ___|___|___  // 0, 1, 2  or  3, 4, 5  or  6, 7, 8
@@ -76,8 +76,7 @@ ___|___|___  // 0, 3, 6  or  1, 4, 7  or  2, 5, 8
    |   |
  6 | 7 | 8   // Diagonal winning combos:
    |   |     // 0, 4, 8  or 2, 4, 6
-
-```
+{% endhighlight %}
 
 In this case, it makes sense to check if a certain player's symbol (the X or O) has a winning combo in the `gameState` and return a `bool`.
 
@@ -93,7 +92,7 @@ Having now defined the function, I could start writing the tests for it.
 
 The first test cases covered the basic assumptions, e.g if `gameState` is full but has no winning move (i.e. a draw), `GameWinChecker` returns *false*.
 
-```cpp
+{% highlight cpp linenos %}
 TEST_METHOD(ExpectNotWon_GameStateDraw)
 {
     // Arrange
@@ -111,7 +110,7 @@ TEST_METHOD(ExpectNotWon_GameStateDraw)
     // Assert
     Assert::IsFalse(gameWon, L"More information here...");
 }
-```
+{% endhighlight %}
 
 Now it's time to put my unit tests... to the test.
 

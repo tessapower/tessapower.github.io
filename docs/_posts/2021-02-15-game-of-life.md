@@ -89,15 +89,14 @@ Armed with a `Point` and a `Grid`, I could create the gameboard for Life!
 
 ![Grid with States]({{ site.baseurl }}/images/posts/2021-02-15-game-of-life/grid-with-states.svg)
 
-
 To check the state of each cell, I also created the `GridIterator` class, which provides an interface to safely loop over each entry in a `Grid` row-by-row like this:
 
-```js
+{% highlight js %}
 // Using a for...of statement
 for (let point of grid) {
   grid.setValueAt(point, "bar");
 }
-```
+{% endhighlight %}
 
 Now the function `isAlive(point, grid)` has everything it needs to return if the cell is alive or dead given a `Point` and a `Grid`.
 

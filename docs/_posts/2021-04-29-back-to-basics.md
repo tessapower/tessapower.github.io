@@ -44,17 +44,17 @@ can be run from the command line, do the following:
 1. The library needs to be in place to link against it, so first install the
    `libtest-dev` package:
 
-  ```zsh
+  {% highlight zsh %}
   sudo apt install libgtest-dev
-  ```
+  {% endhighlight %}
 
 2. Write the tests, and include the header `<gtest/gtest.h>` in the test
    files.
 3. Compile the tests and link against `-lgtest`, and `-lgtest_main`:
 
-```zsh
+{% highlight zsh %}
 clang++ -pthread **/*.cc -lgtest -lgtest_main && ./a.out
-```
+{% endhighlight %}
 
 Here's what it looks like when it runs:
 
@@ -67,9 +67,10 @@ extra overhead.
 
 When I first tried to compile the tests, I ran the command without `-pthread`:
 
-```zsh
+{% highlight zsh %}
 clang++ **/*.cc -lgtest -lgtest_main && ./a.out
-```
+{% endhighlight %}
+
 This resulted in linker errors and warnings about undefined references to
 `pthread` methods. GTest requires Pthreads to compile, so it seemed like I need
 to link against the pthreads library. The internet disagreed, however, on

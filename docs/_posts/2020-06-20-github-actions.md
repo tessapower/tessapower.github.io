@@ -67,11 +67,11 @@ My workflow, creatively named `Build and Test`, needs to build and test my Visua
 
 This step is pretty easy—use GitHub's own [Checkout Action](https://github.com/marketplace/actions/checkout).
 
-```yml
+{% highlight yaml %}
 # Step 1: Check out the code
 - name: Checkout code
   uses: actions/checkout
-```
+{% endhighlight %}
 
 ### Step 2: Build the Project
 
@@ -79,19 +79,19 @@ To build my project, I used [MSBuild](https://en.wikipedia.org/wiki/MSBuild), wh
 
 First, locate `msbuild.exe` on the runner and add it to PATH. For this, I used Microsoft's [Setup MSBuild.exe](https://github.com/marketplace/actions/setup-msbuild-exe) Action:
 
-```yml
+{% highlight yaml %}
 # Step 2.1: locate msbuild.exe and add to PATH
 - name: Add MSBuild to PATH
   uses: microsoft/setup-msbuild
-```
+{% endhighlight %}
 
 Second, run MSBuild in the shell and build the project:
 
-```yml
+{% highlight yaml %}
 # Step 2.2: run MSBuild
 - name: Run MSBuild
   run: msbuild.exe .\path\to\project
-```
+{% endhighlight %}
 
 ### Step 3: Run the Tests
 
@@ -99,23 +99,23 @@ I found Visual Studio on the [list of software installed on runners](https://hel
 
 First, locate `vstest.console.exe` on the runner and add it to PATH. For this, I adapted the [Setup VSTest.console.exe](https://github.com/marketplace/actions/setup-vstest-console-exe) Action from GitHub user [darenm](https://github.com/darenm). The Action is intended for a UWP app, so some of the steps aren't necessary for a console app.
 
-```yml
+{% highlight yaml %}
 # Step 3.1: locate vstest.console.exe and add to PATH
 - name: Setup VSTest path
   uses: darenm/Setup-VSTest@v1
-```
+{% endhighlight %}
 
 Second, run VSTest in the shell to run the tests:
 
-```yml
+{% highlight yaml %}
 # Step 3.2: run VSTest
 - name: Run VSTest
   run: vstest.console.exe /Platform:x64 .\path\to\dll
-```
+{% endhighlight %}
 
 Put everything together, and this is what `Build and Test` looks like:
 
-```yml
+{% highlight yaml linenos %}
 # This workflow sets up and runs MSBuild and VSTest
 # to build and test a Visual Studio solution.
 
@@ -155,7 +155,7 @@ jobs:
       id: run_vstest
       working-directory: ${{ github.workspace }}\x64\Debug\
       run: vstest.console.exe /Platform:x64 .\UnitTests.dll
-```
+{% endhighlight %}
 
 ---
 
@@ -201,15 +201,15 @@ For commands that require a relative path, you need to specify the working direc
 
 GitHub's documentation on Actions is extensive, but not exhaustive, and I found conflicting information where changes haven't been updated. This was the error that prompted me to dig around the docs some more:
 
-<img alt="GITHUB_WORKSPACE Error" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\gh-workspace-error.jpg">
+<img alt="GITHUB_WORKSPACE Error" src="{{ site.baseurl }}\images\posts\2020-06-20-github-actions\gh-workspace-error.jpg">
 
 The issue was that GitHub's [list of default environment variables](https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables) states `GITHUB_WORKSPACE` is the GitHub workspace directory path. After digging around, I found out it should be `github.workspace`.
 
 This fix was pretty easy—just update the environment variable for the working directory:
 
-```yml
+{% highlight yaml %}
 - name: ...
   # working-directory: {% raw %}${{ GITHUB_WORKSPACE }}{% endraw %}
   working-directory: {% raw %}${{ github.workspace }}{% endraw %}
   run: ...
-```
+{% endhighlight %}

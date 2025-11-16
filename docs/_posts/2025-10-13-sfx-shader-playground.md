@@ -49,7 +49,7 @@ The stack is intentionally minimal:
 
 The interesting bit is how shader discovery works. Vite's `import.meta.glob` scans the `shaders/` directory at build time and generates dynamic imports. Each subdirectory becomes a shader program — simply add a `fragment.glsl` file with your shader code and it's automatically available:
 
-```bash
+{% highlight bash %}
 shaders/
   ├── plasma/
   │   └── fragment.glsl
@@ -57,7 +57,7 @@ shaders/
   │   └── fragment.glsl
   └── gradient/
       └── fragment.glsl
-```
+{% endhighlight %}
 
 The `ShaderLoader` utility reads these paths, extracts the shader names, and loads the GLSL as raw text. When you select a shader from the dropdown, Three.js compiles it into a `ShaderMaterial` and applies it to a fullscreen quad.
 
@@ -67,7 +67,7 @@ One quirk I ran into was React's hot module reloading trying to reuse the same c
 
 The deployment setup is minimal. GitHub Actions builds the Vite project and deploys to GitHub Pages:
 
-```yaml
+{% highlight yaml %}
 name: Deploy to GitHub Pages
 on:
   push:
@@ -88,16 +88,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/deploy-pages@v4
-```
+{% endhighlight %}
 
 The critical bit for subdirectory hosting is setting the base path in `vite.config.ts`:
 
-```typescript
+{% highlight typescript linenos %}
 export default defineConfig({
   base: '/sfx/',
   // ...
 })
-```
+{% endhighlight %}
 
 Without this, Vite generates asset paths relative to the domain root, which breaks when deployed to a subdirectory. With the base path set, assets load correctly at `tessapower.xyz/sfx/`.
 
