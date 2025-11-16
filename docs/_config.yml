@@ -46,8 +46,16 @@ theme_config:
 
 highlighter: rouge
 
+kramdown:
+  toc_levels: 2..3  # Include h2 and h3 in table of contents
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
 sass:
   style: compressed
+  quiet_deps: true
 
 plugins:
   - jekyll-feed
