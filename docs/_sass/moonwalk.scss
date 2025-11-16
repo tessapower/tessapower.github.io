@@ -249,3 +249,32 @@ p code, li code {
   text-transform: lowercase;
   //border: 1px solid var(--text-secondary);
 }
+
+.mermaid {
+  background-color: var(--bg-secondary);
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: 1em 0;
+
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  // Override Mermaid's default styles
+  .node rect,
+  .node circle,
+  .node polygon {
+    fill: var(--bg-secondary) !important;
+    stroke: var(--text) !important;
+  }
+
+  .node .label {
+    color: var(--text) !important;
+  }
+
+  .edgeLabel {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+  }
+}
