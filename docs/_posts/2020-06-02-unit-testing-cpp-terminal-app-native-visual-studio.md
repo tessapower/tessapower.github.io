@@ -7,20 +7,10 @@ tags: [c++, console-app, vs, unit-testing]
 In this post, I’ll show you how to set up and run unit tests for a native C++ console app using Visual Studio 2019's built-in testing tools. I'll cover setting up the test project, writing tests, and running them in Terminal. We'll also look at some pitfalls I encountered along the way.
 
 ## Table of Contents
+{:.no_toc}
 
-- [Table of Contents](#table-of-contents)
-- [Welcome to TheGame](#welcome-to-thegame)
-- [Setting up Unit Tests in Visual Studio 2019](#setting-up-unit-tests-in-visual-studio-2019)
-  - [Deciding How to Structure the Unit Test Project](#deciding-how-to-structure-the-unit-test-project)
-- [Writing the Unit Tests](#writing-the-unit-tests)
-  - [Knowing What to Test](#knowing-what-to-test)
-    - [Covering the Test Cases](#covering-the-test-cases)
-- [Running the Tests](#running-the-tests)
-  - [Using Visual Studio Test Explorer in the IDE](#using-visual-studio-test-explorer-in-the-ide)
-    - [Using Visual Studio Test Console in Windows Terminal](#using-visual-studio-test-console-in-windows-terminal)
-- [Stuff That Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
-  - [Linker Errors :(](#linker-errors-)
-- [What's Next?](#whats-next)
+* TOC
+{:toc}
 
 ## [Welcome to TheGame](#welcome-to-thegame)
 
@@ -73,7 +63,7 @@ My first goal is to refactor how `TheGame.cpp` checks for a winner, so I wrote t
 
 In `TheGame.cpp`, the state of the gameboard, a.k.a. the `gameState`, is an empty STL array. As players make moves, the `gameState` fills up with their symbols. Each index corresponds to a position on the 3x3 board.
 
-```cpp
+{% highlight bash %}
    |   |
  0 | 1 | 2   // Horizontal winning combos:
 ___|___|___  // 0, 1, 2  or  3, 4, 5  or  6, 7, 8
@@ -83,8 +73,7 @@ ___|___|___  // 0, 3, 6  or  1, 4, 7  or  2, 5, 8
    |   |
  6 | 7 | 8   // Diagonal winning combos:
    |   |     // 0, 4, 8  or 2, 4, 6
-
-```
+{% endhighlight %}
 
 In this case, it makes sense to check if a certain player's symbol (the X or O) has a winning combo in the `gameState` and return a `bool`.
 
@@ -100,7 +89,7 @@ Having now defined the function, I could start writing the tests for it.
 
 The first test cases covered the basic assumptions, e.g if `gameState` is full but has no winning move (i.e. a draw), `GameWinChecker` returns *false*.
 
-```cpp
+{% highlight cpp linenos %}
 TEST_METHOD(ExpectNotWon_GameStateDraw)
 {
     // Arrange
@@ -118,7 +107,7 @@ TEST_METHOD(ExpectNotWon_GameStateDraw)
     // Assert
     Assert::IsFalse(gameWon, L"More information here...");
 }
-```
+{% endhighlight %}
 
 Now it's time to put my unit tests... to the test.
 
@@ -163,7 +152,7 @@ Now that the tests are doing a great job at failing, we can refactor `TheGame.cp
 
 ### Linker Errors :(
 
-I missed a crucial step when setting up the Unit Tests Project that lead to linker errors when I first went to run the tests (_LNK1165_, _LNK2005_, and _LNK2019_). I was pretty frustrated, as the errors were blocking tests from running. After googling the possible causes for (what felt like) forever, I eventually found out the issue:
+I missed a crucial step when setting up the Unit Tests Project that lead to linker errors when I first went to run the tests (*LNK1165*, *LNK2005*, and *LNK2019*). I was pretty frustrated, as the errors were blocking tests from running. After googling the possible causes for (what felt like) forever, I eventually found out the issue:
 
 The code under test is built as an `.exe` file and not a `.dll`. Which means I needed to link the separate Unit Test Project to the output object file. The code being tested doesn't export the functions that I wanted to test, so the fix was to add the output `.obj` or `.lib` file to the dependencies of the test project.
 

@@ -1,0 +1,124 @@
+/* Code block copy button styles */
+.highlight {
+  position: relative;
+  overflow-x: auto; /* Add horizontal scrollbar when needed */
+}
+
+.highlight,
+.highlight pre,
+.highlight pre code {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.highlight pre {
+  margin: 0;
+}
+
+.rouge-table {
+  margin: 0;
+  border-spacing: 0;
+  border: none;
+  width: auto !important;
+  border-collapse: collapse !important;
+}
+
+.rouge-table tbody {
+  border: none !important;
+}
+
+.rouge-table td,
+.rouge-table th {
+  border: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  white-space: nowrap;
+}
+
+.rouge-table td.gutter {
+  padding-top: 0.75em !important;
+  padding-bottom: 0.75em !important;
+  padding-left: 0.75em !important;
+  padding-right: 0.75em !important;
+  vertical-align: top;
+  width: 1%;
+}
+
+.rouge-table td.code {
+  padding-top: 0.75em !important;
+  padding-bottom: 0.75em !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+  width: 100%;
+}
+
+.highlight pre.lineno {
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  text-align: right;
+  user-select: none;
+  opacity: 0.6;
+  background: transparent;
+  border: none;
+  line-height: 1.4;
+}
+
+.rouge-table td.code pre {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  white-space: pre;
+  overflow-x: visible;
+}
+
+/* Handle code blocks without line numbers (like bash) */
+.highlight:not(:has(.rouge-table)) pre {
+  padding: 0.75em 1em;
+  overflow-x: auto;
+  overflow-y: hidden; /* Never show vertical scrollbar */
+}
+
+.highlight:not(:has(.rouge-table)) code {
+  white-space: pre;
+  display: block;
+}
+
+/* Ensure vertical scrollbar never appears on any code block */
+.highlight,
+.highlight pre {
+  overflow-y: hidden !important;
+  max-height: none !important;
+}
+
+/* Copy button styles */
+
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.5rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s;
+  z-index: 10;
+}
+
+.copy-button:hover {
+  opacity: 1;
+  background: #444;
+}
+
+.copy-button.copied {
+  background: #28a745;
+}
+
+.copy-button i {
+  pointer-events: none;
+}

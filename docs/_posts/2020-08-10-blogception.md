@@ -5,18 +5,24 @@ tags: [blog, jekyll, github, aws, amplify, serverless, cloudfront, markdown]
 ---
 In this post, I'm going to talk about how I set up and deployed a static site that's fast, modern, serverless, and written in Markdown to AWS. And it cost me **$0.00**.
 
+{% include note.html
+    content ="Since writing this post, I have switched to using
+    GitHub Pages to host my site. The content below will still work for anyone wanting
+    to host their Jekyll (or other statically generated site) using AWS.
+
+    Stay tuned for an updated post about using GitHub workflows to automatically deploy
+    your site!
+
+    *Updated Nov. 2025*"
+%}
+
 <!--more-->
 
 ## Table of Contents
+{:.no_toc}
 
-- [Table of Contents](#table-of-contents)
-- [The Goal](#the-goal)
-- [Using Jekyll for the Static Site](#using-jekyll-for-the-static-site)
-- [Deploying to AWS with Amplify Console](#deploying-to-aws-with-amplify-console)
-  - [Behind Amplify Console](#behind-amplify-console)
-  - [My setup](#my-setup)
-- [My workflow](#my-workflow)
-- [The Stats](#the-stats)
+* TOC
+{:toc}
 
 ---
 
@@ -25,11 +31,11 @@ In this post, I'm going to talk about how I set up and deployed a static site th
 I wanted to create a website to write about things I'm working on and learning. I only had a few requirements:
 <!--more-->
 
-- fast;
-- inexpensive;
-- minimal setup;
-- low maintenance;
-- lets me write posts in Markdown;
+* fast;
+* inexpensive;
+* minimal setup;
+* low maintenance;
+* lets me write posts in Markdown;
 
 Why not Squarespace, Wix, or Wordpress? ~$15/month for a simple static site and WYSIWYG text editors with 1000 buttons—*no, thanks*.
 
@@ -39,14 +45,14 @@ Why not Squarespace, Wix, or Wordpress? ~$15/month for a simple static site and 
 
 I chose to use *[Jekyll](https://jekyllrb.com/)*—an open-source, blog-aware static site generator created by Tom Preston-Werner, one of the co-founders of GitHub. Compared to other options, Jekyll ticked a lot of the boxes:
 
-- Setup is super quick;
-- Only needs to be built once, so it's fast;
-- No moving parts that can break or require maintenance;
-- Write content in Markdown, which makes things readable in plain text on GitHub;
+* Setup is super quick;
+* Only needs to be built once, so it's fast;
+* No moving parts that can break or require maintenance;
+* Write content in Markdown, which makes things readable in plain text on GitHub;
 
 It only takes a few lines to get set up, and you have a fully functioning static site. This is what the initial bare-bones folder structure looks like:
 
-```md
+{% highlight bash %}
 .
 ├── _posts
 │   └── 2020-08-10-welcome-to-jekyll.markdown
@@ -57,11 +63,11 @@ It only takes a few lines to get set up, and you have a fully functioning static
 ├── _config.yml
 ├── Gemfile
 └── Gemfile.lock
-```
+{% endhighlight %}
 
 `index.markdown`, `about.markdown` and `404.html` are the pages of your site. `_config.yml` contains the settings that affect your whole blog, e.g. title, description, baseurl, and the theme. Blog posts go in the `_posts` folder, and Jekyll automatically generates these on your site according to date. An example post could look like this:
 
-```markdown
+{% highlight markdown %}
 ---
 layout: post
 title:  "Lorem Ipsum"
@@ -80,7 +86,7 @@ This is an example of a **Jekyll** blog post written in *Markdown*.
 ### H3
 
 | A table | that has | important info |
-```
+{% endhighlight %}
 
 Within a post you can use [Liquid](https://shopify.github.io/liquid/) tags to access site-wide variables, e.g. `page.path` refers to the path to the raw post or page. As you'd expect, these elements combined make a Jekyll site delightfully readable and simple to maintain! Jekyll also has excellent documentation and plenty of support for migrating content from other popular static site generators.
 
@@ -92,7 +98,7 @@ Run `bundle exec jekyll serve` once and Jekyll will continue to serve any change
 
 ---
 
-## [Deploying to AWS with Amplify Console](#deplying-to-aws-with-amplify-console)
+## [Deploying to AWS with Amplify Console](#deploying-to-aws-with-amplify-console)
 
 To build, host, and deploy my static site, I use the [AWS Amplify Console](https://aws.amazon.com/amplify/hosting/). In a nutshell, Amplify Console provides fully managed hosting for static sites and web apps.
 
@@ -100,10 +106,10 @@ By connecting Amplify Console to a GitHub repo, I can continuously deploy my sta
 
 Amplify Console offers some pretty useful features:
 
-- **Branch Auto-detection/-disconnection:** lets Amplify automatically connect to branches that match certain patterns, e.g. `feature/*` or `release*`, and automatically disconnects when branches are deleted.
-- **Domain Management:** connect branches to domains or subdomains, e.g. commits to `dev/*` trigger a build and deploy changes to `https://dev.example.app`. You also get a free HTTPS certificate so your site is secure.
-- **Access Control:** add a password to certain sub-domains to work on new features or content without making it public.
-- **Previews:** see a preview of how your site looks on different devices before merging to the production branch.
+* **Branch Auto-detection/-disconnection:** lets Amplify automatically connect to branches that match certain patterns, e.g. `feature/*` or `release*`, and automatically disconnects when branches are deleted.
+* **Domain Management:** connect branches to domains or subdomains, e.g. commits to `dev/*` trigger a build and deploy changes to `https://dev.example.app`. You also get a free HTTPS certificate so your site is secure.
+* **Access Control:** add a password to certain sub-domains to work on new features or content without making it public.
+* **Previews:** see a preview of how your site looks on different devices before merging to the production branch.
 
 There are a bunch more features which I haven't mentioned—these are just the ones I found useful.
 

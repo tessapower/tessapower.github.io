@@ -10,15 +10,14 @@ without CMake for small-scale C++ projects.
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [GoogleTest](#googletest)
-- [Manually Linking against GoogleTest](#manually-linking-against-googletest)
-- [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
-  - [ `-pthread` vs. `-lpthread`](#--pthread-vs--lpthread)
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ---
 
-## [GoogleTest](#GoogleTest)
+## [GoogleTest](#googletest)
 
 GoogleTest (or GTest) is Google's testing and mocking framework for C++. GTest
 can be used for any kind of tests, not just unit tests, and has some nice
@@ -45,17 +44,17 @@ can be run from the command line, do the following:
 1. The library needs to be in place to link against it, so first install the
    `libtest-dev` package:
 
-  ```zsh
+  {% highlight zsh %}
   sudo apt install libgtest-dev
-  ```
+  {% endhighlight %}
 
 2. Write the tests, and include the header `<gtest/gtest.h>` in the test
    files.
 3. Compile the tests and link against `-lgtest`, and `-lgtest_main`:
 
-```zsh
+{% highlight zsh %}
 clang++ -pthread **/*.cc -lgtest -lgtest_main && ./a.out
-```
+{% endhighlight %}
 
 Here's what it looks like when it runs:
 
@@ -68,9 +67,10 @@ extra overhead.
 
 When I first tried to compile the tests, I ran the command without `-pthread`:
 
-```zsh
+{% highlight zsh %}
 clang++ **/*.cc -lgtest -lgtest_main && ./a.out
-```
+{% endhighlight %}
+
 This resulted in linker errors and warnings about undefined references to
 `pthread` methods. GTest requires Pthreads to compile, so it seemed like I need
 to link against the pthreads library. The internet disagreed, however, on
@@ -81,18 +81,18 @@ to both compile and link POSIX-compliant multi-threaded applications. On top of
 that, Linux machines should also make use of `-pthread`, according to the
 [Linux man pages](https://man7.org/linux/man-pages/man7/pthreads.7.html).
 
-### [ `-pthread` vs. `-lpthread`](#lpthread-vs-pthread)
+### [`-pthread` vs. `-lpthread`](#lpthread-vs-pthread)
 
 I went down the rabbit hole to discover the difference between `-pthread` and
 `lpthread`. Here's what I learned:
 
-- The `-pthread` option sets flags for both the compiler preprocessor *and* linker.
-  - At *compile time*, `-pthread` manifests that the Pthread API is requested
+* The `-pthread` option sets flags for both the compiler preprocessor *and* linker.
+  * At *compile time*, `-pthread` manifests that the Pthread API is requested
     and defines platform-specific macros, such as `_REENTRANT` on Linux.
-  - At *link time*, the linker will specifically link the resultant object
+  * At *link time*, the linker will specifically link the resultant object
     against libpthread.
 
-- In comparison, `-lpthread` will only do the _second part_, i.e. linking against
+* In comparison, `-lpthread` will only do the *second part*, i.e. linking against
   libpthread.
 
 Had I not manually linked against GTest, I would not have discovered this,
@@ -100,4 +100,3 @@ which proves that it's always a good idea to go back to the basics every now
 and then!
 
 ---
-

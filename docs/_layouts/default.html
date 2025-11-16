@@ -19,5 +19,61 @@
         </div>
       </div>
     </main>
+    <!-- Mermaid Diagrams Support -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+      // Get current theme colors from CSS variables
+      function getThemeConfig() {
+        const style = getComputedStyle(document.body);
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+                      (document.documentElement.getAttribute('data-theme') === 'auto' &&
+                        window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+        return {
+          theme: 'base',
+          themeVariables: {
+            primaryColor: isDark ? '#3d4451' : style.getPropertyValue('--bg-secondary').trim(),
+            primaryTextColor: style.getPropertyValue('--text').trim(),
+            primaryBorderColor: isDark ? '#6b7280' : style.getPropertyValue('--text').trim(),
+            lineColor: isDark ? '#6b7280' : style.getPropertyValue('--text').trim(),
+            secondaryColor: style.getPropertyValue('--bg').trim(),
+            tertiaryColor: style.getPropertyValue('--bg-secondary').trim(),
+            background: style.getPropertyValue('--bg').trim(),
+            mainBkg: isDark ? '#3d4451' : style.getPropertyValue('--bg-secondary').trim(),
+            textColor: style.getPropertyValue('--text').trim(),
+            fontSize: '16px',
+            fontFamily: '"Inter", -apple-system, "avenir next", avenir, roboto, noto, ubuntu, "helvetica neue", helvetica, sans-serif'
+          }
+        };
+      }
+
+      mermaid.initialize({
+        startOnLoad: true,
+        ...getThemeConfig()
+      });
+
+      // Re-render diagrams when theme changes
+      const observer = new MutationObserver(() => {
+        mermaid.initialize(getThemeConfig());
+        document.querySelectorAll('.mermaid').forEach(el => {
+          mermaid.render('mermaid-' + Math.random(), el.textContent).then(result => {
+            el.innerHTML = result.svg;
+          });
+        });
+      });
+
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+      });
+
+      // Convert code blocks to mermaid
+      document.querySelectorAll('pre > code.language-mermaid').forEach((codeBlock) => {
+        codeBlock.parentElement.outerHTML = `<pre class="mermaid">${codeBlock.textContent}</pre>`;
+      });
+    </script>
+
+    {% include copy-code.html %}
   </body>
 </html>
