@@ -5,6 +5,17 @@ tags: [blog, jekyll, github, aws, amplify, serverless, cloudfront, markdown]
 ---
 In this post, I'm going to talk about how I set up and deployed a static site that's fast, modern, serverless, and written in Markdown to AWS. And it cost me **$0.00**.
 
+{% include note.html
+    content ="Since writing this post, I have switched to using
+    GitHub Pages to host my site. The content below will still work for anyone wanting
+    to host their Jekyll (or other statically generated site) using AWS.
+
+    Stay tuned for an updated post about using GitHub workflows to automatically deploy
+    your site!
+
+    *Updated Nov. 2025*"
+%}
+
 <!--more-->
 
 ## Table of Contents

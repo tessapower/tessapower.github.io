@@ -116,4 +116,4 @@ But honestly, the simplicity is the point. It does one thing well: lets me write
 
 {% include callout.html
     content ="Check out the [repo on GitHub](https://github.com/tessapower/sfx), and play with sfx at [tessapower.xyz/sfx](https://tessapower.xyz/sfx/)!"
-    type="primary" %}
+    type="success" %}
