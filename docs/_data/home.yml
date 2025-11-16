@@ -3,10 +3,10 @@ navbar_entries:
     url: /
 
   - title: About
-    url: about
+    url: /about
 
   - title: Blog
-    url: blog
+    url: /blog
 
 project_entries:
   - title: Video Stabilizer
