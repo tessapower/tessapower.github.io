@@ -9,17 +9,10 @@ iterators. We are going to repurpose a C++ iterator as a generator to represent
 the geometric properties of circles and rectangles. This novel approach evolved while I was working on an interesting computer vision problem, and had a really nice effect on the memory footprint and program efficiency as you will soon see!
 
 ## Table of Contents
+{:.no_toc}
 
-- [The Problem](#the-problem)
-- [Use of Backtracking](#use-of-backtracking)
-- [Finding the Buttons](#finding-the-buttons)
-- [Assessing the Buttons](#assessing-the-buttons)
-  - [Testing for "Roughly Circularness"](#testing-for-roughly-circularness)
-- [Custom Iterators as Generators](#custom-iterators-as-generators)
-  - [A First Pass with the First Octant](#a-first-pass-with-the-first-octant)
-  - [Jumping from Octant to Octant](#jumping-from-octant-to-octant)
-- [Plugging into STL Algorithms](#plugging-into-stl-algorithms)
-- [The Outcome](#the-outcome)
+* TOC
+{:toc}
 
 ## [The Problem](#the-problem)
 

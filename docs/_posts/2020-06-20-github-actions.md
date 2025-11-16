@@ -6,19 +6,15 @@ tags: [c++, github-actions, vs]
 
 In a [previous post]({% post_url 2020-06-02-unit-testing-cpp-terminal-app-native-visual-studio %}), I created unit tests for a console app using Visual Studio's Native C++ Framework and Test Platform. The process of running the tests with `VSTest.console.exe` in Terminal was rather tedious, so I decided to automate the process using GitHub Actions.
 
-<img alt="GitHub Actions in Action" src="{{ site.baseurl }}\assets\posts\2020-06-20-github-actions\action-in-action.gif">
+<img alt="GitHub Actions in Action" src="{{ site.baseurl }}\images\posts\2020-06-20-github-actions\action-in-action.gif">
 
 <!--more-->
 
 ## Table of Contents
+{:.no_toc}
 
-- [GitHub Actions](#github-actions)
-- [Setting up a new workflow](#setting-up-a-new-workflow)
-- [What to Automate](#what-to-automate)
-- [Configuring the Workflow](#configuring-the-workflow)
-- [Putting the Workflow to Work](#putting-the-workflow-to-work)
-- [What's Next?](#whats-next)
-- [Stuff that Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
+* TOC
+{:toc}
 
 ---
 

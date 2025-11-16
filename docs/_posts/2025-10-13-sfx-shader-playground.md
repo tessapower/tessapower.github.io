@@ -19,11 +19,10 @@ You can check it out live at [tessapower.xyz/sfx](https://tessapower.xyz/sfx/).
 <!--more-->
 
 ## Table of Contents
+{:.no_toc}
 
-- [What It Does](#what-it-does)
-- [Tech Stack](#tech-stack)
-- [Deployment](#deployment)
-- [What's Next?](#whats-next)
+* TOC
+{:toc}
 
 ## What It Does
 

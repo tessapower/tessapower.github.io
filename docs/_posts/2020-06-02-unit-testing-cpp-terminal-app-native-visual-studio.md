@@ -7,13 +7,10 @@ tags: [c++, console-app, vs, unit-testing]
 In this post, I’ll show you how to set up and run unit tests for a native C++ console app using Visual Studio 2019's built-in testing tools. I'll cover setting up the test project, writing tests, and running them in Terminal. We'll also look at some pitfalls I encountered along the way.
 
 ## Table of Contents
+{:.no_toc}
 
-- [Welcome to TheGame](#welcome-to-thegame)
-- [Setting up Unit Tests in Visual Studio 2019](#setting-up-unit-tests-in-visual-studio-2019)
-- [Writing the Unit Tests](#writing-the-unit-tests)
-- [Running the Tests](#running-the-tests)
-- [Stuff That Didn't Go to Plan](#stuff-that-didnt-go-to-plan)
-- [What's Next?](#whats-next)
+* TOC
+{:toc}
 
 ## [Welcome to TheGame](#welcome-to-thegame)
 

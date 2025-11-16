@@ -7,13 +7,10 @@ tags: [js, html, book]
 I took a short detour from C++ to learn Javascript by working through the book [Eloquent Javascript](https://amzn.to/2LMjeuY). It's a delightful, well written book that introduces the language and offers exercises at the end of each chapter—one of the more interesting exercises was implementing **Conway's Game of Life**.
 
 ## Table of Contents
+{:.no_toc}
 
-- [What is Life?](#what-is-life)
-  - [The rules](#the-rules)
-- [The exercise](#the-exercise)
-  - [How Life works](#how-life-works)
-- [The Canvas](#the-canvas)
-- [What's next?](#whats-next)
+* TOC
+{:toc}
 
 ---
 

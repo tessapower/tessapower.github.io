@@ -19,12 +19,10 @@ In this post, I'm going to talk about how I set up and deployed a static site th
 <!--more-->
 
 ## Table of Contents
+{:.no_toc}
 
-- [The Goal](#the-goal)
-- [Using Jekyll for the Static Site](#using-jekyll-for-the-static-site)
-- [Deploying to AWS with Amplify Console](#deploying-to-aws-with-amplify-console)
-- [My workflow](#my-workflow)
-- [The Stats](#the-stats)
+* TOC
+{:toc}
 
 ---
 

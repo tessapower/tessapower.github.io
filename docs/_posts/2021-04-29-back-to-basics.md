@@ -10,10 +10,10 @@ without CMake for small-scale C++ projects.
 
 ## Table of Contents
 
-- [GoogleTest](#googletest)
-- [Manually Linking against GoogleTest](#manually-linking-against-googletest)
-- [Stuff that didn't go to plan](#stuff-that-didnt-go-to-plan)
-  - [ `-pthread` vs. `-lpthread`](#--pthread-vs--lpthread)
+{:.no_toc}
+
+* TOC
+{:toc}
 
 ---
 
