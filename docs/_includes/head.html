@@ -32,6 +32,11 @@
   <!--FontAwesome-->
   <script src="https://kit.fontawesome.com/c09fe7955a.js" crossorigin="anonymous"></script>
 
+  <!-- KaTeX support -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
   {% if site.theme_config.appearance_toggle %}
     {% include toggle_theme_js.html %}
 
