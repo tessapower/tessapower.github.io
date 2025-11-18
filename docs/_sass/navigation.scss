@@ -1,0 +1,43 @@
+// Navigation styles
+.site-nav {
+    ul.horizontal-list {
+        display: flex;
+        margin-top: 0em;
+        margin-left: -20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            display: inline;
+            list-style-type: none;
+            margin-right: 1em;
+        }
+
+        li a {
+            text-decoration: none;
+            font-weight: normal;
+        }
+    }
+}
+
+// Footer styles
+.site-footer {
+    ul.horizontal-list {
+        display: flex;
+        margin-top: 0em;
+        margin-left: -20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            display: inline;
+            list-style-type: none;
+            margin-right: 1em;
+        }
+
+        li a {
+            text-decoration: none;
+            font-weight: normal;
+        }
+    }
+}
