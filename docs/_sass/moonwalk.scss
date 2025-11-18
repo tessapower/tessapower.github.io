@@ -199,6 +199,53 @@ mark {
   text-decoration: none;
 }
 
+.blog-post-preview {
+  margin-bottom: 2em;
+
+  h2 {
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+
+    a {
+      text-decoration: none;
+      color: var(--text);
+
+      &:hover {
+        color: var(--links);
+      }
+    }
+  }
+
+  .post-meta {
+    color: var(--text-secondary);
+    font-family: "Roboto Mono", "Courier New", monospace;
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    margin-top: -0.5em;
+  }
+
+  .post-excerpt {
+    color: var(--text);
+    margin-bottom: 1em;
+    line-height: 1.6;
+
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
+  .read-more {
+    color: var(--links);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+
+    &:hover {
+      color: var(--links);
+    }
+  }
+}
+
 .text-bold {
   font-weight: bold;
 }
