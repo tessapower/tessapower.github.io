@@ -26,9 +26,11 @@
   <meta name="theme-color" content="#ffffff">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
-  <link rel="stylesheet" href="{{ "/assets/css/callout.css" | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="{{ "/assets/css/copy-code.css" | relative_url }}">
+  <link rel='stylesheet' href='{{ "/assets/css/main.css" | relative_url }}' />
+  <link rel='stylesheet'
+        href='{{ "/assets/css/callout.css" | prepend: site.baseurl }}'/>
+  <link rel="stylesheet"
+        href='{{ "/assets/css/copy-code.css" | relative_url }}' />
 
   <!--FontAwesome-->
   <script src="https://kit.fontawesome.com/c09fe7955a.js" crossorigin="anonymous"></script>
@@ -40,6 +42,5 @@
 
   {% if site.theme_config.appearance_toggle %}
     {% include toggle_theme_js.html %}
-
   {% endif %}
 </head>

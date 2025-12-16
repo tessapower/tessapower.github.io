@@ -279,3 +279,34 @@ p code, li code {
     color: var(--text) !important;
   }
 }
+
+// -------------- POST NAVIGATION -------------- //
+.post-navigation {
+  margin-bottom: 2rem;
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.9rem;
+
+    a {
+      color: var(--links);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .nav-previous {
+      text-align: left;
+    }
+
+    .nav-next {
+      text-align: right;
+      margin-left: auto;
+    }
+  }
+}
+

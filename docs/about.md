@@ -5,19 +5,47 @@ title: About
 ---
 ## Hey, my name is Tessa.
 
-Want the short version? [Here's my résumé](/resume.pdf).
+<img alt="Me!" src="/images/profile-photo.png" width="300" style="float:right;vertical-align:middle;margin:2px 1px"/>
 
-<img alt="Me!" src="/images/profile-photo.png" width="200" style="float:left;vertical-align:middle;margin:20px 10px"/>
-I'm a software engineer specializing in the intersection of computer graphics programming and fullstack web development. With over 7 years of C++ experience and 4 years focused on graphics programming, combined with 3+ years shipping production web applications, I bring a unique perspective to technical challenges that span from low-level optimization to modern user interfaces.
+I'm a computer graphics software engineer. I like building things from scratch,
+just to see if I can.
 
-My journey into graphics programming began during my year studying Mechatronics at [Cenit](https://cenit.com), a German company that develops graphical software for robotics programming and production optimization. This early exposure to the intersection of graphics, mathematics, and real-world applications sparked my interest in computer graphics and performance-critical systems.
+Want the short version? [Here's my résumé](/resume.pdf). Otherwise, read on to learn
+more about me.
 
-I've built complete 3D rendering engines using DirectX 11 and OpenGL, developed real-time mesh editing applications, and created computer vision tools using techniques like SIFT feature detection and RANSAC algorithms. On the web development side, I've shipped fullstack applications using React, TypeScript, Ruby-on-Rails, and Go, with experience ranging from API design to CI/CD pipeline implementation.
-My professional experience includes enhancing video review platforms at Shuttlerock that served creative teams across 15+ international markets, where I led automated testing initiatives and created technical training content for fellow engineers. As a Certified Scrum Product Owner and ISTQB Software Tester, I bring systematic approaches to both product development and quality assurance.
+With over 7 years of C++ experience (4 years focused on graphics programming)
+combined with 3+ years of professional experience shipping production web apps,
+I bring a unique perspective to technical challenges that span from low-level
+optimization to modern UIs.
 
-I graduated in 2024 with a Computer Science degree (3.6 GPA) from Victoria University of Wellington, where my coursework focused heavily on computer graphics, real-time rendering, and computer vision. I'm fluent in English and German, and have extensive experience working with distributed teams across multiple time zones.
+My journey to graphics programming began during my year studying Mechatronics
+while working at [Cenit](https://cenit.com), a company headquartered in Germany developing
+industry-leading digital-twin software for offline robotics programming and
+production-line optimization. This early exposure to the intersection of
+graphics, mathematics, and real-world applications sparked my interest in
+computer graphics and performance-critical systems.
 
-I'm particularly interested in roles that leverage both graphics programming and web development expertise, whether that's building data visualization tools, optimizing performance-critical web applications, or creating interactive graphics experiences. You can explore my projects on [GitHub](https://github.com/tessapower) or read about my current learning and development work in my [blog](/blog).
+I've built complete 3D rendering engines using DirectX 11 and OpenGL, developed
+real-time mesh editing apps, a hydraulic erosion simulator, and created computer
+vision tools using techniques like SIFT feature detection and RANSAC algorithms.
+On the web development side, I've shipped fullstack applications using React,
+TypeScript/JS, Ruby-on-Rails, and Go, with experience ranging from API design to
+CI/CD pipeline implementation.
+
+My professional experience includes enhancing the video review platform at
+Shuttlerock that served creative teams across 15+ international markets. As a
+Certified Scrum Product Owner and ISTQB Software Tester, I bring systematic
+approaches to both product development and quality assurance.
+
+I went back to school in 2020, and graduated in 2024 with a Computer Science
+degree (3.6 GPA) from Victoria University of Wellington, where my coursework
+focused heavily on computer graphics, real-time rendering, and computer vision.
+I'm fluent in English and German, and have extensive experience working with
+distributed teams across multiple time zones.
+
+I'm particularly interested in roles involving shader development and low-level
+rendering. Feel free to explore my [projects](/) or read about my current
+learnings and dev work in my [blog](/blog).
 
 ---
 
@@ -54,4 +82,4 @@ I'm particularly interested in roles that leverage both graphics programming and
 - [The Mac Command Line with Terminal](https://amzn.to/3iuY40w)—Joe Kissell
 
 
-Updated: 23 July 2023
+*Updated: 16 Dec 2025*

@@ -1,29 +1,43 @@
-<ul class="horizontal-list">
+<ul class="card-list">
   {% for item in include.collection %}
 
     <li class="card">
       <a href="{{ item.url }}">
-        <span class="header">
-          {{ item.title }}
+        <div class="card-content">
+          <!-- Left side: Text content -->
+          <div class="card-text">
+            <span class="header">
+              {{ item.title }}
 
-          {% if item.highlight %}
-          <mark>{{ item.highlight }}</mark>
+              {% if item.highlight %}
+              <mark>{{ item.highlight }}</mark>
+              {% endif %}
+
+              <br />
+            </span>
+
+            <hr />
+
+            {% if item.desc != false %}
+            <p class="body">
+              {{ item.desc }}
+            </p>
+            {% endif %}
+
+            <span class="footer">
+              {% for keyword in item.keywords %}
+                <mark class="keywords">{{ keyword }}</mark>
+              {% endfor %}
+            </span>
+          </div>
+
+          <!-- Right side: Optional GIF preview -->
+          {% if item.gif %}
+          <div class="card-media">
+            <img src="{{ item.gif }}" alt="{{ item.title }} demonstration" class="card-gif" />
+          </div>
           {% endif %}
-
-          <br />
-          {% for keyword in item.keywords %}
-            <mark class="keywords">{{ keyword }}</mark>
-          {% endfor %}
-
-        </span>
-
-        <hr />
-
-        {% if item.desc != false %}
-        <p class="body">
-          {{ item.desc }}
-        </p>
-        {% endif %}
+        </div>
       </a>
     </li>
 

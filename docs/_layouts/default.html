@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: "en" }}" class="html" data-theme="{{ site.theme_config.appearance | default: "auto" }}">
-        {%- include head.html -%}
+<html lang="{{ page.lang | default: "en" }}" class="html" data-theme="{{
+site.theme_config.appearance | default: "auto" }}">
+  {%- include head.html -%}
   <body>
-    <main class="page-content" aria-label="Content">
-      <div class="w">
+    <main class='page-content' aria-label='Content'>
+      <div class='w'>
         {{ content }}
         {% if site.theme_config.appearance_toggle %}
           {% include toggle_theme_button.html %}
         {% endif %}
-        <div class="credits">
+        <div class='credits'>
           {%- if site.theme_config.show_copyright == true -%}
           &copy;&nbsp;{{ "now" | date: "%Y" }}&nbsp;{{site.author}}
           &nbsp;
           •
           &nbsp;
           {%- endif -%}
-          Theme&nbsp; <a href="https://github.com/abhinavs/moonwalk" target="_blank" rel="noreferrer">Moonwalk</a>
+          Theme&nbsp; <a href='https://github.com/abhinavs/moonwalk' target='_blank' rel='noreferrer'>Moonwalk</a>
         </div>
       </div>
     </main>
     <!-- Mermaid Diagrams Support -->
-    <script type="module">
+    <script type='module'>
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
 
       // Get current theme colors from CSS variables
       function getThemeConfig() {
         const style = getComputedStyle(document.body);
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
-                      (document.documentElement.getAttribute('data-theme') === 'auto' &&
-                        window.matchMedia('(prefers-color-scheme: dark)').matches);
+            (document.documentElement.getAttribute('data-theme') === 'auto' &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches);
 
         return {
           theme: 'base',
@@ -48,32 +49,38 @@
         };
       }
 
-      mermaid.initialize({
-        startOnLoad: true,
-        ...getThemeConfig()
-      });
+      // Only initialize if there are actually mermaid diagrams on the page
+      const hasMermaidDiagrams = document.querySelector('pre > code.language-mermaid') !== null;
 
-      // Re-render diagrams when theme changes
-      const observer = new MutationObserver(() => {
-        mermaid.initialize(getThemeConfig());
-        document.querySelectorAll('.mermaid').forEach(el => {
-          mermaid.render('mermaid-' + Math.random(), el.textContent).then(result => {
-            el.innerHTML = result.svg;
+      if (hasMermaidDiagrams) {
+        mermaid.initialize({
+          startOnLoad: true,
+          ...getThemeConfig()
+        });
+
+        // Re-render diagrams when theme changes
+        const observer = new MutationObserver(() => {
+          mermaid.initialize(getThemeConfig());
+          document.querySelectorAll('.mermaid').forEach(el => {
+            mermaid.render('mermaid-' + Math.random(), el.textContent).then(result => {
+              el.innerHTML = result.svg;
+            });
           });
         });
-      });
 
-      observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['data-theme']
-      });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-theme']
+        });
 
-      // Convert code blocks to mermaid
-      document.querySelectorAll('pre > code.language-mermaid').forEach((codeBlock) => {
-        codeBlock.parentElement.outerHTML = `<pre class="mermaid">${codeBlock.textContent}</pre>`;
-      });
+        // Convert code blocks to mermaid
+        document.querySelectorAll('pre > code.language-mermaid').forEach((codeBlock) => {
+          codeBlock.parentElement.outerHTML = `<pre class="mermaid">${codeBlock.textContent}</pre>`;
+        });
+      }
     </script>
 
+    {% include protect-code-blocks.html %}
     {% include copy-code.html %}
 
     {% include analytics.html %}

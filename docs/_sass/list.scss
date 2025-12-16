@@ -1,7 +1,166 @@
+ul.card-list {
+  display: flex;
+  margin-top: 0;
+  margin-left: -20px;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  li {
+    display: inline;
+    list-style-type: none;
+  }
+
+  li a {
+    text-decoration: none;
+    font-weight: normal;
+  }
+}
+
+.card {
+  padding: 1em;
+  border: 1px var(--text) solid;
+  width: 100%;  // Full width by default
+  height: auto;
+  background-color: var(--bg-secondary);
+  margin-bottom: 0.8em;
+  border-radius: 0.5em;
+  transition: all 0.3s ease;
+
+  .card-content {
+    display: flex;
+    align-items: stretch;
+    gap: 1em;
+  }
+
+  .card-text {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-media {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.3em;
+  }
+
+  .card-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;  // No dimming on full-width cards
+    border-radius: 0.3em;
+  }
+
+  .header {
+    color: var(--links);
+  }
+
+  .body {
+    font-size: 0.8em;
+    flex: 1;
+  }
+
+  hr {
+    margin: 0.5em 0;
+  }
+}
+
+/* Mobile/Small screens - Grid layout with overlay style */
+@media screen and (max-width: 900px) {
+  ul.card-list {
+    margin-left: 0;
+    justify-content: space-between;
+
+    li.card {
+      width: calc(50% - 0.5em);  // Two column grid
+      padding: 0;
+      margin-bottom: 1em;
+      position: relative;
+      min-height: 300px;
+
+      .card-content {
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+      }
+
+      .card-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 1.5em;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.4);  // Dark overlay for readability
+        border-radius: 0.5em;
+      }
+
+      .header {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      }
+
+      .body, hr {
+        display: none;  // Hide description and hr on mobile
+      }
+
+      mark {
+        display: none;  // Hide tags on mobile
+      }
+
+      .card-media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex: none;
+        z-index: 1;
+        border-radius: 0.5em;
+      }
+
+      .card-gif {
+        opacity: 1;  // Always visible on mobile
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      // If no gif, show solid background
+      &:not(:has(.card-media)) .card-text {
+        background: var(--bg-secondary);
+      }
+    }
+  }
+}
+
+/* Very small screens - Single column */
+@media screen and (max-width: 600px) {
+  ul.card-list li.card {
+    width: 100%;
+
+    .header {
+      font-size: 1.3em;
+    }
+  }
+}
+
 ul.horizontal-list {
   display: flex;
-  //justify-content: space-between;
-  margin-top: 0em;
+  margin-top: 0;
   margin-left: -20px;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -14,46 +173,7 @@ ul.horizontal-list {
 
   li a {
     text-decoration: none;
-    font-weight: normal
+    font-weight: normal;
   }
 
-}
-
-.card {
-  padding: 1em;
-  border: 1px var(--text) solid;
-  width: calc(100% / 4);
-  height: auto;
-  text-align: center;
-  font-size: 1em;
-  align-items: center;
-  background-color: var(--bg-secondary);
-  margin-bottom: 0.8em;
-  border-radius: 0.5em;
-
-  .header {
-    color: var(--links);
-  }
-
-  .body {
-    font-size: 0.8em;
-  }
-
-  hr {
-    margin: 0.5em 0;
-  }
-
-}
-
-/* Responsive cards - one column layout on small screens */
-@media screen and (max-width: 600px) {
-  ul.horizontal-list li.card {
-    width: 100%;
-    display: block;
-    margin-bottom: 1em;
-    margin-left: 1em;
-    a, .header {
-      font-size: 1em;
-    }
-  }
 }

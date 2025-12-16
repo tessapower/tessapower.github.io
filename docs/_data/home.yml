@@ -1,5 +1,5 @@
 navbar_entries:
-  - title: Home
+  - title: Projects
     url: /
 
   - title: About
@@ -9,10 +9,17 @@ navbar_entries:
     url: /blog
 
 project_entries:
+  - title: Hydraulic Erosion Simulation
+    url: https://github.com/tessapower/hydraulic-erosion
+    desc: A particle-based hydraulic erosion simulation that realistically simulates the effects of water flow on procedurally generated terrain.
+    keywords: [Computer Graphics, TypeScript, WebGL, GLSL, Simulation]
+    gif: assets/images/projects/erosion-simulation.gif
+
   - title: Video Stabilizer
     url: https://github.com/tessapower/video-stabilizer
-    desc: An application of computer vision algorithms and techniques to stabilize shaky video footage, including Lowe's Scale-Invariant Feature Transform (SIFT) technique for feature detection and Fischler and Bolles' RAndom SAmple Consesus (RANSAC) algorithm to compute robust homography matrices.
+    desc: An application of computer vision algorithms and techniques to stabilize shaky video footage, including Lowe's Scale-Invariant Feature Transform (SIFT) technique for feature detection and Fischler and Bolles' RAndom SAmple Consensus (RANSAC) algorithm to compute robust homography matrices.
     keywords: [Computer Vision, C++, OpenCV, SIFT, RANSAC]
+    gif: assets/images/projects/video-stabilizer.gif
 
   - title: Trail Conditions Map
     url: https://github.com/tessapower/trail-conditions-map
@@ -31,6 +38,7 @@ project_entries:
     url: https://github.com/tessapower/sfx
     desc: A hot-reloadable shader playground for experimenting with GLSL fragment shaders offline, built with React, TypeScript, and Three.js.
     keywords: [TypeScript, React, Three.js, WebGL, Shaders]
+    gif: assets/images/projects/water-shader.gif
 
   - title: 3D Gaussian Splat Viewer
     url: https://github.com/tessapower/3dgs-viewer
@@ -45,8 +53,7 @@ project_entries:
 
   - title: TEngine
     url: https://github.com/tessapower/tengine
-    desc: A 2D game engine built to support building games in Java for the
-      course 159261 Games Programming at Massey University.
+    desc: A custom built 2D game engine created to support building games in Java for the "159261 Games Programming" course at Massey University.
     keywords: [Java, Game Engine]
 
   - title: Snek
@@ -54,16 +61,19 @@ project_entries:
     desc: A simple remake of the classic game Snake, built in Java using my own
       custom 2D game engine TEngine.
     keywords: [Java, Game, TEngine]
+    gif: assets/images/projects/snek.gif
 
   - title: Holy Whac-a-Moley
-    url: https://github.com/tessapower/weeksauce-feb24
-    desc: A game jam entry created for Weeksauce February 2024, using the Godot game engine and GDScript.
-    keywords: [GDScript, Game, Godot Engine, Game Jam]
+    url: https://github.com/tessapower/week-sauce-feb24
+    desc: A delightful take on the classic Whack-A-Mole game. Created as a game jam entry for Weeksauce February 2024, using the Godot game engine and GDScript.
+    keywords: [GDScript, 2D Game, Godot Engine, Game Jam]
+    gif: assets/images/projects/holy-whac-a-moley.gif
 
   - title: Conway's Game of Life
     url: https://github.com/tessapower/game-of-life
     desc: A JS implementation of Conway's Game of Life.
     keywords: [JavaScript, Cellular Automata]
+    gif: assets/images/projects/game-of-life.gif
 
 # old_project_entries:
   # - title: Cookie
