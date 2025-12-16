@@ -9,6 +9,12 @@ navbar_entries:
     url: /blog
 
 project_entries:
+  - title: Hydraulic Erosion Simulation
+    url: https://github.com/tessapower/hydraulic-erosion
+    desc: A particle-based hydraulic erosion simulation that realistically simulates the effects of water flow on procedurally generated terrain.
+    keywords: [Computer Graphics, TypeScript, WebGL, GLSL, Simulation]
+    gif: assets/images/projects/erosion-simulation.gif
+
   - title: Video Stabilizer
     url: https://github.com/tessapower/video-stabilizer
     desc: An application of computer vision algorithms and techniques to stabilize shaky video footage, including Lowe's Scale-Invariant Feature Transform (SIFT) technique for feature detection and Fischler and Bolles' RAndom SAmple Consesus (RANSAC) algorithm to compute robust homography matrices.
