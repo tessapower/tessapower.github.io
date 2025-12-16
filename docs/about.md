@@ -15,7 +15,7 @@ With over 7 years of C++ experience (4 years focused on graphics programming) co
 
 My journey to graphics programming began during my year studying Mechatronics while working at [Cenit](https://cenit.com), a company headquartered in Germany developing industry-leading digital-twin software for offline robotics programming and production-line optimization. This early exposure to the intersection of graphics, mathematics, and real-world applications sparked my interest in computer graphics and performance-critical systems.
 
-I've built complete 3D rendering engines using DirectX 11 and OpenGL, developed real-time mesh editing apps, a hydraulic erosion simulator,and created computer vision tools using techniques like SIFT feature detection and RANSAC algorithms. On the web development side, I've shipped fullstack applications using React, TypeScript/JS, Ruby-on-Rails, and Go, with experience ranging from API design to CI/CD pipeline implementation.
+I've built complete 3D rendering engines using DirectX 11 and OpenGL, developed real-time mesh editing apps, a hydraulic erosion simulator, and created computer vision tools using techniques like SIFT feature detection and RANSAC algorithms. On the web development side, I've shipped fullstack applications using React, TypeScript/JS, Ruby-on-Rails, and Go, with experience ranging from API design to CI/CD pipeline implementation.
 
 My professional experience includes enhancing video review platforms at Shuttlerock that served creative teams across 15+ international markets. As a Certified Scrum Product Owner and ISTQB Software Tester, I bring systematic approaches to both product development and quality assurance.
 
