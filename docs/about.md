@@ -58,4 +58,4 @@ I'm particularly interested in roles involving shader development and low-level 
 - [The Mac Command Line with Terminal](https://amzn.to/3iuY40w)—Joe Kissell
 
 
-Updated: 23 July 2023
+*Updated: 16 Dec 2025*
