@@ -9,6 +9,17 @@ layout: default
   <div class="dashed"></div>
 {% endif %}
 
+<nav class="post-navigation">
+  <div class="nav-links">
+    {% if page.next.url %}
+      <a class="nav-previous" href="{{ page.next.url }}" rel="prev">← Next</a>
+    {% endif %}
+    {% if page.previous.url %}
+      <a class="nav-next" href="{{ page.previous.url }}" rel="next">Previous →</a>
+    {% endif %}
+  </div>
+</nav>
+
 <h1 class="post-title">{{ page.title }}</h1>
 {% include date_and_social_share.html %}
 {{ content }}
