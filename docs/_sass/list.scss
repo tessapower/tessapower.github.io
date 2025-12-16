@@ -1,6 +1,6 @@
-ul.horizontal-list {
+ul.card-list {
   display: flex;
-  margin-top: 0em;
+  margin-top: 0;
   margin-left: -20px;
   flex-wrap: wrap;
   gap: 1em;
@@ -72,7 +72,7 @@ ul.horizontal-list {
 
 /* Mobile/Small screens - Grid layout with overlay style */
 @media screen and (max-width: 900px) {
-  ul.horizontal-list {
+  ul.card-list {
     margin-left: 0;
     justify-content: space-between;
 
@@ -149,7 +149,7 @@ ul.horizontal-list {
 
 /* Very small screens - Single column */
 @media screen and (max-width: 600px) {
-  ul.horizontal-list li.card {
+  ul.card-list li.card {
     width: 100%;
 
     .header {
