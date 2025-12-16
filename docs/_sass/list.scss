@@ -157,3 +157,24 @@ ul.card-list {
     }
   }
 }
+
+ul.horizontal-list {
+  display: flex;
+  //justify-content: space-between;
+  margin-top: 0;
+  margin-left: -20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 1em;
+  }
+
+  li a {
+    text-decoration: none;
+    font-weight: normal
+  }
+
+}
