@@ -1,0 +1,67 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Store original code block HTML
+    const codeBlocks = new Map();
+
+    document.querySelectorAll('.highlight').forEach(block => {
+      codeBlocks.set(block, {
+        html: block.cloneNode(true),
+        hasTable: !!block.querySelector('.rouge-table')
+      });
+    });
+
+    // Track if we're currently restoring to prevent infinite loops
+    let isRestoring = false;
+
+    // Watch for modifications
+    const observer = new MutationObserver((mutations) => {
+      // Skip if we're currently restoring
+      if (isRestoring) return;
+
+      mutations.forEach((mutation) => {
+        const highlight = mutation.target.closest('.highlight');
+        if (highlight && codeBlocks.has(highlight)) {
+          const stored = codeBlocks.get(highlight);
+          const currentHasTable = !!highlight.querySelector('.rouge-table');
+
+          // Check if structure was damaged
+          let needsRestore = false;
+
+          if (stored.hasTable && !currentHasTable) {
+            // Table structure was lost
+            needsRestore = true;
+          } else if (!stored.hasTable) {
+            // Non-table block - check if syntax highlighting was lost
+            const hasHighlightSpans = highlight.querySelectorAll('span[class^="n"], span[class^="k"], span[class^="o"]').length > 0;
+            if (!hasHighlightSpans) {
+              needsRestore = true;
+            }
+          }
+
+          if (needsRestore) {
+            isRestoring = true;
+
+            const original = stored.html;
+            // Preserve any copy buttons we added
+            const copyButton = highlight.querySelector('.copy-button');
+            highlight.innerHTML = original.innerHTML;
+            if (copyButton && !highlight.querySelector('.copy-button')) {
+              highlight.appendChild(copyButton);
+            }
+
+            // Allow observer to resume after restoration completes
+            setTimeout(() => {
+              isRestoring = false;
+            }, 100);
+          }
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true
+    });
+  });
+</script>
