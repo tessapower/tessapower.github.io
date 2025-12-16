@@ -53,8 +53,7 @@ project_entries:
 
   - title: TEngine
     url: https://github.com/tessapower/tengine
-    desc: A 2D game engine built to support building games in Java for the
-      course 159261 Games Programming at Massey University.
+    desc: A custom built 2D game engine created to support building games in Java for the "159261 Games Programming" course at Massey University.
     keywords: [Java, Game Engine]
 
   - title: Snek
@@ -65,9 +64,9 @@ project_entries:
     gif: assets/images/projects/snek.gif
 
   - title: Holy Whac-a-Moley
-    url: https://github.com/tessapower/weeksauce-feb24
-    desc: A game jam entry created for Weeksauce February 2024, using the Godot game engine and GDScript.
-    keywords: [GDScript, Game, Godot Engine, Game Jam]
+    url: https://github.com/tessapower/week-sauce-feb24
+    desc: A delightful take on the classic Whack-A-Mole game. Created as a game jam entry for Weeksauce February 2024, using the Godot game engine and GDScript.
+    keywords: [GDScript, 2D Game, Godot Engine, Game Jam]
     gif: assets/images/projects/holy-whac-a-moley.gif
 
   - title: Conway's Game of Life
