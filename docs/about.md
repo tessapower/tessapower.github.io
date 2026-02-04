@@ -3,49 +3,45 @@ layout: about
 title: About
 
 ---
-## Hey, my name is Tessa.
+## Howdy, my name is Tessa.
 
 <img alt="Me!" src="/images/profile-photo.png" width="300" style="float:right;vertical-align:middle;margin:2px 1px"/>
 
 I'm a computer graphics software engineer. I like building things from scratch,
 just to see if I can.
 
-Want the short version? [Here's my résumé](/resume.pdf). Otherwise, read on to learn
-more about me.
+Want the short version? [Here's my résumé](/resume.pdf).
 
-With over 7 years of C++ experience (4 years focused on graphics programming)
-combined with 3+ years of professional experience shipping production web apps,
-I bring a unique perspective to technical challenges that span from low-level
-optimization to modern UIs.
+I've worked with C++ for more than 8 years, with the last 4 years dedicated to
+rendering pipelines and computer graphics. Before going back to school in 2020,
+I spent several years in the tech industry as a mechatronics developer, frontend
+developer, and product owner. Holding professional certifications as a Scrum
+Product Owner, ISTQB Software Tester, and C++ programmer, my approach to
+development is generally described as methodical, pragmatic, and quality-focused.
 
-My journey to graphics programming began during my year studying Mechatronics
-while working at [Cenit](https://cenit.com), a company headquartered in Germany developing
-industry-leading digital-twin software for offline robotics programming and
-production-line optimization. This early exposure to the intersection of
-graphics, mathematics, and real-world applications sparked my interest in
-computer graphics and performance-critical systems.
+I graduated in 2024 with a Computer Science degree (3.6 GPA) from the Victoria
+University of Wellington, recognized for its world-class computer graphics
+program and close collaboration with Weta Digital. My coursework focused heavily
+on 2D and 3D computer graphics, the rendering pipeline, real-time graphics, and
+computer vision.
 
-I've built complete 3D rendering engines using DirectX 11 and OpenGL, developed
-real-time mesh editing apps, a hydraulic erosion simulator, and created computer
-vision tools using techniques like SIFT feature detection and RANSAC algorithms.
-On the web development side, I've shipped fullstack applications using React,
-TypeScript/JS, Ruby-on-Rails, and Go, with experience ranging from API design to
-CI/CD pipeline implementation.
+A few of my more noteworthy projects include a 2D game engine based on ECS
+architecture, a 3D rendering engine (C++/DirectX 11/Win32), an app that
+supports editing a procedurally generated 3D terrain mesh in real-time
+(C++/OpenGL/Win32), a hydraulic erosion simulator (TypeScript, Three.js, WebGL),
+and computer vision tools for Gaussian Splatting and video stabilization using
+techniques like SIFT feature detection and RANSAC algorithms. I also enjoy
+experimenting with shaders and building video games in game jams.
 
-My professional experience includes enhancing the video review platform at
-Shuttlerock that served creative teams across 15+ international markets. As a
-Certified Scrum Product Owner and ISTQB Software Tester, I bring systematic
-approaches to both product development and quality assurance.
+I've lived in 10 different cities across 4 different countries, and have extensive
+experience working onsite and remotely with distributed teams across multiple
+time zones.
 
-I went back to school in 2020, and graduated in 2024 with a Computer Science
-degree (3.6 GPA) from Victoria University of Wellington, where my coursework
-focused heavily on computer graphics, real-time rendering, and computer vision.
-I'm fluent in English and German, and have extensive experience working with
-distributed teams across multiple time zones.
+I'm also fluent in English and German.
 
-I'm particularly interested in roles involving shader development and low-level
-rendering. Feel free to explore my [projects](/) or read about my current
-learnings and dev work in my [blog](/blog).
+Feel free to explore my [projects](/) or read about my current learnings and
+development work in my [blog](/blog). Links to my professional profiles can be
+found at the bottom of the page.
 
 ---
 
@@ -57,10 +53,11 @@ learnings and dev work in my [blog](/blog).
 - [The Nature of Code: Simulating Natural Systems](https://www.amazon.com/Nature-Code-Simulating-Natural-Processing/dp/0985930802/ref=sr_1_1?crid=3OVP6G73P925K&keywords=the+nature+of+code&qid=1651042162&s=books&sprefix=the+nature+of+cod%2Cstripbooks-intl-ship%2C253&sr=1-1) (1E)—Daniel Shiffman
 
 **Currently Reading...**
-- [Computer Graphics: Principles and Practice](https://www.amazon.com/Computer-Graphics-Principles-Practice-3rd/dp/0321399528/ref=sr_1_2?keywords=Computer+Graphics&qid=1690144655&sr=8-2&ufe=app_do%3Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc) (3E)—Hughs, van Dam, et al.
+- [3D Game Programming with DirectX 12](https://www.amazon.com/Introduction-3D-Game-Programming-DirectX/dp/1942270062) (1E)—Frank Luna
 <br>
 
 **Previously Read**
+- [Computer Graphics: Principles and Practice](https://www.amazon.com/Computer-Graphics-Principles-Practice-3rd/dp/0321399528/ref=sr_1_2?keywords=Computer+Graphics&qid=1690144655&sr=8-2&ufe=app_do%3Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc) (3E)—Hughs, van Dam, et al.
 - [Operating Systems: Three Easy Pieces](https://www.amazon.com/Operating-Systems-Three-Easy-Pieces/dp/198508659X) (1E)—Andrea & Remzi Arpaci-Dusseau
 - [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/) (1E)—Brian "Beej" Hall
 - [Game Programming Patterns](https://www.amazon.com/Game-Programming-Patterns-Robert-Nystrom/dp/0990582906/ref=sr_1_1?crid=OK2MUY2G5LY8&keywords=Game+Design+Patterns&qid=1651042024&s=books&sprefix=game+design+patter%2Cstripbooks-intl-ship%2C248&sr=1-1) (1E)—Robert Nystrom
@@ -82,4 +79,4 @@ learnings and dev work in my [blog](/blog).
 - [The Mac Command Line with Terminal](https://amzn.to/3iuY40w)—Joe Kissell
 
 
-*Updated: 16 Dec 2025*
+*Updated: Feb 4th, 2026*
