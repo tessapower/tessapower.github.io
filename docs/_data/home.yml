@@ -1,12 +1,12 @@
 navbar_entries:
-  - title: Projects
+  - title: Blog
     url: /
+    
+  - title: Projects
+    url: /projects
 
   - title: About
     url: /about
-
-  - title: Blog
-    url: /blog
 
 project_entries:
   - title: Hydraulic Erosion Simulation
