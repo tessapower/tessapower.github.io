@@ -1,5 +1,5 @@
 ---
-title: "Repurposing iterators as geometric generators"
+title: "Repurposing C++ iterators as geometric generators"
 layout: post
 tags: [c++, iterators, generators, computer vision, backtracking]
 ---

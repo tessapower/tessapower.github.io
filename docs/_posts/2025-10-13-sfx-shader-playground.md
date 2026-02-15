@@ -1,5 +1,5 @@
 ---
-title: "sfx: A Shader Playground"
+title: "sfx: A hot-reloading, locally-hosted shader playground"
 layout: post
 tags: [shaders, webgl, threejs, react, typescript]
 ---
