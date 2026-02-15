@@ -1,7 +1,7 @@
 navbar_entries:
   - title: Blog
     url: /
-    
+
   - title: Projects
     url: /projects
 
@@ -38,6 +38,7 @@ project_entries:
     url: https://github.com/tessapower/3dgs-viewer
     desc: A simple Godot tool for visualizing and interacting with 3D Gaussian Splat point cloud data. Supports .PLY (Stanford Triangle Format), .SPLAT (3D Gaussian Splat format) and .XYZ files (simple point format).
     keywords: [Computer Graphics, 3D Gaussian Splat, Godot, GDScript]
+    gif: assets/images/projects/3dgs-viewer.gif
 
   - title: DXEngine
     url: https://github.com/tessapower/dxengine
