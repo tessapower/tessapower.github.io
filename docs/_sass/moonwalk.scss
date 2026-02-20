@@ -280,6 +280,15 @@ p code, li code {
   }
 }
 
+// -------------- ABOUT PAGE -------------- //
+@media screen and (max-width: 600px) {
+  .profile-photo {
+    width: 40% !important;
+    max-width: 40%;
+    margin: 4px 0 4px 8px !important;
+  }
+}
+
 // -------------- POST NAVIGATION -------------- //
 .post-navigation {
   margin-bottom: 2rem;

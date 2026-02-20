@@ -93,6 +93,20 @@ takes care of the rest! This extremely simple setup is a efficient and allows me
 to focus on writing content, and less on maintaining the site.
 
 ---
+
+### Image Caching
+
+Since GitHub Pages doesn't support custom HTTP cache headers, GIFs and other
+images are cached client-side via a Service Worker (`docs/sw.js`) using a
+Cache-First strategy. On first visit, images are fetched from the network and
+stored in the browser's Cache Storage under the key `images-v1`. Subsequent
+visits (and page navigations) serve images directly from cache.
+
+If you replace a GIF or image with a new file of the same name, bump the cache
+version in `docs/sw.js` (e.g. `images-v1` → `images-v2`) to force browsers to
+fetch the updated file.
+
+---
 ### [My workflow](my-workflow)
 
 Not only is this approach modern and extremely fast, it has made my workflow pretty lean. I can add
