@@ -9,10 +9,22 @@ navbar_entries:
     url: /about
 
 project_entries:
+  - title: Tattler
+    url: https://github.com/tessapower/tattler
+    desc: A standalone, lightweight frame debugger for DX12 applications built with Detours and Dear ImGui. Allows users to easily capture and analyze frames, providing insights into performance bottlenecks and rendering issues.
+    keywords: [DirectX 12, Performance Analysis, Tooling, Detours, Win32, Dear ImGui, C++, Computer Graphics]
+
+  - title: DirectX 12 Real-Time Path Tracer
+    url: https://github.com/tessapower/pathtracer
+    desc: A real-time compute-based ray tracer that applies path tracing to realistically simulate the effects of light transport in 3D scenes. Built with DirectX 12 and HLSL compute shaders.
+    highlight: WIP
+    keywords: [DirectX 12, Path Tracing, Real-time Rendering, HLSL, Compute Shaders, Win32, C++, Computer Graphics]
+
   - title: Hydraulic Erosion Simulation
     url: https://github.com/tessapower/hydraulic-erosion
+    demo: https://tessapower.xyz/hydraulic-erosion/
     desc: A particle-based hydraulic erosion simulation that realistically simulates the effects of water flow on procedurally generated terrain.
-    keywords: [Computer Graphics, TypeScript, WebGL, GLSL, Simulation]
+    keywords: [Physics Simulation, TypeScript, WebGL, GLSL, Computer Graphics]
     gif: assets/images/projects/erosion-simulation.gif
 
   - title: Video Stabilizer
@@ -26,25 +38,27 @@ project_entries:
     desc: 3D terrain simulation with an editable, procedurally generated terrain
       mesh that updates in real-time. Built for the course CGRA350 Real Time
       Rendering at VUW.
-    keywords: [Real-time Rendering, C++, OpenGL, GLSL]
+    keywords: [Real-time Rendering, C++, OpenGL, GLSL, Computer Graphics]
 
   - title: sfx
     url: https://github.com/tessapower/sfx
+    demo: https://tessapower.xyz/sfx/
     desc: A hot-reloadable shader playground for experimenting with GLSL fragment shaders offline, built with React, TypeScript, and Three.js.
-    keywords: [TypeScript, React, Three.js, WebGL, Shaders]
+    keywords: [TypeScript, React, Three.js, WebGL, Shaders, Computer Graphics]
     gif: assets/images/projects/water-shader.gif
 
   - title: 3D Gaussian Splat Viewer
     url: https://github.com/tessapower/3dgs-viewer
+    demo: https://tessapower.xyz/3dgs-viewer
     desc: A simple Godot tool for visualizing and interacting with 3D Gaussian Splat point cloud data. Supports .PLY (Stanford Triangle Format), .SPLAT (3D Gaussian Splat format) and .XYZ files (simple point format).
-    keywords: [Computer Graphics, 3D Gaussian Splat, Godot, GDScript]
+    keywords: [Computer Graphics, 3D Gaussian Splat, Godot, GDScript, Point Cloud Visualization]
     gif: assets/images/projects/3dgs-viewer.gif
 
   - title: DXEngine
     url: https://github.com/tessapower/dxengine
     desc: Hardware accelerated DX11 based rendering engine built on Win32.
     highlight: WIP
-    keywords: [Rendering Engine, Shader Development, HLSL, C++, DirectX, Win32]
+    keywords: [Rendering Engine, Shader Development, HLSL, C++, DirectX, Win32, Computer Graphics]
 
   - title: TEngine
     url: https://github.com/tessapower/tengine
@@ -59,12 +73,14 @@ project_entries:
 
   - title: Hugh's Chromatic Adventure
     url: https://sasspower.itch.io/hughs-chromatic-adventure
+    demo: https://sasspower.itch.io/hughs-chromatic-adventure
     desc: A colorful 2D platformer where you help Hugh the penguin solve puzzling levels. Built using the Godot game engine and GDScript.
     keywords: [GDScript, 2D Game, Platformer, Godot Engine, Game Jam]
     gif: assets/images/projects/hughs-chromatic-adventure.png
 
   - title: Holy Whac-a-Moley
     url: https://sasspower.itch.io/holy-whac-a-moley
+    demo: https://sasspower.itch.io/holy-whac-a-moley
     desc: A delightful take on the classic Whack-A-Mole game. Created as a game jam entry for Weeksauce February 2024, using the Godot game engine and GDScript.
     keywords: [GDScript, 2D Game, Godot Engine, Game Jam]
     gif: assets/images/projects/holy-whac-a-moley.gif
@@ -78,6 +94,7 @@ project_entries:
 
   - title: Conway's Game of Life
     url: https://github.com/tessapower/game-of-life
+    demo: https://tessapower.xyz/blog/game-of-life#the-canvas
     desc: A JS implementation of Conway's Game of Life.
     keywords: [JavaScript, Simulation, Cellular Automata]
     gif: assets/images/projects/game-of-life.gif
@@ -96,6 +113,9 @@ footer_entries:
 
   - title: Twitter
     url: https://twitter.com/sass_pwr
+
+  - title: Itch.io
+    url: https://sasspower.itch.io
 
   - title: Résumé
     url: ./resume.pdf
