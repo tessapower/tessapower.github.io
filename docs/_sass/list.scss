@@ -74,7 +74,8 @@ ul.card-list {
 @media screen and (max-width: 900px) {
   ul.card-list {
     margin-left: 0;
-    justify-content: space-between;
+    padding-left: 0;
+    justify-content: center;
 
     li.card {
       width: calc(50% - 0.5em);  // Two column grid
@@ -86,7 +87,6 @@ ul.card-list {
       .card-content {
         flex-direction: column;
         height: 100%;
-        position: relative;
       }
 
       .card-text {
@@ -133,7 +133,7 @@ ul.card-list {
       }
 
       .card-gif {
-        opacity: 1;  // Always visible on mobile
+        opacity: 0.7;
         width: 100%;
         height: 100%;
         object-fit: cover;
