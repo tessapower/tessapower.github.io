@@ -114,6 +114,9 @@ footer_entries:
   - title: Twitter
     url: https://twitter.com/sass_pwr
 
+  - title: Itch.io
+    url: https://sasspower.itch.io
+
   - title: Résumé
     url: ./resume.pdf
 
