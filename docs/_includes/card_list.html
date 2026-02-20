@@ -2,43 +2,53 @@
   {% for item in include.collection %}
 
     <li class="card">
-      <a href="{{ item.url }}">
-        <div class="card-content">
-          <!-- Left side: Text content -->
-          <div class="card-text">
+      <div class="card-content">
+        <!-- Left side: Text content -->
+        <div class="card-text">
+          <div class="card-header-row">
             <span class="header">
               {{ item.title }}
 
               {% if item.highlight %}
               <mark>{{ item.highlight }}</mark>
               {% endif %}
-
-              <br />
             </span>
 
-            <hr />
+            <div class="card-links">
+              {% if item.demo %}
+              <a href="{{ item.demo }}" class="card-demo-link" target="_blank" rel="noopener noreferrer" aria-label="Live demo of {{ item.title }}">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              {% endif %}
 
-            {% if item.desc != false %}
-            <p class="body">
-              {{ item.desc }}
-            </p>
-            {% endif %}
-
-            <span class="footer">
-              {% for keyword in item.keywords %}
-                <mark class="keywords">{{ keyword }}</mark>
-              {% endfor %}
-            </span>
+              <a href="{{ item.url }}" class="card-repo-link" target="_blank" rel="noopener noreferrer" aria-label="View {{ item.title }} on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
           </div>
 
-          <!-- Right side: Optional GIF preview -->
-          {% if item.gif %}
-          <div class="card-media">
-            <img src="{{ item.gif }}" alt="{{ item.title }} demonstration" class="card-gif" />
-          </div>
+          <hr />
+
+          {% if item.desc != false %}
+          <p class="body">
+            {{ item.desc }}
+          </p>
           {% endif %}
+
+          <span class="footer">
+            {% for keyword in item.keywords %}
+              <mark class="keywords">{{ keyword }}</mark>
+            {% endfor %}
+          </span>
         </div>
-      </a>
+
+        <!-- Right side: Optional GIF preview -->
+        {% if item.gif %}
+        <div class="card-media">
+          <img src="{{ item.gif }}" alt="{{ item.title }} demonstration" class="card-gif" />
+        </div>
+        {% endif %}
+      </div>
     </li>
 
   {% endfor %}
