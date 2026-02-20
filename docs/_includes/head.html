@@ -43,4 +43,10 @@
   {% if site.theme_config.appearance_toggle %}
     {% include toggle_theme_js.html %}
   {% endif %}
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 </head>
