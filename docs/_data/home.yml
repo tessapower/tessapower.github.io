@@ -72,7 +72,7 @@ project_entries:
     keywords: [Fullstack, JavaScript, TypeScript, React.js]
 
   - title: Hugh's Chromatic Adventure
-    url: https://sasspower.itch.io/hughs-chromatic-adventure
+    url: https://github.com/tessapower/ggj-2026
     demo: https://sasspower.itch.io/hughs-chromatic-adventure
     desc: A colorful 2D platformer where you help Hugh the penguin solve puzzling levels. Built using the Godot game engine and GDScript.
     keywords: [GDScript, 2D Game, Platformer, Godot Engine, Game Jam]
