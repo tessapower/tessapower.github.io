@@ -163,21 +163,12 @@ ul.card-list {
         top: 0.3em;
         right: 0.3em;
         z-index: 3;
-        color: white;
         font-size: 2.4em;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-      }
-
-      .card-demo-link {
-        color: white;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
       }
 
       .header {
         font-size: 1.5em;
         font-weight: bold;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
       }
 
       .body, hr {
@@ -206,7 +197,25 @@ ul.card-list {
         object-fit: cover;
       }
 
-      // If no gif, show solid background
+      // Cards with a gif: dark overlay is present, so use white + text-shadow for contrast
+      &:has(.card-media) {
+        .card-repo-link {
+          color: white;
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .card-demo-link {
+          color: white;
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .header {
+          color: white;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+      }
+
+      // Cards without a gif: solid theme background, use default theme colors
       &:not(:has(.card-media)) .card-text {
         background: var(--bg-secondary);
       }
