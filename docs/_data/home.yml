@@ -79,7 +79,7 @@ project_entries:
     gif: assets/images/projects/hughs-chromatic-adventure.png
 
   - title: Holy Whac-a-Moley
-    url: https://sasspower.itch.io/holy-whac-a-moley
+    url: https://github.com/tessapower/week-sauce-feb24
     demo: https://sasspower.itch.io/holy-whac-a-moley
     desc: A delightful take on the classic Whack-A-Mole game. Created as a game jam entry for Weeksauce February 2024, using the Godot game engine and GDScript.
     keywords: [GDScript, 2D Game, Godot Engine, Game Jam]
