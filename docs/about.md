@@ -7,7 +7,7 @@ title: About
 
 <img alt="Me!" src="/images/profile-photo.png" width="300" class="profile-photo" style="float:right;vertical-align:middle;margin:2px 1px"/>
 
-I'm a computer graphics software engineer. I like building things from scratch,
+I'm a computer graphics software engineer at AMD. I like building things from scratch,
 just to see if I can.
 
 Want the short version? [Here's my résumé](/resume.pdf).
