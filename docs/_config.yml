@@ -19,7 +19,7 @@ linkedin:
     url: https://linkedin.com/in/tessa-power
 
 #theme: moonwalk # if you are using GitHub Pages, change it to remote_theme: abhinavs/moonwalk
-remote_theme: abhinavs/moonwalk
+remote_theme: abhinavs/moonwalk@ab37fa6265a8b78f203f203cbab71c0b3edbe400
 
 theme_config:
   appearance: "auto"            # can be "light", "dark" or "auto"
