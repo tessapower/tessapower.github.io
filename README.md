@@ -1,6 +1,6 @@
 ## Personal Website
 
-[![Deployment](https://github.com/tessapower/tessapower.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/tessapower/tessapower.github.io/actions/workflows/pages/pages-build-deployment)
+[![Deploy Jekyll site to Pages](https://github.com/tessapower/tessapower.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/tessapower/tessapower.github.io/actions/workflows/deploy.yml)
 
 This is a repo for my personal website, where I post about what I'm learning and working on. It's generated using [Jekyll](https://github.com/jekyll/jekyll),
 the [Moonwalk](https://github.com/abhinavs/moonwalk) theme, and automatically deployed via [GitHub Pages](https://pages.github.com/). It also supports comments on blogposts via [Giscus](https://github.com/giscus/giscus), which you can see in the Discussion section of this repo.
